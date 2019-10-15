@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>~/Desktop/3xc3pt10n/3xc3pt10n/codeforces/363/B/B.cpp.html</title>
+<meta name="Generator" content="Vim/8.0">
+<meta name="plugin-version" content="vim7.4_v2">
+<meta name="syntax" content="cpp">
+<meta name="settings" content="number_lines,use_css,pre_wrap,no_foldcolumn,expand_tabs,line_ids,prevent_copy=">
+<meta name="colorscheme" content="iceberg">
+<style type="text/css">
+<!--
+pre { white-space: pre-wrap; font-family: monospace; color: #d0d0d0; background-color: #1c1c1c; }
+body { font-family: monospace; color: #d0d0d0; background-color: #1c1c1c; }
+* { font-size: 1em; }
+.String { color: #87afaf; }
+.LineNr { color: #4e4e4e; background-color: #262626; padding-bottom: 1px; }
+.Function { color: #87afd7; }
+.Structure { color: #87afd7; }
+.parens { color: #ffffff; font-weight: bold; }
+.Comment { color: #6c6c6c; }
+.Constant { color: #af87d7; }
+.Special { color: #afd787; }
+.Statement { color: #87afd7; }
+.PreProc { color: #afd787; }
+.Type { color: #87afd7; }
+.Include { color: #87afd7; }
+.StorageClass { color: #87afd7; }
+-->
+</style>
+
+<script type='text/javascript'>
+<!--
+
+/* function to open any folds containing a jumped-to line before jumping to it */
+function JumpToLine()
+{
+  var lineNum;
+  lineNum = window.location.hash;
+  lineNum = lineNum.substr(1); /* strip off '#' */
+
+  if (lineNum.indexOf('L') == -1) {
+    lineNum = 'L'+lineNum;
+  }
+  lineElem = document.getElementById(lineNum);
+  /* Always jump to new location even if the line was hidden inside a fold, or
+   * we corrected the raw number to a line ID.
+   */
+  if (lineElem) {
+    lineElem.scrollIntoView(true);
+  }
+  return true;
+}
+if ('onhashchange' in window) {
+  window.onhashchange = JumpToLine;
+}
+
+-->
+</script>
+</head>
+<body onload='JumpToLine();'>
+<pre id='vimCodeElement'>
+<span id="L1" class="LineNr"> 1 </span><span class="Include">#include         </span><span class="String">&lt;iostream&gt;</span>
+<span id="L2" class="LineNr"> 2 </span><span class="Include">#include         </span><span class="String">&lt;algorithm&gt;</span>
+<span id="L3" class="LineNr"> 3 </span><span class="Include">#include         </span><span class="String">&lt;functional&gt;</span>
+<span id="L4" class="LineNr"> 4 </span><span class="Include">#include         </span><span class="String">&lt;vector&gt;</span>
+<span id="L5" class="LineNr"> 5 </span><span class="Include">#include         </span><span class="String">&lt;map&gt;</span>
+<span id="L6" class="LineNr"> 6 </span><span class="Include">#include         </span><span class="String">&lt;set&gt;</span>
+<span id="L7" class="LineNr"> 7 </span><span class="Include">#include         </span><span class="String">&lt;string&gt;</span>
+<span id="L8" class="LineNr"> 8 </span><span class="Include">#include         </span><span class="String">&lt;cstring&gt;</span>
+<span id="L9" class="LineNr"> 9 </span><span class="Include">#include         </span><span class="String">&lt;climits&gt;</span>
+<span id="L10" class="LineNr">10 </span><span class="Include">#include         </span><span class="String">&lt;cstdlib&gt;</span>
+<span id="L11" class="LineNr">11 </span><span class="Include">#include         </span><span class="String">&lt;cmath&gt;</span>
+<span id="L12" class="LineNr">12 </span><span class="PreProc">#define pb       </span><span class="Function">push_back</span>
+<span id="L13" class="LineNr">13 </span><span class="PreProc">#define eb       </span><span class="Function">emplace_back</span>
+<span id="L14" class="LineNr">14 </span><span class="PreProc">#define se       </span><span class="Function">second</span>
+<span id="L15" class="LineNr">15 </span><span class="PreProc">#define fi       </span><span class="Function">first</span>
+<span id="L16" class="LineNr">16 </span><span class="PreProc">#define </span><span class="Function">all</span><span class="parens">(</span><span class="PreProc">v</span><span class="parens">)</span><span class="PreProc">   </span><span class="parens">(</span><span class="PreProc">v</span><span class="parens">)</span>.<span class="Function">begin</span><span class="parens">()</span><span class="PreProc">,</span><span class="parens">(</span><span class="PreProc">v</span><span class="parens">)</span>.<span class="Function">end</span><span class="parens">()</span>
+<span id="L17" class="LineNr">17 </span><span class="PreProc">#define </span><span class="Function">bug</span><span class="parens">(</span><span class="PreProc">s,x</span><span class="parens">)</span><span class="PreProc"> </span><span class="Function">fprintf</span><span class="parens">(</span><span class="Constant">stderr</span><span class="PreProc">,</span><span class="String">&quot;[</span><span class="Special">%s</span><span class="String"> </span><span class="Special">%s</span><span class="String"> : </span><span class="Special">%i</span><span class="String">]</span><span class="Special">\n</span><span class="String">&quot;</span><span class="PreProc">,s,#x,x</span><span class="parens">)</span>
+<span id="L18" class="LineNr">18 </span><span class="PreProc">#define </span><span class="Function">bg</span><span class="parens">(</span><span class="PreProc">x</span><span class="parens">)</span><span class="PreProc">    </span><span class="Function">bug </span><span class="parens">(</span><span class="String">&quot;here : &quot;</span><span class="PreProc">, x</span><span class="parens">)</span>
+<span id="L19" class="LineNr">19 </span><span class="PreProc">#define </span><span class="Function">inf      </span><span class="parens">(</span><span class="Constant">0x7fffffff</span><span class="parens">)</span>
+<span id="L20" class="LineNr">20 </span><span class="PreProc">#define </span><span class="Function">eps      </span><span class="parens">((</span><span class="Type">double</span><span class="parens">)</span><span class="Constant">1e-9</span><span class="parens">)</span>
+<span id="L21" class="LineNr">21 </span><span class="PreProc">#define </span><span class="Function">scanf</span><span class="PreProc">    warnscanf_shit = </span><span class="Function">scanf</span>
+<span id="L22" class="LineNr">22 </span><span class="PreProc">#define IOS      </span><span class="Type">ios_base</span>::<span class="Function">sync_with_stdio</span><span class="parens">(</span><span class="Constant">false</span><span class="parens">)</span>
+<span id="L23" class="LineNr">23 </span><span class="PreProc">#define PREC     </span><span class="Constant">cin</span>.<span class="Function">tie</span><span class="PreProc"> </span><span class="parens">(</span><span class="Constant">NULL</span><span class="parens">)</span><span class="PreProc">; </span><span class="Constant">cout</span>.<span class="Function">precision</span><span class="PreProc"> </span><span class="parens">(</span><span class="Constant">10</span><span class="parens">)</span><span class="PreProc">; </span><span class="Constant">cout</span><span class="PreProc"> &lt;&lt; </span><span class="Function">fixed</span><span class="PreProc">;</span>
+<span id="L24" class="LineNr">24 </span><span class="Statement">using</span> <span class="Structure">namespace</span> <span class="Constant">std</span>;
+<span id="L25" class="LineNr">25 </span><span class="Type">int</span> warnscanf_shit;
+<span id="L26" class="LineNr">26 </span><span class="Structure">typedef</span> <span class="Type">int64_t</span> ll;
+<span id="L27" class="LineNr">27 </span><span class="Structure">typedef</span> <span class="Type">uint64_t</span> ull;
+<span id="L28" class="LineNr">28 </span><span class="StorageClass">const</span> <span class="Type">int</span> mod = <span class="Constant">1e9</span> + <span class="Constant">7</span>;
+<span id="L29" class="LineNr">29 </span><span class="StorageClass">const</span> <span class="Type">int</span> maxn = <span class="Constant">1e6</span> + <span class="Constant">10</span>;
+<span id="L30" class="LineNr">30 </span><span class="Type">int</span> n, k;
+<span id="L31" class="LineNr">31 </span><span class="Type">int</span> h[maxn];
+<span id="L32" class="LineNr">32 </span><span class="Type">int</span> dp[maxn];
+<span id="L33" class="LineNr">33 </span>
+<span id="L34" class="LineNr">34 </span><span class="Type">int</span> <span class="Function">main</span><span class="parens">()</span> <span class="parens">{</span>
+<span id="L35" class="LineNr">35 </span>    <span class="Comment">//IOS; PREC;</span>
+<span id="L36" class="LineNr">36 </span>    <span class="Function">scanf</span> <span class="parens">(</span><span class="String">&quot;</span><span class="Special">%i%i</span><span class="String">&quot;</span>, &amp;n, &amp;k<span class="parens">)</span>;
+<span id="L37" class="LineNr">37 </span>    <span class="Statement">for</span> <span class="parens">(</span><span class="Type">int</span> i = <span class="Constant">0</span>; i &lt; n; ++i<span class="parens">)</span> <span class="parens">{</span>
+<span id="L38" class="LineNr">38 </span>      <span class="Function">scanf</span> <span class="parens">(</span><span class="String">&quot; </span><span class="Special">%i</span><span class="String">&quot;</span>, &amp;h[i]<span class="parens">)</span>;
+<span id="L39" class="LineNr">39 </span>      <span class="Statement">if</span> <span class="parens">(</span>i<span class="parens">)</span> dp[i] = dp[i - <span class="Constant">1</span>] + h[i];
+<span id="L40" class="LineNr">40 </span>      <span class="Statement">else</span> dp[i] = h[i];
+<span id="L41" class="LineNr">41 </span>    <span class="parens">}</span>
+<span id="L42" class="LineNr">42 </span>    <span class="Type">int</span> mn = dp[k-<span class="Constant">1</span>], idx = k - <span class="Constant">1</span>;
+<span id="L43" class="LineNr">43 </span>    <span class="Statement">for</span> <span class="parens">(</span><span class="Type">int</span> i = k; i &lt; n; ++i<span class="parens">)</span> <span class="parens">{</span>
+<span id="L44" class="LineNr">44 </span>      <span class="Statement">if</span> <span class="parens">(</span>mn &gt; dp[i] - dp[i - k]<span class="parens">)</span> <span class="parens">{</span>
+<span id="L45" class="LineNr">45 </span>        mn = dp[i] - dp[i - k];
+<span id="L46" class="LineNr">46 </span>        idx = i;
+<span id="L47" class="LineNr">47 </span>      <span class="parens">}</span>
+<span id="L48" class="LineNr">48 </span>    <span class="parens">}</span>
+<span id="L49" class="LineNr">49 </span>    <span class="Function">printf</span> <span class="parens">(</span><span class="String">&quot;</span><span class="Special">%i</span><span class="Special">\n</span><span class="String">&quot;</span>, idx - k + <span class="Constant">2</span><span class="parens">)</span>;
+<span id="L50" class="LineNr">50 </span>
+<span id="L51" class="LineNr">51 </span>    <span class="Statement">return</span> <span class="Constant">EXIT_SUCCESS</span>;
+<span id="L52" class="LineNr">52 </span><span class="parens">}</span>
+</pre>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->

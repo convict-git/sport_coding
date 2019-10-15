@@ -1,0 +1,15 @@
+Case #1:
+NEGATIVE CYCLE
+NEGATIVE CYCLE
+NEGATIVE CYCLE
+NEGATIVE CYCLE
+Case #2:
+Nieuwkerk-Nieuwkerk 0
+Nieuwkerk-Oudekerk -5
+Nieuwkerk-Pierteck NOT REACHABLE
+Oudekerk-Nieuwkerk 10
+Oudekerk-Oudekerk 0
+Oudekerk-Pierteck NOT REACHABLE
+Pierteck-Nieuwkerk -100
+Pierteck-Oudekerk -105
+Pierteck-Pierteck 0

@@ -1,0 +1,59 @@
+# INDEX
+* priority_queue in C++ STL
+
+##################################################################################################
+
+///* PRIORITY_QUEUE IN C++ STL *///
+/*
+#include <queue>
+template <class T, class Container = vector<T>,
+  class Compare = less<typename Container::value_type> > class priority_queue
+  (first iterator of container, last iterator of container, Compare class object);
+
+# priority_queue's first element is the greatest element according to the weak ordering criteria
+# Default parameters for Container (vector) and Compare (less)
+# How to use the Compare parameter?
+# # # i) Write a class and overload operator() for it. Then you can simply pass this class name as Compare.
+# # # ii) Use a comparator function and use polymorphic function wrapping with std::function
+# # # iii) Use a comparator function and use decltype
+# Priority_queue has a constructor which takes [first, last) iterators and the comparison object
+Below are some examples for priority_queue for user defined data-type
+NOTE: You can use the same techinique to design custom comparator for sets and other STLs
+*/
+
+struct Point {
+	int x, y;
+	friend ostream& operator << (ostream &os, const Point &p1) {
+		os << p1.x << ' ' << p1.y;
+		return os;
+	}
+};
+
+class cmp {
+	public:
+		bool flag; cmp (bool f=false) : flag(f){}
+
+		bool operator ()(const Point& p1, const Point& p2) {
+			if (flag) return p1.x > p2.x || (p1.x == p2.x && p1.y > p2.y);
+			else return p1.x < p2.x || (p1.x == p2.x && p1.y < p2.y);
+		}
+};
+
+bool compar (const Point& p1, const Point& p2) {
+	return p1.x > p2.x || (p1.x == p2.x && p1.y > p2.y);
+}
+
+priority_queue <Point, vector <Point>, cmp> Q;
+priority_queue <Point, vector <Point>, cmp> Q (cmp(true));
+priority_queue <Point, vector <Point>, cmp> Q(V.begin(), V.end(), cmp(true)); //from a vector using make_heap algorithm
+
+priority_queue <Point, vector <Point>, function<bool(Point, Point)> > Q(compar);
+priority_queue <Point, vector <Point>, decltype(&compar) > Q(compar);
+
+
+using pii = pair <int, int>;
+priority_queue <pii, vector <pii>, greater<pii> > Q;
+
+##################################################################################################
+
+# Problem based on prefix suffix sum dp on tree - SPOJ - EAGLE1

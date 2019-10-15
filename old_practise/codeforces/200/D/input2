@@ -1,0 +1,18 @@
+6
+void f(string,double,int)
+void f(int)
+   void f  ( T  )
+void procedure(int,double)
+void f  (T, double,int)   
+void f(string, T,T)
+4
+ int a
+ int x
+string  t
+double  val  
+5
+f(t, a, a)
+f(t,val,a)
+f(val,a, val)
+ solve300(val, val)
+f  (x)

@@ -1,0 +1,38 @@
+
+   cout << "Case " << tc << ": ";
+   int flow = edmondsKarp(s, t);
+   if (flow == totalWater) {
+      cout << "YES\n";
+      vector <pii> prep, ans;
+      for (int i = 0; i < nm; ++i) {
+         prep.clear(), ans.clear();
+         cerr << bg(i) << '\n';
+         for (int v : Adj[i]) {
+            if (v == s) continue;
+            if (f[v][i]) {
+               prep.push_back(pii(interval[v - nm].x, interval[v - nm].y + 1));
+            }
+         }
+         for (auto it : prep)
+            cerr << it.x << ' ' << it.y << '\n';
+
+         int aa = prep[0].x, bb = prep[0].y;
+         for (int j = 1; j < (int)prep.size(); ++i) {
+            if (bb + 1 == prep[i].x)
+               bb = prep[i].x + 1;
+            else {
+               ans.push_back(pii(aa, bb));
+               aa = prep[i].x, bb = prep[i].y;
+            }
+         }
+      }
+      int sz = (int) ans.size();
+      cout << sz << ' ';
+      for (int i = 0; i < sz; ++i) {
+         cout << '(' << ans[i].x << ',' << ans[i].y << ')' << " \n"[i == sz - 1];
+      }
+   }
+   else cout << "NO\n";
+
+}
+

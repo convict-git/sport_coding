@@ -1,0 +1,35 @@
+bool vis[N];
+int match[N];
+vector < vector <int> > Adj;
+int n, nl, nr; // first 0, ..., nl - 1 vertices in left nl, ..., nr - 1 in right
+
+void init() {
+   assert(n && n % 2 == 0);
+   Adj.assign(n, vector <int> ());
+   for (int i = 0; i < n; ++i)
+      vis[i] = -1, match[i] = -1;
+}
+
+bool augment(int u) {
+   if (vis[u]) return false;
+   vis[u] = true;
+
+   for (int v : Adj[u]) {
+      if (match[v] == -1 || augment(v)) {
+         match[v] = u;
+         return true;
+      }
+   }
+   return false;
+}
+
+int MCBM() {
+   assert (nl + nr == n);
+   int mcbm = 0;
+   init();
+
+   for (int u = 0; u < nl; ++u) { // in left set
+      fill(vis, vis + n, false);
+      mcbm += augment(u);
+   }
+}
