@@ -1,3 +1,4 @@
+/*{{{*/
 #include      <bits/stdc++.h>
 #include      <ext/pb_ds/assoc_container.hpp>
 #include      <ext/pb_ds/tree_policy.hpp>
@@ -63,9 +64,9 @@ void err(istream_iterator<string> it, T a, Args... args) {
       << " [ " <<  *it << " : " << a  << " ] "<< ' ';
    err(++it, args...);
 }
+/*}}}*/
 /*****************************************************************************/
 //Don’t practice until you get it right. Practice until you can’t get it wrong
-
 
 signed main() {
    IOS; PREC;
@@ -125,6 +126,7 @@ signed main() {
 
       for (Edge &e : edges) if (pi[e.u] == e.v)
             swap(e.u, e.v);
+
 
       // fenwick tree on euler tour
       int sz = (int)euler.size();

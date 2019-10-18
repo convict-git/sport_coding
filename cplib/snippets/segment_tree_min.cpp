@@ -1,5 +1,9 @@
 #include <bits/stdc++.h>
-using namespace std; class seg_min {
+using namespace std;
+class seg_min { /*{{{*/
+   // Recurisve Segment Tree with lazy propogation for min library
+   // This library is created by Priyanshu Shrivastav (mr.convict)
+   // https://github.com/convict-git/sport_coding/blob/master/cplib/snippets/segment_tree_min.cpp
    public:
       using ll = long long;
       seg_min (int n, int Ar[] = nullptr) {
@@ -77,4 +81,4 @@ using namespace std; class seg_min {
          ll rq = get(ql, qr, mid + 1, r, x + x + 2);
          return min(lq, rq);
       }
-};
+}; /*}}}*/

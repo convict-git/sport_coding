@@ -26,12 +26,35 @@ public class Main {
             N = Math.max(N, A[i]);
          }
          // out.println(N);
+         boolean [] take = new boolean [n];
+
          int [] idx = new int [N + 1];
          Arrays.fill(idx, -1);
          for (int i = 0; i < n; ++i) {
             idx[A[i]] = Math.max(idx[A[i]], i);
          }
+         for (int i = n - 1; i >= 0; --i) {
+            if (idx[A[i]] == i) take[i] = true;
+         }
 
+         int []fq = new int [N + 1];
+         Arrays.fill(fq, 0);
+
+         int mxn = 0;
+         for (int i = 0; i < n; ++i) {
+            if (take[i] == true) {
+               int x = A[i];
+               int cur_max = 0;
+               for (int y = x; y <= N; y += x) {
+                  cur_max += fq[y];
+               }
+               mxn = Math.max(mxn, cur_max);
+            }
+            ++fq[A[i]];
+         }
+         out.println(mxn);
+
+         /*
          int [] dp = new int [N + 1];
          for (int i = 1; i <= N; ++i) {
             dp[i] = i;
@@ -65,6 +88,7 @@ public class Main {
             answer = Math.max(answer, cur_cnt);
          }
          out.println(answer);
+         */
       }
    }
 

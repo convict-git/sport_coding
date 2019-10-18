@@ -70,56 +70,68 @@ signed main() {
    IOS; PREC;
 
    int n;
-   while (cin >> n) {
-      vector <vector <int>> T(n, vector <int>());
-      vector <int> pi(n, -1);
-      vector <bool> in_cycle(n, false);
-
-      for (int i = 0; i < n; ++i) {
-         int u; cin >> u; --u;
-         T[i].push_back(u);
-         T[u].push_back(i);
-         pi[i] = u;
+   while (cin >> n, n) {
+      const int D = 21;
+      vector <vector <pii>> T(n, vector <pii>());
+      vector <vector <int> > table(n, vector <int> (D + 1, -1));
+      vector <vector <int>> dp(n, vector <int>(D + 1, INT_MIN));
+      vector <int> depth(n, 0);
+      for (int i = 0; i < n - 1; ++i) {
+         int u, v, w;
+         cin >> u >> v >> w;
+         --u, --v;
+         T[u].push_back(make_pair(v, w));
+         T[v].push_back(make_pair(u, w));
       }
 
-      vector <int> cc(n, -1);
-      vector <bool> vis(n, false);
-      const int D = 21;
-      vector <int> depth(n, -1);
-      vector <vector <int>> table(n, vector <int> (D+1, -1));
-
-      function <void(int, int, int, int)> dfs =
-         [&] (int u, int pr, int d, int cc_idx) {
+      function <void(int, int, int)> dfs =
+         [&] (int u, int pr, int d) {
             depth[u] = d;
-            vis[u] = true;
-            cc[u] = cc_idx;
-
-            for (int k = 1; k <= D; ++k) if (table[u][k-1] != -1)
+            for (int k = 1; k <= D; ++k) if (table[u][k-1] != -1) {
                table[u][k] = table[table[u][k-1]][k-1];
-            for (int v : T[u]) if (v != pr)
-               dfs(v, u, d+1, cc_idx);
+               dp[u][k] = max(dp[table[u][k-1]][k-1], dp[u][k-1]);
+            }
+
+            for (auto vp : T[u]) if (vp.x != pr) {
+               table[vp.x][0] = u;
+               dp[vp.x][0] = vp.y;
+               dfs(vp.x, u, d+1);
+            }
          };
 
-      for (int i = 0, cc_idx = 0; i < n; ++i) if (!vis[i])
-         dfs(i, -1, 0, cc_idx++);
+      dfs(0, -1, 0);
 
+      auto walk_get_max = [&] (int& u, int k) {
+         int mx = INT_MIN;
+         for (int d = 0; d <= D && u >= 0; ++d) if ((1 << d) & k) {
+            mx = max(mx, dp[u][d]);
+            u = table[u][d];
+         }
+         return mx;
+      };
 
-      vis.assign(n, false);
+      auto get_max = [&] (int u, int v) {
+         int mx = INT_MIN;
+         if (depth[u] > depth[v]) mx = max(mx, walk_get_max(u, depth[u] - depth[v]));
+         if (depth[v] > depth[u]) mx = max(mx, walk_get_max(v, depth[v] - depth[u]));
+         if (u == v) return mx;
 
-
+         for (int d = D; d >= 0; --d) if (table[u][d] != table[v][d]) {
+            mx = max({mx, dp[u][d], dp[v][d]});
+            u = table[u][d], v = table[v][d];
+         }
+         return mx = max({mx, dp[u][0], dp[v][0]});
+      };
       int q;
       cin >> q;
-      while(q--) {
+      while (q--) {
          int u, v;
          cin >> u >> v;
          --u, --v;
-         if (cc[u] != cc[v]) cout << -1 << '\n';
-         else {
-
-         }
+         cout << get_max(u, v) << '\n';;
       }
+      cout << '\n';
    }
-
 
    return EXIT_SUCCESS;
 }

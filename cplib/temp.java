@@ -3,12 +3,15 @@ import java.util.*;
 
 public class Main {
    public static void main(String[] args) {
-      InputStream inputStream = System.in;
+      /*{{{*/ InputStream inputStream = System.in;
       OutputStream outputStream = System.out;
       InputReader in = new InputReader(inputStream);
-      OutputWriter out = new OutputWriter(outputStream);
+      OutputWriter out = new OutputWriter(outputStream); /*}}}*/
       Task solver = new Task();
-      solver.solve(1, in, out);
+      int tc = in.nextInt();
+      for (int t = 1; t <= tc; ++t) {
+         solver.solve(t, in, out);
+      }
       out.close();
    }
 
@@ -17,6 +20,7 @@ public class Main {
       }
    }
 
+   /*{{{*/
    static class InputReader {
       public final BufferedReader reader;
       public StringTokenizer tokenizer = null;
@@ -92,6 +96,6 @@ public class Main {
       public void close() {
          writer.close();
       }
-
    }
+   /*}}}*/
 }

@@ -1,10 +1,10 @@
-// BFS library
-// This library is created by Priyanshu Shrivastav (mr.convict)
-// https://github.com/convict-git/sport_coding/blob/master/cplib/snippets/graph.cpp
 #include <bits/stdc++.h>
 using namespace std;
 
-class graph {
+class graph { /*{{{*/
+   // BFS library
+   // This library is created by Priyanshu Shrivastav (mr.convict)
+   // https://github.com/convict-git/sport_coding/blob/master/cplib/snippets/graph.cpp
    public:
       static const int N = (int)2e5 + 10;
       static const int inf_int = (int)1e9;
@@ -22,7 +22,7 @@ class graph {
       bool IS_UNDIR, vis[N];
       int V;
       vector <vector <Edge>> adj, adj_rev;
-      set <Edge> edges;
+      vector <Edge> edges;
       int deg[N];
 
       long long dist_s[N];
@@ -41,13 +41,13 @@ class graph {
          assert(v != u);
          adj[u].push_back({u, v, w, id});
          adj_rev[v].push_back({v, u, w, id});
-         edges.insert({u, v, w, id});
+         edges.push_back({u, v, w, id});
          ++deg[u];
 
          if (IS_UNDIR) {
             adj[v].push_back({v, u, w, id});
             adj_rev[u].push_back({u, v, w, id});
-            edges.insert({v, u, w, id});
+            edges.push_back({v, u, w, id});
             ++deg[v];
          }
       }
@@ -96,5 +96,5 @@ class graph {
          }
          return path_v;
       }
-};
+}; /*}}}*/
 

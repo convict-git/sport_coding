@@ -23,7 +23,7 @@ class graph {
       bool IS_UNDIR, vis[N];
       int V;
       vector <vector <Edge>> adj, adj_rev;
-      set <Edge> edges;
+      vector <Edge> edges;
       int deg[N];
 
       long long dist_s[N];
@@ -44,13 +44,13 @@ class graph {
          assert(v != u);
          adj[u].push_back({u, v, w, id});
          adj_rev[v].push_back({v, u, w, id});
-         edges.insert({u, v, w, id});
+         edges.push_back({u, v, w, id});
          ++deg[u];
 
          if (IS_UNDIR) {
             adj[v].push_back({v, u, w, id});
             adj_rev[u].push_back({u, v, w, id});
-            edges.insert({v, u, w, id});
+            edges.push_back({v, u, w, id});
             ++deg[v];
          }
       }
@@ -99,7 +99,7 @@ class graph {
             ++edge_cnt_mst;
          }
 
-         assert (edge_cnt_mst == V - 1);
+         // assert (edge_cnt_mst == V - 1);
          return cost;
       }
 };

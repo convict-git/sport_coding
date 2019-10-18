@@ -1,7 +1,10 @@
 #include      <bits/stdc++.h>
 using namespace std;
 
-class LCA {
+class LCA { /*{{{*/
+   // LCA library using binary lifting + dp using binary lifting
+   // This library is created by Priyanshu Shrivastav (mr.convict)
+   // https://github.com/convict-git/sport_coding/blob/master/cplib/snippets/lca_bin.cpp
    public:
    int V;
    const int D = 21; // for handling n upto 2e6
@@ -70,7 +73,7 @@ class LCA {
          int mn = INT_MAX;
          for (int d = 0; d <= D && i >= 0; ++d) {
             if ((1 << d) & k) {
-               mn = dp[i][d];
+               mn = min(mn, dp[i][d]);
                i = table[i][d];
             }
          }
@@ -95,4 +98,4 @@ class LCA {
       mn = min({mn, dp[u][0], dp[v][0]});
       return mn;
    }
-};
+}; /*}}}*/

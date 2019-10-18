@@ -1,6 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
-class seg_sum {
+
+class seg_sum { /*{{{*/
+   // Recurisve Segment Tree with lazy propogation for sum library
+   // This library is created by Priyanshu Shrivastav (mr.convict)
+   // https://github.com/convict-git/sport_coding/blob/master/cplib/snippets/segment_tree_sum.cpp
    public:
       using ll = long long;
       seg_sum (int n, int Ar[] = nullptr) {
@@ -84,4 +88,4 @@ class seg_sum {
       ll query_range_sum (int ql, int qr) {
          return get (ql, qr, 0, sz - 1, 0);
       }
-};
+}; /*}}}*/

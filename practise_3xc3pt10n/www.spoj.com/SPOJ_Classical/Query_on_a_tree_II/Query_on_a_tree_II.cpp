@@ -69,57 +69,106 @@ void err(istream_iterator<string> it, T a, Args... args) {
 signed main() {
    IOS; PREC;
 
-   int n;
-   while (cin >> n) {
-      vector <vector <int>> T(n, vector <int>());
-      vector <int> pi(n, -1);
-      vector <bool> in_cycle(n, false);
+   int tc;
+   cin >> tc;
 
-      for (int i = 0; i < n; ++i) {
-         int u; cin >> u; --u;
-         T[i].push_back(u);
-         T[u].push_back(i);
-         pi[i] = u;
-      }
+   while (tc--) {
+      int n;
+      cin >> n;
 
-      vector <int> cc(n, -1);
-      vector <bool> vis(n, false);
+      struct Edge {
+         int u, v;
+         ll w;
+      };
       const int D = 21;
-      vector <int> depth(n, -1);
+      vector <vector <Edge>> T(n, vector<Edge>());
       vector <vector <int>> table(n, vector <int> (D+1, -1));
+      vector <vector <ll>> dp(n, vector <ll> (D+1, 0));
 
-      function <void(int, int, int, int)> dfs =
-         [&] (int u, int pr, int d, int cc_idx) {
+      for (int i = 0; i < n-1; ++i) {
+         int u, v; ll w;
+         cin >> u >> v >> w;
+         --u, --v;
+         T[u].push_back({u, v, w});
+         T[v].push_back({v, u, w});
+      }
+      vector <int> depth(n, 0);
+
+      function <void(int, int, int)> dfs =
+         [&] (int u, int pr, int d) {
             depth[u] = d;
-            vis[u] = true;
-            cc[u] = cc_idx;
 
-            for (int k = 1; k <= D; ++k) if (table[u][k-1] != -1)
+            for (int k = 1; k <= D; ++k) if (table[u][k-1] != -1) {
                table[u][k] = table[table[u][k-1]][k-1];
-            for (int v : T[u]) if (v != pr)
-               dfs(v, u, d+1, cc_idx);
+               dp[u][k] = dp[table[u][k-1]][k-1] + dp[u][k-1];
+            }
+
+            for (auto e : T[u]) if (e.v != pr) {
+               table[e.v][0] = u;
+               dp[e.v][0] = e.w;
+               dfs(e.v, u, d+1);
+            }
          };
 
-      for (int i = 0, cc_idx = 0; i < n; ++i) if (!vis[i])
-         dfs(i, -1, 0, cc_idx++);
+      dfs(0, -1, 0);
 
+      auto walk = [&] (int u, int k) {
+         for (int d = 0; d <= D && u >= 0; ++d)
+            if ((1 << d) & k) u = table[u][d];
+         return u;
+      };
 
-      vis.assign(n, false);
+      auto get_sum = [&] (int u, int k) {
+         ll sm = 0;
+         for (int d = 0; d <= D && u >= 0; ++d)
+            if ((1 << d) & k) {
+               sm += dp[u][d];
+               u = table[u][d];
+            }
+         return sm;
+      };
 
+      auto lca = [&] (int u, int v) {
+         if (depth[v] > depth[u]) v = walk(v, depth[v] - depth[u]);
+         else if (depth[u] > depth[v]) u = walk(u, depth[u] - depth[v]);
+         if (u == v) return u;
 
-      int q;
-      cin >> q;
-      while(q--) {
-         int u, v;
-         cin >> u >> v;
-         --u, --v;
-         if (cc[u] != cc[v]) cout << -1 << '\n';
+         for (int d = D; d >= 0; --d) {
+            if (table[u][d] == table[v][d]) continue;
+            u = table[u][d];
+            v = table[v][d];
+         }
+         return table[u][0];
+      };
+
+      string query;
+      int u, v, k;
+      while (cin >> query, query != "DONE") {
+         if (query == "DIST") {
+            cin >> u >> v;
+            --u, --v;
+
+            int z = lca(u, v);
+            ll uget = get_sum(u, depth[z] - depth[u]);
+            ll vget = get_sum(v, depth[z] - depth[v]);
+            cout << uget + vget << '\n';
+         }
          else {
+            cin >> u >> v >> k;
+            --u, --v;
 
+            int z = lca(u, v);
+            assert(k <= depth[u] - depth[z] + 1 + depth[v] - depth[z] + 1 - 1);
+            if (depth[u] - depth[z] >= k) {
+               cout << walk(u, k-1) + 1 << '\n';
+            }
+            else {
+               k = (depth[v] - depth[z] + 1) - (k - (depth[u] - depth[z] + 1));
+               cout << walk(v, k-1) + 1 << '\n';
+            }
          }
       }
+      cout << '\n';
    }
-
-
    return EXIT_SUCCESS;
 }

@@ -1,5 +1,10 @@
 #include <bits/stdc++.h>
-using namespace std; class seg_max {
+using namespace std;
+
+class seg_max { /*{{{*/
+   // Recurisve Segment Tree with lazy propogation for max library
+   // This library is created by Priyanshu Shrivastav (mr.convict)
+   // https://github.com/convict-git/sport_coding/blob/master/cplib/snippets/segment_tree_max.cpp
    public:
       using ll = long long;
       seg_max (int n, int Ar[] = nullptr) {
@@ -78,3 +83,4 @@ using namespace std; class seg_max {
          return max(lq, rq);
       }
 };
+/*}}}*/

@@ -1,4 +1,4 @@
-#include      <bits/stdc++.h>
+#include      <bits/stdc++.h> /*{{{*/
 #include      <ext/pb_ds/assoc_container.hpp>
 #include      <ext/pb_ds/tree_policy.hpp>
 using namespace std;
@@ -16,10 +16,11 @@ using namespace __gnu_pbds;
 #define y         second
 #define fr(i,x,y) for (int i = x; i <= y; ++i)
 #define fR(i,x,y) for (int i = x; i >= y; --i)
+#define cnt(x)    __buildin_popcount(x)
+#define cntll(x)  __buildin_popcountll(x)
 #define bg(x)     " [ " << #x << " : " << (x) << " ] "
 #define un(x)     sort(x.begin(), x.end()), \
                   x.erase(unique(x.begin(), x.end()), x.end())
-
 using   ll  =     long long;
 using   ull =     unsigned long long;
 using   ff  =     long double;
@@ -63,12 +64,12 @@ void err(istream_iterator<string> it, T a, Args... args) {
       << " [ " <<  *it << " : " << a  << " ] "<< ' ';
    err(++it, args...);
 }
+/*}}}*/
 /*****************************************************************************/
 //Don’t practice until you get it right. Practice until you can’t get it wrong
 
 signed main() {
    IOS; PREC;
-
 
    return EXIT_SUCCESS;
 }

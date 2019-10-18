@@ -1,10 +1,11 @@
-// GRAPH library
-// This library is created by Priyanshu Shrivastav (mr.convict)
-// https://github.com/convict-git/sport_coding/blob/master/cplib/snippets/graph.cpp
 #include <bits/stdc++.h>
 using namespace std;
 
-class graph {
+class graph { /*{{{*/
+   // GRAPH library contains bellman ford, bfs, connected components, dijkstra, bridges,
+   // // // // // // articulation points, spfa, kruskals, topological sort . . .
+   // This library is created by Priyanshu Shrivastav (mr.convict)
+   // https://github.com/convict-git/sport_coding/blob/master/cplib/snippets/graph.cpp
    public:
       static const int N = (int)2e5 + 10;
       static const int inf_int = (int)1e9;
@@ -23,7 +24,7 @@ class graph {
       bool IS_UNDIR, vis[N];
       int V;
       vector <vector <Edge>> adj, adj_rev;
-      set <Edge> edges;
+      vector <Edge> edges;
       int deg[N];
 
       vector <int> topological_order;
@@ -40,7 +41,6 @@ class graph {
 
       vector <Edge> MST;
 
-
       graph (int n, bool undir = true) {
          V = n;
          adj.assign(n, vector <Edge> ());
@@ -54,13 +54,13 @@ class graph {
          assert(v != u);
          adj[u].push_back({u, v, w, id});
          adj_rev[v].push_back({v, u, w, id});
-         edges.insert({u, v, w, id});
+         edges.push_back({u, v, w, id});
          ++deg[u];
 
          if (IS_UNDIR) {
             adj[v].push_back({v, u, w, id});
             adj_rev[u].push_back({u, v, w, id});
-            edges.insert({v, u, w, id});
+            edges.push_back({v, u, w, id});
             ++deg[v];
          }
       }
@@ -418,10 +418,10 @@ class graph {
                ++rnk[rv];
          };
 
-
          long long cost = 0;
          int edge_cnt_mst = 0;
 
+         sort (edges.begin(), edges.end());
          for (Edge e : edges) {
             int u = e.u, v = e.v;
             long long w = e.w;
@@ -432,11 +432,11 @@ class graph {
             ++edge_cnt_mst;
          }
 
-         assert (edge_cnt_mst == V - 1);
+         // assert (edge_cnt_mst == V - 1);
          return cost;
       }
 
       /* -------------------------------------------------- */
 };
-
 /* -------------------------------------------------------------------------- */
+ /*}}}*/
