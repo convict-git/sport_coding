@@ -127,7 +127,6 @@ signed main() {
       for (Edge &e : edges) if (pi[e.u] == e.v)
             swap(e.u, e.v);
 
-
       // fenwick tree on euler tour
       int sz = (int)euler.size();
       vector <int> BIT(sz + 2);
@@ -161,7 +160,5 @@ signed main() {
 
       for (int el : answer) cout << el << '\n';
    }
-
-
    return EXIT_SUCCESS;
 }

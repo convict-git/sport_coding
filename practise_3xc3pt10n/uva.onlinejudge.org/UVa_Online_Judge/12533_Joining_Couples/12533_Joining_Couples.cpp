@@ -1,4 +1,4 @@
-#include      <bits/stdc++.h>
+#include      <bits/stdc++.h> /*{{{*/
 #include      <ext/pb_ds/assoc_container.hpp>
 #include      <ext/pb_ds/tree_policy.hpp>
 using namespace std;
@@ -16,10 +16,11 @@ using namespace __gnu_pbds;
 #define y         second
 #define fr(i,x,y) for (int i = x; i <= y; ++i)
 #define fR(i,x,y) for (int i = x; i >= y; --i)
+#define cnt(x)    __buildin_popcount(x)
+#define cntll(x)  __buildin_popcountll(x)
 #define bg(x)     " [ " << #x << " : " << (x) << " ] "
 #define un(x)     sort(x.begin(), x.end()), \
-                  x.erase(unique(x.begin(), x.end()), x.end())
-
+   x.erase(unique(x.begin(), x.end()), x.end())
 using   ll  =     long long;
 using   ull =     unsigned long long;
 using   ff  =     long double;
@@ -63,63 +64,130 @@ void err(istream_iterator<string> it, T a, Args... args) {
       << " [ " <<  *it << " : " << a  << " ] "<< ' ';
    err(++it, args...);
 }
+/*}}}*/
 /*****************************************************************************/
 //Don’t practice until you get it right. Practice until you can’t get it wrong
 
 signed main() {
    IOS; PREC;
-
    int n;
    while (cin >> n) {
-      vector <vector <int>> T(n, vector <int>());
+      vector <vector <int>> uT(n, vector <int>());
       vector <int> pi(n, -1);
-      vector <bool> in_cycle(n, false);
-
       for (int i = 0; i < n; ++i) {
-         int u; cin >> u; --u;
-         T[i].push_back(u);
-         T[u].push_back(i);
-         pi[i] = u;
+         cin >> pi[i];
+         --pi[i];
+         uT[i].push_back(pi[i]);
+         uT[pi[i]].push_back(i);
       }
 
-      vector <int> cc(n, -1);
       vector <bool> vis(n, false);
-      const int D = 21;
-      vector <int> depth(n, -1);
-      vector <vector <int>> table(n, vector <int> (D+1, -1));
+      vector <int> cc(n, -1);
 
-      function <void(int, int, int, int)> dfs =
-         [&] (int u, int pr, int d, int cc_idx) {
-            depth[u] = d;
-            vis[u] = true;
-            cc[u] = cc_idx;
+      function <void(int, int)> dfs = [&] (int u, int cc_idx) -> void {
+         vis[u] = true;
+         cc[u] = cc_idx;
+         for (int v : uT[u]) if (!vis[v]) dfs(v, cc_idx);
+      };
 
-            for (int k = 1; k <= D; ++k) if (table[u][k-1] != -1)
-               table[u][k] = table[table[u][k-1]][k-1];
-            for (int v : T[u]) if (v != pr)
-               dfs(v, u, d+1, cc_idx);
-         };
 
-      for (int i = 0, cc_idx = 0; i < n; ++i) if (!vis[i])
-         dfs(i, -1, 0, cc_idx++);
+      int cc_idx = 0;
+      for (int u = 0; u < n; ++u)
+         if (!vis[u]) dfs(u, cc_idx++);
 
+      /////////////////////////////////////////////////////
+      vector <int> root(cc_idx, -1);
 
       vis.assign(n, false);
+      function <void(int, int)> dfs2 =
+         [&] (int u, int pr) -> void{
+            vis[u] = true;
 
+            for (int v : uT[u]) if (v != pr) {
+               if (vis[v]) root[cc[v]] = v;
+               else dfs2 (v, u);
+            }
+         };
 
-      int q;
-      cin >> q;
-      while(q--) {
+      for (int i = 0; i < n; ++i) {
+         if (!vis[i]) dfs2(i, -1);
+         if (pi[pi[i]] == i) root[cc[i]] = i;
+      }
+
+      vector <bool> take(n, false);
+      for (int i = 0; i < cc_idx; ++i)
+         if (root[i] != -1) take[root[i]] = true;
+
+      vector <vector <int>> T(n + n, vector <int>());
+      for (int i = 0; i < n; ++i) {
+         if (!take[i]) {
+            T[pi[i]].push_back(i);
+            T[pi[i] + n].push_back(i + n);
+         }
+         else {
+            T[pi[i]].push_back(i + n);
+         }
+      }
+      /////////////////////////////////////////////////////
+
+      const int D = 21;
+      vector <vector <int>> table(n+n, vector <int>(D + 1, -1));
+      vector <int> depth(n+n, 0);
+
+      function <void(int, int)> dfs3 = [&] (int u, int d) -> void {
+         depth[u] = d;
+         for (int k = 1; k <= D; ++k) if (table[u][k-1] != -1) {
+            table[u][k] = table[table[u][k-1]][k-1];
+         }
+         for (int v : T[u]) {
+            table[v][0] = u;
+            dfs3(v, d+1);
+         }
+      };
+
+      for (int i = 0; i < cc_idx; ++i) {
+         dfs3(root[i], 0);
+      }
+
+      auto walk = [&] (int u, int l) -> int {
+         for (int d = 0; d <= D && u >= 0; ++d)
+            if ((1 << d) & l)
+               u = table[u][d];
+         return u;
+      };
+
+      auto lca = [&] (int u, int v) -> int {
+         if (depth[v] > depth[u]) v = walk(v, depth[v] - depth[u]);
+         if (depth[u] > depth[v]) u = walk(u, depth[u] - depth[v]);
+         if (u == v) return u;
+
+         for (int d = D; d >= 0; --d) {
+            if (table[u][d] == table[v][d]) continue;
+            u = table[u][d], v = table[v][d];
+         }
+         assert(table[u][0] == table[v][0]);
+         return table[u][0];
+      };
+
+      /////////////////////////////////////////////////////
+      int q; cin >> q;
+      while (q--) {
          int u, v;
-         cin >> u >> v;
-         --u, --v;
+         cin >> u >> v; --u, --v;
          if (cc[u] != cc[v]) cout << -1 << '\n';
          else {
-
+            int mn = INT_MAX;
+            int U[] = {u, u + n};
+            int V[] = {v, v + n};
+            for (int i = 0; i < 2; ++i) for (int j = 0; j < 2; ++j) {
+               int u_ = U[i], v_ = V[j];
+               int z = lca(u_, v_);
+               mn = min(mn, depth[u_] - depth[z] + depth[v_] - depth[z]);
+            }
+            cout << mn << '\n';
          }
       }
    }
-
 
    return EXIT_SUCCESS;
 }
