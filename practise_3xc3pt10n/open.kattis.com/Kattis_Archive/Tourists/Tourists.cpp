@@ -101,17 +101,8 @@ signed main() {
    }
 
    auto walk = [&] (int u, int k) -> int {
-      for (int d = 0; d <= D && u != -1; ++d) {
-         if ((1 << d) & k)  {
-            u = table[u][d];
-         }
-      }- CYK Algorithm
-
-[ ] - Pumping Lemma for CFG
-
-	( ) - Examples and proof
-
-	( ) - Problems
+      for (int d = 0; d <= D && u != -1; ++d)
+         if ((1 << d) & k) u = table[u][d];
       return u;
    };
 
