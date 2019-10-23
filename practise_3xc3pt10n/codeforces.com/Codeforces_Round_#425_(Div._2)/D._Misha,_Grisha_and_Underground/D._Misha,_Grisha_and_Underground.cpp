@@ -16,8 +16,8 @@ using namespace __gnu_pbds;
 #define y         second
 #define fr(i,x,y) for (int i = x; i <= y; ++i)
 #define fR(i,x,y) for (int i = x; i >= y; --i)
-#define cnt(x)    __buildin_popcount(x)
-#define cntll(x)  __buildin_popcountll(x)
+#define cnt(x)    __builtin_popcount(x)
+#define cntll(x)  __builtin_popcountll(x)
 #define bg(x)     " [ " << #x << " : " << (x) << " ] "
 #define un(x)     sort(x.begin(), x.end()), \
                   x.erase(unique(x.begin(), x.end()), x.end())
