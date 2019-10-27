@@ -14,8 +14,8 @@ using namespace __gnu_pbds;
 #define PREC      cout.precision (10); cout << fixed
 #define x         first
 #define y         second
-#define fr(i,x,y) for (int i = x; i <= y; ++i)
-#define fR(i,x,y) for (int i = x; i >= y; --i)
+#define fr(i,x,y) for (int i = int(x); i <= int(y); ++i)
+#define fR(i,x,y) for (int i = int(x); i >= int(y); --i)
 #define cnt(x)    __builtin_popcount(x)
 #define cntll(x)  __builtin_popcountll(x)
 #define bg(x)     " [ " << #x << " : " << (x) << " ] "
@@ -29,6 +29,7 @@ using   pil =     pair<int,ll>;
 using   vi  =     vector <int>;
 using   vvi =     vector <vi>;
 using   vp  =     vector <pii>;
+using   vvp =     vector <vp>;
 using   vl  =     vector<ll>;
 typedef tree
 < int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update>
@@ -72,72 +73,79 @@ void err(istream_iterator<string> it, T a, Args... args) {
 /*****************************************************************************/
 //Don’t practice until you get it right. Practice until you can’t get it wrong
 
-const int N = (int)2e5 + 10;
-int seg[4 * N];
-void create (int l, int r, int x, vi &A) {
-   if (l == r) {
-      seg[x] = A[l];
-      return;
-   }
-   int mid = (l+r)/2;
-   create(l, mid, x + x + 1, A);
-   create(mid+1, r, x + x + 2, A);
-   seg[x] = min(seg[x + x + 1], seg[x + x + 2]);
-}
-
-int query (int l, int r, int x, int ql, int qr, int m) {
-   if (l > qr || r < ql) return m+1;
-   if (l >= ql && r <= qr) return seg[x];
-   int mid = (l+r)/2;
-   return min(
-         query(l, mid, x + x + 1, ql, qr, m),
-         query(mid+1, r, x + x + 2, ql, qr, m));
-}
-
 signed main() {
    IOS; PREC;
+   int n, m;
+   cin >> n >> m;
 
-   const int D = 21;
-   int n, m, q;
-   cin >> n >> m >> q;
-   vi p(n), A(m);
-   vvi table(m, vi(D+1, m+1));
-   fr(i, 0, n-1) cin >> p[i];
-   fr(i, 0, m-1) cin >> A[i];
+   struct Edge {
+      int u, v, w, id;
+      bool operator < (const Edge &o) const {
+         return w < o.w;
+      }
+   };
 
-   vi nxt(n+1, -1);
-   fr(i, 0, n-2) nxt[p[i]] = p[i+1];
-   nxt[p[n-1]] = p[0];
+   vector <Edge> edges;
 
-   vi recent_idx(n+1, m+1);
-   fR(i, m-1, 0) {
-      table[i][0] = recent_idx[nxt[A[i]]];
-      recent_idx[A[i]] = i;
+   fr(e, 0, m-1) {
+      int u, v, w;
+      cin >> u >> v >> w;
+      --u, --v;
+      edges.push_back({u, v, w, e});
+   }
+   sort (edges.begin(), edges.end());
+
+   vector <vector <Edge>> layers;
+   vector <Edge> t;
+
+   t.push_back(edges[0]);
+   fr(i, 1, m-1) {
+      while (edges[i].w == t.back().w) {
+         t.push_back(edges[i]);
+         ++i;
+      }
+      layers.push_back(t);
+      t.clear();
+      if (i < m) t.push_back(edges[i]);
+   }
+   layers.push_back(t);
+
+   vi rep(n);
+   fr(i, 0, n-1) rep[i] = i;
+
+   function <int(int)> find_set = [&] (int x) -> int {
+      return x == rep[x] ? x : rep[x] = find_set(rep[x]);
+   };
+
+   vector <string> ans(m), sol{"any", "none", "at least one"};
+
+   vi t_in(n), f(n), vis(n, false);
+   int timer = 0;
+   vvp G(n, vp());
+
+   function <void(int, int)> dfs = [&] (int u, int pr) -> void {
+      vis[u] = true;
+      f[u] = t_in[u] = timer++;
+
+      for (auto vp : G[u]) {
+         int v = vp.x, id = vp.y;
+         if (v == pr) continue;
+         if (vis[v]) f[u] = min(f[u], t_in[v]);
+         if (!vis[v]) {
+            dfs(v, u), f[u] = min(f[u], f[v]);
+         }
+
+         // debug(u, v, t_in[u], t_in[v], f[u], f[v]);
+         if (f[v] > t_in[u]) { // this is a bridge edge
+            ans[id] = sol[0];
+         }
+      }
+   };
+
+   for (auto l : layers) {
    }
 
-   fr(k, 1, D) fR(i, m-1, 0)
-      if (table[i][k-1] < m)
-         table[i][k] = table[table[i][k-1]][k-1];
+   fr(i, 0, m-1) cout << ans[i] << '\n';
 
-   vi idx(m, m+1);
-   fr(i, 0, m-1) {
-      int j = i;
-      for (int d = 0; d <= D && j < m; ++d)
-         if ((1 << d) & (n-1)) j = table[j][d];
-      idx[i] = j;
-   }
-
-   create(0, m-1, 0, idx);
-
-   while (q--) {
-      int l, r;
-      cin >> l >> r;
-      --l, --r;
-      int r_min_idx = query (0, m-1, 0, l, r, m);
-      if (r_min_idx <= r) cout << "1";
-      else cout << "0";
-   }
-   cout << '\n';
    return EXIT_SUCCESS;
 }
-

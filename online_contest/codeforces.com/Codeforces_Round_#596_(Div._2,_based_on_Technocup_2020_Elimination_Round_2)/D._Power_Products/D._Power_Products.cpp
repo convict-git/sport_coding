@@ -72,72 +72,63 @@ void err(istream_iterator<string> it, T a, Args... args) {
 /*****************************************************************************/
 //Don’t practice until you get it right. Practice until you can’t get it wrong
 
-const int N = (int)2e5 + 10;
-int seg[4 * N];
-void create (int l, int r, int x, vi &A) {
-   if (l == r) {
-      seg[x] = A[l];
-      return;
-   }
-   int mid = (l+r)/2;
-   create(l, mid, x + x + 1, A);
-   create(mid+1, r, x + x + 2, A);
-   seg[x] = min(seg[x + x + 1], seg[x + x + 2]);
-}
-
-int query (int l, int r, int x, int ql, int qr, int m) {
-   if (l > qr || r < ql) return m+1;
-   if (l >= ql && r <= qr) return seg[x];
-   int mid = (l+r)/2;
-   return min(
-         query(l, mid, x + x + 1, ql, qr, m),
-         query(mid+1, r, x + x + 2, ql, qr, m));
-}
-
 signed main() {
    IOS; PREC;
 
-   const int D = 21;
-   int n, m, q;
-   cin >> n >> m >> q;
-   vi p(n), A(m);
-   vvi table(m, vi(D+1, m+1));
-   fr(i, 0, n-1) cin >> p[i];
-   fr(i, 0, m-1) cin >> A[i];
+   int n, k;
+   cin >> n >> k;
+   vector <ff> a(n);
 
-   vi nxt(n+1, -1);
-   fr(i, 0, n-2) nxt[p[i]] = p[i+1];
-   nxt[p[n-1]] = p[0];
+   ff mx = 0;
+   fr(i, 0, n-1) cin >> a[i], a[i] = log2(a[i]), mx = max(mx, a[i]);
 
-   vi recent_idx(n+1, m+1);
-   fR(i, m-1, 0) {
-      table[i][0] = recent_idx[nxt[A[i]]];
-      recent_idx[A[i]] = i;
+   ff lk = log2(k);
+   ff limit = 2 * mx;
+   vector <pair <ff, int>> A(n);
+   fr(i, 0, n-1) A[i] = make_pair(a[i], i);
+   sort (A.begin(), A.end());
+
+   fr(i, 0, n-1) a[i] = A[i].x;
+
+   int final_ans = 0;
+
+   ff eps = 1e-9;
+   fr (i, 0, n-1) {
+      cerr << "searching for a[i] " << pow(2, a[i]) << endl;
+      int cnt = 0;
+      for (int x = 1; x <= limit + 1; ++x) {
+
+         ff find = x * lk - a[i];
+
+         int l = 0, h = n-1;
+         while (l <= h) {
+            int g = (l+h)/2;
+            if (fabs(a[g] - find) <= eps || a[g] >= find) // check equality
+               h = g - 1;
+            else l = g + 1;
+         }
+         int left = l;
+
+         l = 0, h = n-1;
+         while (l <= h){
+            int g = (l+h)/2;
+            if (abs(a[g] - find) <= eps || a[g] <= find) // check equality
+               l = g + 1;
+            else h = g - 1;
+         }
+         int right = h;
+
+         if (left <= right) {
+            cerr << "is number : " << x << endl;
+            // cerr << "got it : " << A[i].y << ' ' << pow(2, a[i]) << ' ' << pow(2, find) << ' ' << pow(x, k) << endl;
+            cnt += (right - left  + 1);
+            if (fabs(2 * a[i] - x * lk) <= eps) --cnt;
+         }
+      }
+      final_ans += cnt;
    }
+   cout << final_ans/2 << '\n';
 
-   fr(k, 1, D) fR(i, m-1, 0)
-      if (table[i][k-1] < m)
-         table[i][k] = table[table[i][k-1]][k-1];
 
-   vi idx(m, m+1);
-   fr(i, 0, m-1) {
-      int j = i;
-      for (int d = 0; d <= D && j < m; ++d)
-         if ((1 << d) & (n-1)) j = table[j][d];
-      idx[i] = j;
-   }
-
-   create(0, m-1, 0, idx);
-
-   while (q--) {
-      int l, r;
-      cin >> l >> r;
-      --l, --r;
-      int r_min_idx = query (0, m-1, 0, l, r, m);
-      if (r_min_idx <= r) cout << "1";
-      else cout << "0";
-   }
-   cout << '\n';
    return EXIT_SUCCESS;
 }
-

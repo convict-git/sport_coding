@@ -71,73 +71,102 @@ void err(istream_iterator<string> it, T a, Args... args) {
 /*}}}*/
 /*****************************************************************************/
 //Don’t practice until you get it right. Practice until you can’t get it wrong
+//
+// source https://www.geeksforgeeks.org/counting-inversions/
+ll _mergeSort(ll arr[], ll temp[], ll left, ll right);
+ll merge(ll arr[], ll temp[], ll left, ll mid, ll right);
 
-const int N = (int)2e5 + 10;
-int seg[4 * N];
-void create (int l, int r, int x, vi &A) {
-   if (l == r) {
-      seg[x] = A[l];
-      return;
-   }
-   int mid = (l+r)/2;
-   create(l, mid, x + x + 1, A);
-   create(mid+1, r, x + x + 2, A);
-   seg[x] = min(seg[x + x + 1], seg[x + x + 2]);
+/* This function sorts the input array and returns the
+number of inversions in the array */
+ll mergeSort(ll arr[], ll array_size)
+{
+    ll temp[array_size];
+    return _mergeSort(arr, temp, 0, array_size - 1);
 }
 
-int query (int l, int r, int x, int ql, int qr, int m) {
-   if (l > qr || r < ql) return m+1;
-   if (l >= ql && r <= qr) return seg[x];
-   int mid = (l+r)/2;
-   return min(
-         query(l, mid, x + x + 1, ql, qr, m),
-         query(mid+1, r, x + x + 2, ql, qr, m));
+/* An auxiliary recursive function that sorts the input array and
+returns the number of inversions in the array. */
+ll _mergeSort(ll arr[], ll temp[], ll left, ll right)
+{
+    ll mid, inv_count = 0;
+    if (right > left) {
+        /* Divide the array llo two parts and
+        call _mergeSortAndCountInv()
+        for each of the parts */
+        mid = (right + left) / 2;
+
+        /* Inversion count will be sum of
+        inversions in left-part, right-part
+        and number of inversions in merging */
+        inv_count = _mergeSort(arr, temp, left, mid);
+        inv_count += _mergeSort(arr, temp, mid + 1, right);
+
+        /*Merge the two parts*/
+        inv_count += merge(arr, temp, left, mid + 1, right);
+    }
+    return inv_count;
+}
+
+/* This funt merges two sorted arrays
+and returns inversion count in the arrays.*/
+ll merge(ll arr[], ll temp[], ll left,
+          ll mid, ll right)
+{
+    ll i, j, k;
+    ll inv_count = 0;
+
+    i = left; /* i is index for left subarray*/
+    j = mid; /* j is index for right subarray*/
+    k = left; /* k is index for resultant merged subarray*/
+    while ((i <= mid - 1) && (j <= right)) {
+        if (arr[i] <= arr[j]) {
+            temp[k++] = arr[i++];
+        }
+        else {
+            temp[k++] = arr[j++];
+
+            /* this is tricky -- see above
+            explanation/diagram for merge()*/
+            inv_count = inv_count + (mid - i);
+        }
+    }
+
+    /* Copy the remaining elements of left subarray
+(if there are any) to temp*/
+    while (i <= mid - 1)
+        temp[k++] = arr[i++];
+
+    /* Copy the remaining elements of right subarray
+(if there are any) to temp*/
+    while (j <= right)
+        temp[k++] = arr[j++];
+
+    /*Copy back the merged elements to original array*/
+    for (i = left; i <= right; i++)
+        arr[i] = temp[i];
+
+    return inv_count;
 }
 
 signed main() {
    IOS; PREC;
 
-   const int D = 21;
-   int n, m, q;
-   cin >> n >> m >> q;
-   vi p(n), A(m);
-   vvi table(m, vi(D+1, m+1));
-   fr(i, 0, n-1) cin >> p[i];
-   fr(i, 0, m-1) cin >> A[i];
+   int tc;
+   cin >> tc;
+   while (tc--){
+      int n, q;
+      cin >> n >> q;
+      ll ar[n];
+      fr(i, 0, n-1) cin >> ar[i];
 
-   vi nxt(n+1, -1);
-   fr(i, 0, n-2) nxt[p[i]] = p[i+1];
-   nxt[p[n-1]] = p[0];
-
-   vi recent_idx(n+1, m+1);
-   fR(i, m-1, 0) {
-      table[i][0] = recent_idx[nxt[A[i]]];
-      recent_idx[A[i]] = i;
+      while (q--) {
+         ll a[n];
+         ll k;
+         cin >> k;
+         fr(i, 0, n-1) a[i] = k^ar[i];
+         cout << mergeSort(a, n) << '\n';
+      }
    }
 
-   fr(k, 1, D) fR(i, m-1, 0)
-      if (table[i][k-1] < m)
-         table[i][k] = table[table[i][k-1]][k-1];
-
-   vi idx(m, m+1);
-   fr(i, 0, m-1) {
-      int j = i;
-      for (int d = 0; d <= D && j < m; ++d)
-         if ((1 << d) & (n-1)) j = table[j][d];
-      idx[i] = j;
-   }
-
-   create(0, m-1, 0, idx);
-
-   while (q--) {
-      int l, r;
-      cin >> l >> r;
-      --l, --r;
-      int r_min_idx = query (0, m-1, 0, l, r, m);
-      if (r_min_idx <= r) cout << "1";
-      else cout << "0";
-   }
-   cout << '\n';
    return EXIT_SUCCESS;
 }
-

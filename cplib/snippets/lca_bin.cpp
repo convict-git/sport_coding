@@ -20,7 +20,7 @@ class LCA { /*{{{*/
       return u;
    }
 
-   LCA(int n, vector <vector<pair <int, int>>> &T, int root = 0) {
+   LCA(int n, vector <vector<pair <int, int>>> &T, int root = 0, int OP=0) {
       V = n;
       table.assign(n, vector <int>(D + 1, -1));
       dp.assign(n, vector <int>(D + 1, INT_MAX));

@@ -72,72 +72,40 @@ void err(istream_iterator<string> it, T a, Args... args) {
 /*****************************************************************************/
 //Don’t practice until you get it right. Practice until you can’t get it wrong
 
-const int N = (int)2e5 + 10;
-int seg[4 * N];
-void create (int l, int r, int x, vi &A) {
-   if (l == r) {
-      seg[x] = A[l];
-      return;
-   }
-   int mid = (l+r)/2;
-   create(l, mid, x + x + 1, A);
-   create(mid+1, r, x + x + 2, A);
-   seg[x] = min(seg[x + x + 1], seg[x + x + 2]);
-}
-
-int query (int l, int r, int x, int ql, int qr, int m) {
-   if (l > qr || r < ql) return m+1;
-   if (l >= ql && r <= qr) return seg[x];
-   int mid = (l+r)/2;
-   return min(
-         query(l, mid, x + x + 1, ql, qr, m),
-         query(mid+1, r, x + x + 2, ql, qr, m));
-}
-
 signed main() {
    IOS; PREC;
+   int tc;
+   cin >> tc;
+   while (tc--) {
+      int n, k, d;
+      cin >> n >> k >> d;
 
-   const int D = 21;
-   int n, m, q;
-   cin >> n >> m >> q;
-   vi p(n), A(m);
-   vvi table(m, vi(D+1, m+1));
-   fr(i, 0, n-1) cin >> p[i];
-   fr(i, 0, m-1) cin >> A[i];
+      vi a(n), fq(k + 1, 0);
+      fr(i, 0, n-1) cin >> a[i];
 
-   vi nxt(n+1, -1);
-   fr(i, 0, n-2) nxt[p[i]] = p[i+1];
-   nxt[p[n-1]] = p[0];
+      int mn = INT_MAX;
+      int cnt = 0;
 
-   vi recent_idx(n+1, m+1);
-   fR(i, m-1, 0) {
-      table[i][0] = recent_idx[nxt[A[i]]];
-      recent_idx[A[i]] = i;
+      fr(i, 0, d-1) {
+         if (fq[a[i]] == 0)   {
+            ++cnt;
+         }
+         ++fq[a[i]];
+      }
+      mn = min(mn, cnt);
+
+      fr (i, d, n-1) {
+         --fq[a[i-d]];
+         if (fq[a[i - d]] == 0) --cnt;
+         if (fq[a[i]] == 0) {
+            ++cnt;
+         }
+         ++fq[a[i]];
+         mn = min(mn, cnt);
+      }
+      cout << mn << '\n';
    }
 
-   fr(k, 1, D) fR(i, m-1, 0)
-      if (table[i][k-1] < m)
-         table[i][k] = table[table[i][k-1]][k-1];
 
-   vi idx(m, m+1);
-   fr(i, 0, m-1) {
-      int j = i;
-      for (int d = 0; d <= D && j < m; ++d)
-         if ((1 << d) & (n-1)) j = table[j][d];
-      idx[i] = j;
-   }
-
-   create(0, m-1, 0, idx);
-
-   while (q--) {
-      int l, r;
-      cin >> l >> r;
-      --l, --r;
-      int r_min_idx = query (0, m-1, 0, l, r, m);
-      if (r_min_idx <= r) cout << "1";
-      else cout << "0";
-   }
-   cout << '\n';
    return EXIT_SUCCESS;
 }
-

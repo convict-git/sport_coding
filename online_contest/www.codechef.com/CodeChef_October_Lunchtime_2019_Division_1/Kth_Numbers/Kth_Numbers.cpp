@@ -4,11 +4,13 @@
 using namespace std;
 using namespace __gnu_pbds;
 
+/*
 #ifndef CONVICTION
 #pragma GCC       optimize ("Ofast")
 #pragma GCC       optimize ("unroll-loops")
 #pragma GCC       target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")
 #endif
+*/
 
 #define IOS       ios_base::sync_with_stdio(false); cin.tie (nullptr)
 #define PREC      cout.precision (10); cout << fixed
@@ -71,73 +73,41 @@ void err(istream_iterator<string> it, T a, Args... args) {
 /*}}}*/
 /*****************************************************************************/
 //Don’t practice until you get it right. Practice until you can’t get it wrong
-
-const int N = (int)2e5 + 10;
-int seg[4 * N];
-void create (int l, int r, int x, vi &A) {
-   if (l == r) {
-      seg[x] = A[l];
-      return;
-   }
-   int mid = (l+r)/2;
-   create(l, mid, x + x + 1, A);
-   create(mid+1, r, x + x + 2, A);
-   seg[x] = min(seg[x + x + 1], seg[x + x + 2]);
+//
+const int Mod = (int)1e9 + 7;
+inline int add (int x, int y) {
+   return (x % Mod + y % Mod) % Mod;
 }
-
-int query (int l, int r, int x, int ql, int qr, int m) {
-   if (l > qr || r < ql) return m+1;
-   if (l >= ql && r <= qr) return seg[x];
-   int mid = (l+r)/2;
-   return min(
-         query(l, mid, x + x + 1, ql, qr, m),
-         query(mid+1, r, x + x + 2, ql, qr, m));
+inline int mul (int x, int y) {
+   return int((1ll * (x % Mod) * (y % Mod)) % Mod);
 }
 
 signed main() {
    IOS; PREC;
+   const int N = (int)6e3 + 10;
+   int pwr[N];
+   pwr[0] = 1;
+   fr(i, 1, N-1) pwr[i] = mul(2, pwr[i-1]);
 
-   const int D = 21;
-   int n, m, q;
-   cin >> n >> m >> q;
-   vi p(n), A(m);
-   vvi table(m, vi(D+1, m+1));
-   fr(i, 0, n-1) cin >> p[i];
-   fr(i, 0, m-1) cin >> A[i];
-
-   vi nxt(n+1, -1);
-   fr(i, 0, n-2) nxt[p[i]] = p[i+1];
-   nxt[p[n-1]] = p[0];
-
-   vi recent_idx(n+1, m+1);
-   fR(i, m-1, 0) {
-      table[i][0] = recent_idx[nxt[A[i]]];
-      recent_idx[A[i]] = i;
+   int dp[N][N];
+   fr(i, 0, N-1) fr(j, 0, i) {
+      if (j == 0 || j == i) dp[i][j] = 1;
+      else dp[i][j] = add(dp[i-1][j-1], dp[i-1][j]);
    }
 
-   fr(k, 1, D) fR(i, m-1, 0)
-      if (table[i][k-1] < m)
-         table[i][k] = table[table[i][k-1]][k-1];
+   int tc;
+   cin >> tc;
+   while (tc--) {
+      int n;
+      cin >> n;
+      vi A(n), F(n);
+      fr(i, 0, n-1) cin >> A[i], F[i] = 0;
 
-   vi idx(m, m+1);
-   fr(i, 0, m-1) {
-      int j = i;
-      for (int d = 0; d <= D && j < m; ++d)
-         if ((1 << d) & (n-1)) j = table[j][d];
-      idx[i] = j;
+      fr (j, 0, n-1) fr (i, j, n-1) {
+         F[j] = add(F[j], mul(A[i], mul(dp[i][j], pwr[n - i - 1])));
+      }
+
+      fr(i, 0, n-1) cout << F[i] << " \n"[i == n-1];
    }
-
-   create(0, m-1, 0, idx);
-
-   while (q--) {
-      int l, r;
-      cin >> l >> r;
-      --l, --r;
-      int r_min_idx = query (0, m-1, 0, l, r, m);
-      if (r_min_idx <= r) cout << "1";
-      else cout << "0";
-   }
-   cout << '\n';
    return EXIT_SUCCESS;
 }
-
