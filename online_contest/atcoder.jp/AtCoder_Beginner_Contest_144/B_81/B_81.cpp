@@ -76,5 +76,17 @@ void err(istream_iterator<string> it, T a, Args... args) {
 signed main() {
    IOS; PREC;
 
+   int n;
+   cin >> n;
+   bool ok = false;
+   for (int i = 1; i <= 9; ++i)  {
+     if (n % i == 0 && n/i >= 1 && n/i <= 9) {
+       ok = true;
+       break;
+     }
+   }
+   cout << (ok ? "Yes\n" : "No\n");
+
+
    return EXIT_SUCCESS;
 }

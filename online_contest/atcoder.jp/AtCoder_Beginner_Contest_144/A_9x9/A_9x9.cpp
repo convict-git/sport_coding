@@ -75,6 +75,10 @@ void err(istream_iterator<string> it, T a, Args... args) {
 
 signed main() {
    IOS; PREC;
+   int a, b;
+   cin >> a >> b;
+   if (!(a >= 1 && a <= 9 && b >= 1 && b <= 9)) cout << -1 << '\n';
+   else cout << a*b << '\n';
 
    return EXIT_SUCCESS;
 }

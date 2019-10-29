@@ -76,5 +76,53 @@ void err(istream_iterator<string> it, T a, Args... args) {
 signed main() {
    IOS; PREC;
 
+   int n, m;
+   cin >> n >> m;
+
+   vvi G(n, vi());
+
+   fr(e, 1, m) {
+     int u, v;
+     cin >> u >> v;
+     --u, --v;
+     G[u].push_back(v);
+   }
+
+   const ff inf = 1e18;
+   vector <ff> dp(n, inf);
+
+   dp[n-1] = 0;
+
+   for (int i = n-2; i >= 0; --i) {
+     ff sm = 0;
+     for (int j : G[i]) sm += dp[j];
+     sm /= G[i].size();
+     dp[i] = 1 + sm;
+   }
+   ff mn = dp[0];
+
+   for (int i = 0; i < n-1; ++i) { // O(NM)// already in topological order
+     if (G[i].size() == 1) continue;
+     vector <ff> new_dp(dp);
+
+     ff local_max = -inf;
+     for (int j : G[i])
+       local_max = fmax(local_max, dp[j]);
+
+     new_dp[i] = (new_dp[i] - 1) * G[i].size() - local_max;
+     new_dp[i] /= (G[i].size()-1);
+     new_dp[i] += 1;
+
+     for (int j = i-1; j >= 0; --j) { // O(M)
+       ff sm = 0;
+       for (int k : G[j]) sm += new_dp[k];
+       sm /= G[j].size();
+       new_dp[j] = 1 + sm;
+     }
+     mn = min(mn, new_dp[0]);
+   }
+
+   cout << mn << '\n';
+
    return EXIT_SUCCESS;
 }

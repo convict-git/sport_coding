@@ -1,0 +1,2 @@
+#! /bin/bash
+git fetch origin && git merge origin/master && git add . && git commit -m "Update" && git push -u origin master

@@ -76,5 +76,39 @@ void err(istream_iterator<string> it, T a, Args... args) {
 signed main() {
    IOS; PREC;
 
+   int n;
+   ll k_;
+   cin >> n >> k_;
+   vi A(n), F(n);
+
+   fr(i, 0, n-1) cin >> A[i];
+   fr(i, 0, n-1) cin >> F[i];
+
+   sort (A.begin(), A.end());
+   sort (F.begin(), F.end(), greater <int> ());
+
+   ll l = 0, h = LLONG_MIN;
+   fr(i, 0, n-1) {
+     h = max(h, 1ll*A[i] * F[i]);
+   }
+
+   auto check = [&] (ll g)->bool {
+     ll k = k_;
+     fr (i, 0, n-1) {  // (A[i] - x) * F[i] <= g
+       k -= max(0ll, A[i] - g/F[i]);
+       if (k < 0) return false;
+     }
+     return true;
+   };
+
+   while (l <= h) { // answer will be in low
+     ll g = (l+h)/2;
+     if (check(g))
+       h = g - 1;
+     else l = g + 1;
+   }
+
+   cout << l << '\n';
+
    return EXIT_SUCCESS;
 }

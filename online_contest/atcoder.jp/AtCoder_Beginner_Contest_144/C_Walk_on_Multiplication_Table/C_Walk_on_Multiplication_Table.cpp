@@ -75,6 +75,21 @@ void err(istream_iterator<string> it, T a, Args... args) {
 
 signed main() {
    IOS; PREC;
+   ll n;
+   cin >> n;
+
+   vector <pair <ll, ll>> divisor;
+   for (ll i = 1; i * i <= n; ++i) {
+     if (n % i == 0) {
+       divisor.push_back(make_pair(i, n/i));
+     }
+   }
+
+   ll mn = LLONG_MAX;
+   for (auto p : divisor) {
+     mn = min(mn, (p.x - 1) + (p.y - 1));
+   }
+   cout << mn << '\n';
 
    return EXIT_SUCCESS;
 }

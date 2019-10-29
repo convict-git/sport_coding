@@ -76,5 +76,21 @@ void err(istream_iterator<string> it, T a, Args... args) {
 signed main() {
    IOS; PREC;
 
+   ff a, b, x;
+   ff eps = 1e-9;
+   ff pi = acos(-1);
+   cin >> a >> b >> x;
+
+   ff h1 = 2 * x / (a * a)  - b;
+   ff z = 2 * x /(a * b);
+   ff angle = -1;
+   if (h1 >= 0) {
+     angle = atan((b - h1)/a);
+   }
+   else angle = atan(b/z);
+
+   cout << angle * 180 / pi << '\n';
+
+
    return EXIT_SUCCESS;
 }
