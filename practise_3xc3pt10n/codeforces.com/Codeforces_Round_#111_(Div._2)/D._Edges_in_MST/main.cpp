@@ -73,6 +73,7 @@ void err(istream_iterator<string> it, T a, Args... args) {
 /*****************************************************************************/
 //Don’t practice until you get it right. Practice until you can’t get it wrong
 
+// MODIFIED THIS CODE ACCORDING TO SOME GOOD TRICKS LEARNED FROM RED CODER's CODE
 signed main() {
   IOS; PREC;
   int n, m;
@@ -94,28 +95,6 @@ signed main() {
   }
   sort (edges.begin(), edges.end());
 
-  vector <vector <Edge>> layers;
-  vector <Edge> t;
-
-  t.push_back(edges[0]);
-  fr(i, 1, m-1) {
-    while (i <= m-1 && edges[i].w == t.back().w) {
-      t.push_back(edges[i]);
-      ++i;
-    }
-    layers.push_back(t);
-    t.clear();
-    if (i < m) t.push_back(edges[i]);
-  }
-  if (t.size()) layers.push_back(t);
-
-  /*
-     for (auto l : layers) if (l.size()) {
-     for (Edge e : l) debug(e.u, e.v, e.w, e.id);
-     cerr << endl;
-     }
-     */
-
   vi rep(n), rnk(n);
   fr(i, 0, n-1) rep[i] = i, rnk[i] = 1;
 
@@ -132,65 +111,54 @@ signed main() {
 
   vector <string> ans(m, "yet");
 
-  vi t_in(n), f(n), vis(n, false);
-  int timer = 0;
+  vi t_in(n), f(n), vis(n, -1);
+  int timer = 0, iter = 0;
   vvp G(n, vp());
 
   function <void(int, int)> dfs = [&] (int u, int last_id) -> void {
-    // debug(u, last_id);
-    vis[u] = true;
+    vis[u] = iter;
     f[u] = t_in[u] = timer++;
 
     for (auto vpair : G[u]) {
       int v = vpair.x, id = vpair.y;
       if (id == last_id) continue;
-      if (vis[v]) f[u] = min(f[u], t_in[v]);
+      if (vis[v] == iter) f[u] = min(f[u], t_in[v]);
       else {
         dfs(v, id);
         f[u] = min(f[u], f[v]);
         if (f[v] > t_in[u]) { // this is a bridge edge
-          // debug("marking bridge", u, v, t_in[u], t_in[v], f[u], f[v]);
           ans[id] = "any";
         }
       }
-      // debug(u, v, t_in[u], t_in[v], f[u], f[v]);
-    } };
-
-  set <int> vertices;
-  vector <Edge> take;
-  for (auto l : layers) if (l.size()) {
-
-    /*
-    for (int i = 0; i < n; ++i) {
-      debug(i, find_set(rep[i]));
     }
-    cerr << endl;
-    */
-    vertices.clear();
-    take.clear();
+  };
 
-    for (Edge &e : l) {
+  for (int i = 0, j = 0; i < m; i = j) {
+    ++iter;
+    for (j = i; j < m && edges[i].w == edges[j].w; ++j); // after here j will not be part of i's
+
+    for (int k = i; k < j; ++k) {
+      Edge& e = edges[k];
       e.u = find_set(e.u), e.v = find_set(e.v);
       int u = e.u, v = e.v, id = e.id;
-      vertices.insert(u), vertices.insert(v);
       G[u].clear(), G[v].clear();
       if (u == v) ans[id] = "none";
-      else {
-        ans[id] = "at least one";
-        take.push_back(e);
-      }
+      else ans[id] = "at least one";
     }
 
-    for (Edge e : take) {
+    for (int k = i; k < j; ++k) {
+      Edge& e = edges[k];
       int u = e.u, v = e.v, id = e.id;
-      // debug(u, v, w, id);
+      if (u == v) continue;
       G[u].push_back(make_pair(v, id));
       G[v].push_back(make_pair(u, id));
       merge(u, v);
+      timer = 0;
     }
-
-    for (int v : vertices) vis[v] = false;
-    for (int v : vertices) if (!vis[v]) dfs(v, -1);
+    for (int k = i; k < j; ++k) {
+      if (vis[edges[k].u] != iter) dfs(edges[k].u, -1);
+      else if (vis[edges[k].v] != iter) dfs(edges[k].v, -1);
+    }
   }
 
   fr(i, 0, m-1) cout << ans[i] << '\n';
