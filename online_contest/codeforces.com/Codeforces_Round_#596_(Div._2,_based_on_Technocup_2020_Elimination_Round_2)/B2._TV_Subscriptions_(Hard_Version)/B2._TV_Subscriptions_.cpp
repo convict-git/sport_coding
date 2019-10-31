@@ -1,3 +1,11 @@
+// Hack it and have it ;) //
+/*author* Priyanshu Shrivastav (from IIT Palakkad) *
+ * *_ __ ___  _ ______ ___  _ ____   ___  ___| |_  *
+ * | '_ ` _ \| '__/ __/ _ \| '_ \ \ / / |/ __| __| *
+ * | | | | | | | | (_| (_) | | | \ V /| | (__| |_  *
+ * |_| |_| |_|_|(_)___\___/|_| |_|\_/ |_|\___|\__| *
+When I wrote this, only God and I understood what I was doing
+ ** * * * * * * * Now, only God knows!* * * * * * */
 #include      <bits/stdc++.h> /*{{{*/
 #include      <ext/pb_ds/assoc_container.hpp>
 #include      <ext/pb_ds/tree_policy.hpp>
@@ -76,11 +84,13 @@ signed main() {
    IOS; PREC;
    int tc;
    cin >> tc;
+   const int N = (int)1e6 + 10;
+   vi fq(N);
    while (tc--) {
       int n, k, d;
       cin >> n >> k >> d;
 
-      vi a(n), fq(k + 1, 0);
+      vi a(n);
       fr(i, 0, n-1) cin >> a[i];
 
       int mn = INT_MAX;
@@ -103,6 +113,8 @@ signed main() {
          ++fq[a[i]];
          mn = min(mn, cnt);
       }
+      // i + d - 1 == n - 1
+      fr (i, (n - 1) - (d - 1), n-1) fq[a[i]] = 0;
       cout << mn << '\n';
    }
 
