@@ -177,6 +177,5 @@ signed main() {
       cout << lca_solve.get_sum_path(u, v) << '\n';
    }
 
-
    return EXIT_SUCCESS;
 }

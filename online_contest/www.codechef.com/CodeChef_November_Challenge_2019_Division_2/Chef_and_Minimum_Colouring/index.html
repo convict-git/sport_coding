@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>~/Dropbox/myfiles/sport_coding/online_contest/www.codechef.com/CodeChef_November_Challenge_2019_Division_2/Chef_and_Minimum_Colouring/Chef_and_Minimum_Colouring.cpp.html</title>
+<meta name="Generator" content="Vim/8.0">
+<meta name="plugin-version" content="vim7.4_v2">
+<meta name="syntax" content="cpp">
+<meta name="settings" content="use_css,no_foldcolumn,expand_tabs,prevent_copy=">
+<meta name="colorscheme" content="PaperColor">
+<style type="text/css">
+<!--
+pre { font-family: monospace; color: #d0d0d0; background-color: #1c1c1c; }
+body { font-family: monospace; color: #d0d0d0; background-color: #1c1c1c; }
+* { font-size: 1em; }
+.String { color: #d7af5f; }
+.Function { color: #d0d0d0; }
+.Structure { color: #00afaf; font-weight: bold; }
+.cType { color: #afd700; font-weight: bold; }
+.cFunction { color: #d0d0d0; }
+.cppSTLnamespace { color: #af87d7; }
+.Statement { color: #afd700; }
+.cConstant { color: #d7af00; font-weight: bold; }
+.Comment { color: #808080; }
+.Include { color: #5faf5f; }
+.parens { color: #ffffff; font-weight: bold; }
+.cConditional { color: #af87d7; font-weight: bold; }
+.cSpecial { color: #d7af5f; font-weight: bold; }
+.cNumber { color: #ff5faf; }
+.cRepeat { color: #af87d7; font-weight: bold; }
+.cppStatement { color: #00afaf; }
+.cppSTLconstant { color: #d0d0d0; }
+.cppSTLtype { color: #d0d0d0; }
+.cppSTLfunction { color: #d0d0d0; }
+-->
+</style>
+
+<script type='text/javascript'>
+<!--
+
+-->
+</script>
+</head>
+<body>
+<pre id='vimCodeElement'>
+<span class="Include">#include </span><span class="String">&lt;bits/stdc++.h&gt;</span>
+<span class="cppStatement">using</span> <span class="Structure">namespace</span> <span class="cppSTLnamespace">std</span>;
+
+<span class="cType">int</span> <span class="cFunction">main</span><span class="parens">()</span> <span class="parens">{</span>
+   <span class="cType">int</span> tc;
+   <span class="cppSTLconstant">cin</span> &gt;&gt; tc;
+   <span class="cRepeat">while</span> <span class="parens">(</span>tc--<span class="parens">)</span> <span class="parens">{</span>
+     <span class="cType">int</span> n, m;
+     <span class="cppSTLconstant">cin</span> &gt;&gt; n &gt;&gt; m;
+     <span class="cppSTLtype">vector</span>&lt;<span class="cppSTLtype">pair</span>&lt;<span class="cType">int</span>,<span class="cType">int</span>&gt;&gt; <span class="Function">A</span><span class="parens">(</span>n<span class="parens">)</span>;
+
+     <span class="cRepeat">for</span> <span class="parens">(</span><span class="cType">int</span> i = <span class="cNumber">0</span>; i &lt; n; ++i<span class="parens">)</span>
+       <span class="cppSTLconstant">cin</span> &gt;&gt; A<span class="parens">[</span>i<span class="parens">]</span>.<span class="Function">first</span>, A<span class="parens">[</span>i<span class="parens">]</span>.<span class="Function">second</span> = i % m;
+
+     <span class="cppSTLfunction">sort</span> <span class="parens">(</span>A.<span class="Function">begin</span><span class="parens">()</span>, A.<span class="Function">end</span><span class="parens">())</span>;
+
+     <span class="cppSTLtype">vector</span> &lt;<span class="cType">int</span>&gt; <span class="Function">fq</span><span class="parens">(</span>m<span class="parens">)</span>;
+     <span class="cType">int</span> cnt = <span class="cNumber">0</span>;
+
+     <span class="cType">int</span> i = <span class="cNumber">0</span>, j = <span class="cNumber">0</span>;
+     <span class="cType">int</span> mn = <span class="cConstant">INT_MAX</span>;
+
+     <span class="cRepeat">for</span> <span class="parens">(</span>; i &lt; n; ++i<span class="parens">)</span> <span class="parens">{</span>  <span class="Comment">// first pointer</span>
+       j = <span class="cppSTLfunction">max</span><span class="parens">(</span>i, j<span class="parens">)</span>;
+       <span class="cRepeat">while</span> <span class="parens">(</span>j &lt; n &amp;&amp; cnt &lt; m<span class="parens">)</span> <span class="parens">{</span> <span class="Comment">// second pointer</span>
+         <span class="cConditional">if</span> <span class="parens">(</span>fq<span class="parens">[</span>A<span class="parens">[</span>j<span class="parens">]</span>.<span class="Function">second</span><span class="parens">]</span> == <span class="cNumber">0</span><span class="parens">)</span> <span class="parens">{</span>
+           ++cnt;
+         <span class="parens">}</span>
+         ++fq<span class="parens">[</span>A<span class="parens">[</span>j<span class="parens">]</span>.<span class="Function">second</span><span class="parens">]</span>;
+         <span class="cConditional">if</span> <span class="parens">(</span>cnt == m<span class="parens">)</span> <span class="Statement">break</span>;
+         ++j;
+       <span class="parens">}</span>
+       <span class="cConditional">if</span> <span class="parens">(</span>cnt == m<span class="parens">)</span> <span class="parens">{</span>
+         mn = <span class="cppSTLfunction">min</span><span class="parens">(</span>mn, A<span class="parens">[</span>j<span class="parens">]</span>.<span class="Function">first</span> - A<span class="parens">[</span>i<span class="parens">]</span>.<span class="Function">first</span><span class="parens">)</span>;
+       <span class="parens">}</span>
+
+       --fq<span class="parens">[</span>A<span class="parens">[</span>i<span class="parens">]</span>.<span class="Function">second</span><span class="parens">]</span>;
+       <span class="cConditional">if</span> <span class="parens">(</span>fq<span class="parens">[</span>A<span class="parens">[</span>i<span class="parens">]</span>.<span class="Function">second</span><span class="parens">]</span> == <span class="cNumber">0</span><span class="parens">)</span> --cnt;
+     <span class="parens">}</span>
+     <span class="cppSTLconstant">cout</span> &lt;&lt; mn &lt;&lt; <span class="cSpecial">'\n'</span>;
+   <span class="parens">}</span>
+   <span class="Statement">return</span> <span class="cNumber">0</span>;
+<span class="parens">}</span>
+
+</pre>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->

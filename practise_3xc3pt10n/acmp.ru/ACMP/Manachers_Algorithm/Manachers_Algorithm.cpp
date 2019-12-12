@@ -67,7 +67,7 @@ struct polyhash {
       // #WARNING "check encoding"
       s.assign(sz, 0);
       for (int i = 0; i < sz; ++i) s[i] = st[i];
-   }
+  }
 
    polyhash (const string &st) : sz((int)st.size())
    {

@@ -1,11 +1,3 @@
-// Hack it and have it ;) //
-/*author* Priyanshu Shrivastav (from IIT Palakkad) *
- * *_ __ ___  _ ______ ___  _ ____   ___  ___| |_  *
- * | '_ ` _ \| '__/ __/ _ \| '_ \ \ / / |/ __| __| *
- * | | | | | | | | (_| (_) | | | \ V /| | (__| |_  *
- * |_| |_| |_|_|(_)___\___/|_| |_|\_/ |_|\___|\__| *
-When I wrote this, only God and I understood what I was doing
- ** * * * * * * * Now, only God knows!* * * * * * */
 #include      <bits/stdc++.h> /*{{{*/
 #include      <ext/pb_ds/assoc_container.hpp>
 #include      <ext/pb_ds/tree_policy.hpp>
@@ -78,7 +70,7 @@ void err(istream_iterator<string> it, T a, Args... args) {
 }
 /*}}}*/
 /*****************************************************************************/
-//Don’t practice until you get it right. Practice until you can’t get it wrong
+//Don’t practice until you get it right. Practice until you can’t get it wronghttps://bitbucket.org/Shruti_Umat/os_lab
 
 signed main() {
    IOS; PREC;

@@ -72,8 +72,25 @@ void err(istream_iterator<string> it, T a, Args... args) {
 /*****************************************************************************/
 //Don’t practice until you get it right. Practice until you can’t get it wrong
 
+const int Mod = (int)1e9 + 7;
+inline int add (int x, int y) {
+  return (x + y) % Mod;
+}
+inline int mul (int x, int y) {
+  return 1ll*x*y % Mod;
+}
+
 signed main() {
    IOS; PREC;
+
+   int n, m;
+   cin >> n >> m;
+   vector <string> mat;
+   string s;
+   fr (i, 0, n-1) cin >> s, mat.push_back(s);
+
+   const int N = (int)1e3 + 10;
+   int dp[N][N];
 
    return EXIT_SUCCESS;
 }

@@ -40,13 +40,15 @@ inline int add (int a, int b) { return ((a%MOD) + (b%MOD)) % MOD; };
 inline int mul (int a, int b) { return int(1ll*a*b % MOD); };
 
 void solve() {
-   dp[0] = 0;
+   dp[0] = 1;
 
+   /*
    for (int k = 0; k < n; ++k) {
       if (ar[1][k + 1]) dp[1 << k] = 1;
    }
+   */
 
-   for (int i = 2; i <= n; ++i) {
+   for (int i = 1; i <= n; ++i) {
       for (int j = (1 << n) - 1; j >= 1; --j) {
          if (__builtin_popcount(j) != i) continue;
          for (int k = 0; k < n; ++k) {

@@ -75,5 +75,11 @@ void err(istream_iterator<string> it, T a, Args... args) {
 signed main() {
    IOS; PREC;
 
+   int n;
+   cin >> n;
+   vi p(n, -1);
+   fr (i, 1, n-1) cin >> p[i];
+
+
    return EXIT_SUCCESS;
 }

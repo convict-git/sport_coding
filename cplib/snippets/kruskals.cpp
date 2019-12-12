@@ -88,6 +88,7 @@ class graph {
 
          long long cost = 0;
          int edge_cnt_mst = 0;
+         sort(edges.begin(), edges.end());
 
          for (Edge e : edges) {
             int u = e.u, v = e.v;

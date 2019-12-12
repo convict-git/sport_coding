@@ -36,6 +36,20 @@ int n;
 
 inline int add (int a, int b) { return ((a%MOD) + (b%MOD)) % MOD; };
 
+/*
+void rec(int len, int i, int men_idx, int cur_mask) {
+  if (len == 0 || i == 0) {
+    for (int k = 0; k < n; ++k) {
+      if (ar[men_idx][k+1] && (cur_mask & (1 << k)))
+        dp[men_idx][cur_mask] = add(dp[men_idx][cur_mask], dp[men_idx-1][cur_mask-(1 << k)]);
+    }
+    return;
+  }
+  rec(len-1, i, men_idx, cur_mask);
+  rec(len-1, i-1, men_idx, cur_mask + (1 << (len-1)));
+}
+*/
+
 void solve() {
    for (int i = 1; i <= n; ++i) {
       for (int j = 0; j < (1 << n); ++j) {
@@ -43,11 +57,17 @@ void solve() {
       }
    }
 
+   /*
    for (int k = 0; k < n; ++k) {
       if (ar[1][k+1]) dp[1][1 << k] = 1;
    }
+   */
+   dp[0][0] = 1;
 
-   for (int i = 2; i <= n; ++i) {
+   for (int i = 1; i <= n; ++i) {
+     /*
+     rec(n, i, i, 0);
+      */
       for (int j = 0; j < (1 << n); ++j) {
          if (__builtin_popcount(j) != i) continue;
          for (int k = 0; k < n; ++k) {
