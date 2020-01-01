@@ -1,0 +1,22 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+IOS	Prime_Digit_Sums.cpp	10;"	d	file:
+PREC	Prime_Digit_Sums.cpp	11;"	d	file:
+bg	Prime_Digit_Sums.cpp	14;"	d	file:
+chash	Prime_Digit_Sums.cpp	/^struct chash {$/;"	s	file:
+debug	Prime_Digit_Sums.cpp	44;"	d	file:
+err	Prime_Digit_Sums.cpp	/^void err(istream_iterator<string> it) {$/;"	f
+err	Prime_Digit_Sums.cpp	/^void err(istream_iterator<string> it, T a, Args... args) {$/;"	f
+is_prime	Prime_Digit_Sums.cpp	/^bool is_prime (int x) {$/;"	f
+main	Prime_Digit_Sums.cpp	/^signed main() {$/;"	f
+mp	Prime_Digit_Sums.cpp	/^gp_hash_table <pii, int, chash> mp;$/;"	v
+operator ()	Prime_Digit_Sums.cpp	/^   int operator () (pii x) const { return x.x*31 + x.y; }$/;"	f	struct:chash
+ordered_set	Prime_Digit_Sums.cpp	/^ordered_set;$/;"	t	file:
+seed	Prime_Digit_Sums.cpp	/^auto seed = chrono::high_resolution_clock::now().time_since_epoch().count();$/;"	v
+un	Prime_Digit_Sums.cpp	15;"	d	file:
+x	Prime_Digit_Sums.cpp	12;"	d	file:
+y	Prime_Digit_Sums.cpp	13;"	d	file:

@@ -1,0 +1,32 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+IOS	C._Diverse_Matrix.cpp	13;"	d	file:
+MAX_P	C._Diverse_Matrix.cpp	/^const int MAX_P = 2101000;$/;"	v
+PREC	C._Diverse_Matrix.cpp	14;"	d	file:
+X	C._Diverse_Matrix.cpp	15;"	d	file:
+Y	C._Diverse_Matrix.cpp	16;"	d	file:
+bg	C._Diverse_Matrix.cpp	22;"	d	file:
+chash	C._Diverse_Matrix.cpp	/^struct chash {$/;"	s	file:
+cnt	C._Diverse_Matrix.cpp	20;"	d	file:
+cntll	C._Diverse_Matrix.cpp	21;"	d	file:
+debug	C._Diverse_Matrix.cpp	58;"	d	file:
+err	C._Diverse_Matrix.cpp	/^void err(istream_iterator<string> it) {$/;"	f
+err	C._Diverse_Matrix.cpp	/^void err(istream_iterator<string> it, T a, Args... args) {$/;"	f
+fr	C._Diverse_Matrix.cpp	18;"	d	file:
+gcd	C._Diverse_Matrix.cpp	/^ll gcd (ll a, ll b) {$/;"	f
+gcd_list	C._Diverse_Matrix.cpp	/^ll gcd_list (vl v) {$/;"	f
+main	C._Diverse_Matrix.cpp	/^signed main() {$/;"	f
+mp	C._Diverse_Matrix.cpp	/^gp_hash_table <pii, int, chash> mp;$/;"	v
+operator ()	C._Diverse_Matrix.cpp	/^   int operator () (pii x) const { return x.X*31 + x.Y; }$/;"	f	struct:chash
+ordered_set	C._Diverse_Matrix.cpp	/^ordered_set;$/;"	t	file:
+powers	C._Diverse_Matrix.cpp	/^vector <int> primes = {2}, powers;$/;"	v
+primes	C._Diverse_Matrix.cpp	/^vector <int> primes = {2}, powers;$/;"	v
+rv	C._Diverse_Matrix.cpp	19;"	d	file:
+seed	C._Diverse_Matrix.cpp	/^auto seed = chrono::high_resolution_clock::now().time_since_epoch().count();$/;"	v
+sieve	C._Diverse_Matrix.cpp	/^void sieve() {$/;"	f
+sz	C._Diverse_Matrix.cpp	17;"	d	file:
+un	C._Diverse_Matrix.cpp	23;"	d	file:

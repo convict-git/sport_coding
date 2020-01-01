@@ -1,0 +1,59 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558 
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "tester",
+            "command": "tester_all",
+            "args": [
+                "${file}",
+                "3",
+                "C"
+            ],
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "type": "shell",
+            "label": "tester_debug",
+            "command": "tester_all",
+            "args": [
+                "${file}",
+                "3",
+                "CD"
+            ],
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "type": "shell",
+            "label": "run_tests",
+            "command": "tester_all",
+            "args": [
+                "${file}",
+                "3",
+            ],
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "type": "shell",
+            "label": "compile",
+            "command": "compile",
+            "args": [
+                "${file}"
+            ],
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "type": "shell",
+            "label": "parser",
+            "command": "parse",
+            "group": "build",
+            "problemMatcher": []
+        }
+    ]
+}

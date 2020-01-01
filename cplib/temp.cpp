@@ -12,8 +12,9 @@ using namespace __gnu_pbds;
 
 #define IOS       ios_base::sync_with_stdio(false); cin.tie (nullptr)
 #define PREC      cout.precision (10); cout << fixed
-#define x         first
-#define y         second
+#define X         first
+#define Y         second
+#define sz(x)     (int)x.size()
 #define fr(i,x,y) for (int i = (int)x; i <= (int)y; ++i)
 #define rv(i,x,y) for (int i = (int)x; i >= (int)y; --i)
 #define cnt(x)    __builtin_popcount(x)
@@ -29,6 +30,7 @@ using   pil =     pair<int,ll>;
 using   vi  =     vector <int>;
 using   vl  =     vector<ll>;
 using   vvi =     vector <vi>;
+using   vvl =     vector <vl>;
 using   vp  =     vector <pii>;
 using   vvp =     vector <vp>;
 typedef tree
@@ -36,7 +38,7 @@ typedef tree
 ordered_set;
 
 struct chash {
-   int operator () (pii x) const { return x.x*31 + x.y; }
+   int operator () (pii x) const { return x.X*31 + x.Y; }
 };
 gp_hash_table <pii, int, chash> mp;
 
@@ -98,6 +100,7 @@ void err(istream_iterator<string> it, T a, Args... args) {
 
 signed main() {
    IOS; PREC;
+
 
    return EXIT_SUCCESS;
 }

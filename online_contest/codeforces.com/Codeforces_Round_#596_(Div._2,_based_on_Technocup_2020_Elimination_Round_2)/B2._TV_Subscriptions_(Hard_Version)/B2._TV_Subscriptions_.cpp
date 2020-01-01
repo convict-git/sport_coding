@@ -78,6 +78,7 @@ signed main() {
    cin >> tc;
    const int N = (int)1e6 + 10;
    vi fq(N);
+
    while (tc--) {
       int n, k, d;
       cin >> n >> k >> d;
@@ -105,8 +106,9 @@ signed main() {
          ++fq[a[i]];
          mn = min(mn, cnt);
       }
+
       // i + d - 1 == n - 1
-      fr (i, (n - 1) - (d - 1), n-1) fq[a[i]] = 0;
+      fr(i, (n - 1) - (d - 1), n - 1) fq[a[i]] = 0;
       cout << mn << '\n';
    }
 

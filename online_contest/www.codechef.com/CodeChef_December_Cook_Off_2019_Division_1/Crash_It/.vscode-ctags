@@ -1,0 +1,26 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+IOS	Crash_It.cpp	13;"	d	file:
+PREC	Crash_It.cpp	14;"	d	file:
+X	Crash_It.cpp	15;"	d	file:
+Y	Crash_It.cpp	16;"	d	file:
+bg	Crash_It.cpp	22;"	d	file:
+chash	Crash_It.cpp	/^struct chash {$/;"	s	file:
+cnt	Crash_It.cpp	20;"	d	file:
+cntll	Crash_It.cpp	21;"	d	file:
+debug	Crash_It.cpp	57;"	d	file:
+err	Crash_It.cpp	/^void err(istream_iterator<string> it) {$/;"	f
+err	Crash_It.cpp	/^void err(istream_iterator<string> it, T a, Args... args) {$/;"	f
+fr	Crash_It.cpp	18;"	d	file:
+main	Crash_It.cpp	/^signed main() {$/;"	f
+mp	Crash_It.cpp	/^gp_hash_table <pii, int, chash> mp;$/;"	v
+operator ()	Crash_It.cpp	/^   int operator () (pii x) const { return x.X*31 + x.Y; }$/;"	f	struct:chash
+ordered_set	Crash_It.cpp	/^ordered_set;$/;"	t	file:
+rv	Crash_It.cpp	19;"	d	file:
+seed	Crash_It.cpp	/^auto seed = chrono::high_resolution_clock::now().time_since_epoch().count();$/;"	v
+sz	Crash_It.cpp	17;"	d	file:
+un	Crash_It.cpp	23;"	d	file:

@@ -12,8 +12,8 @@ using namespace __gnu_pbds;
 
 #define IOS       ios_base::sync_with_stdio(false); cin.tie (nullptr)
 #define PREC      cout.precision (10); cout << fixed
-#define x         first
-#define y         second
+#define X         first
+#define Y         second
 #define fr(i,x,y) for (int i = (int)x; i <= (int)y; ++i)
 #define rv(i,x,y) for (int i = (int)x; i >= (int)y; --i)
 #define cnt(x)    __builtin_popcount(x)
@@ -36,7 +36,7 @@ typedef tree
 ordered_set;
 
 struct chash {
-   int operator () (pii x) const { return x.x*31 + x.y; }
+   int operator () (pii x) const { return x.X*31 + x.Y; }
 };
 gp_hash_table <pii, int, chash> mp;
 
@@ -167,6 +167,7 @@ class seg_less { /*{{{*/
     void lz_upd(int l, int r, int x) {
       if (lz[x] != 0) {
         seg[x].add_val(lz[x]);
+
         if (l != r)
         {
           lz[x + x + 1] += lz[x];
@@ -182,6 +183,7 @@ class seg_less { /*{{{*/
       if (l > qr || r < ql) return;
       if (l >= ql && r <= qr) {
         seg[x].add_val(val);
+
         if (l != r)
         {
           lz[x + x + 1] += val;
@@ -189,6 +191,7 @@ class seg_less { /*{{{*/
         }
         return;
       }
+
       int mid = (l + r)/2;
       upd(ql, qr, val, l, mid, x + x + 1);
       upd(ql, qr, val, mid + 1, r, x + x + 2);
@@ -216,7 +219,9 @@ class seg_less { /*{{{*/
 }; /*}}}*/
 
 signed main() {
-   IOS; PREC;
+   // IOS; PREC;
+   // freopen("input1", "r", stdin);
+   // freopen("out.txt", "w", stdout);
 
    int n, k;
    cin >> n >> k;
@@ -234,33 +239,26 @@ signed main() {
      last[a[i]] = i;
    }
 
-   fr (i, 0, n - 1) fr (d, 1, D)
-     if (bin[i][d - 1] != -1)
+   vi b(n);
+   fr(i, 0, n-1) {
+     fr (d, 1, D) if (bin[i][d - 1] != -1)
        bin[i][d] = bin[bin[i][d - 1]][d - 1];
 
-   auto walk = [&] (int i, int d) -> int {
-     for (int j = 0; j <= D && i >= 0; ++j) if (d & (1 << j))
-       i = bin[i][j];
-     return i;
-   };
-
-   vi b(n);
-   fr(i, 0, n-1) b[i] = walk(i, k);
-
-   /*
-   fr(i, 0, n-1) cerr << b[i] << " ";
-   cerr << endl;
-   */
+     b[i] = i;
+     fr (d, 0, D) if ((k & (1 << d)) && b[i] >= 0)
+       b[i] = bin[b[i]][d];
+   }
 
    seg_less Tree(n, b);
+
    int q, lst = 0;
    cin >> q;
-
    while (q--) {
      int l, r;
      cin >> l >> r;
      l = (l + lst) % n;
      r = (r + lst) % n;
+
      if (l > r) swap(l, r);
      lst = Tree.query_range_less(l, r, l);
      cout << lst << '\n';

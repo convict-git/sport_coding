@@ -1,0 +1,28 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ChristmasCrackers	250.cpp	/^class ChristmasCrackers {$/;"	c	file:
+IOS	250.cpp	13;"	d	file:
+PREC	250.cpp	14;"	d	file:
+X	250.cpp	15;"	d	file:
+Y	250.cpp	16;"	d	file:
+bg	250.cpp	22;"	d	file:
+chash	250.cpp	/^struct chash {$/;"	s	file:
+cnt	250.cpp	20;"	d	file:
+cntll	250.cpp	21;"	d	file:
+crack	250.cpp	/^  vector <int> crack(int n, int k) {$/;"	f	class:ChristmasCrackers
+debug	250.cpp	57;"	d	file:
+err	250.cpp	/^void err(istream_iterator<string> it) {$/;"	f
+err	250.cpp	/^void err(istream_iterator<string> it, T a, Args... args) {$/;"	f
+fr	250.cpp	18;"	d	file:
+main	250.cpp	/^signed main() {$/;"	f
+mp	250.cpp	/^gp_hash_table <pii, int, chash> mp;$/;"	v
+operator ()	250.cpp	/^   int operator () (pii x) const { return x.X*31 + x.Y; }$/;"	f	struct:chash
+ordered_set	250.cpp	/^ordered_set;$/;"	t	file:
+rv	250.cpp	19;"	d	file:
+seed	250.cpp	/^auto seed = chrono::high_resolution_clock::now().time_since_epoch().count();$/;"	v
+sz	250.cpp	17;"	d	file:
+un	250.cpp	23;"	d	file:

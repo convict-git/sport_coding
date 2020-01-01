@@ -56,8 +56,9 @@ void err(istream_iterator<string> it, T a, Args... args) {
 
 const int N = (int)1e5 + 10;
 const int Mod = 998244353;
-int n;
+}
 vector <int> fac;
+vector <Mint> fac;
 vector <pii> el;
 inline int add(int x, int y) {
    return (x + y) % Mod;

@@ -1,0 +1,25 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+IOS	B2._TV_Subscriptions_.cpp	13;"	d	file:
+PREC	B2._TV_Subscriptions_.cpp	14;"	d	file:
+bg	B2._TV_Subscriptions_.cpp	21;"	d	file:
+chash	B2._TV_Subscriptions_.cpp	/^struct chash {$/;"	s	file:
+cnt	B2._TV_Subscriptions_.cpp	19;"	d	file:
+cntll	B2._TV_Subscriptions_.cpp	20;"	d	file:
+debug	B2._TV_Subscriptions_.cpp	55;"	d	file:
+err	B2._TV_Subscriptions_.cpp	/^void err(istream_iterator<string> it) {$/;"	f
+err	B2._TV_Subscriptions_.cpp	/^void err(istream_iterator<string> it, T a, Args... args) {$/;"	f
+fR	B2._TV_Subscriptions_.cpp	18;"	d	file:
+fr	B2._TV_Subscriptions_.cpp	17;"	d	file:
+main	B2._TV_Subscriptions_.cpp	/^signed main() {$/;"	f
+mp	B2._TV_Subscriptions_.cpp	/^gp_hash_table <pii, int, chash> mp;$/;"	v
+operator ()	B2._TV_Subscriptions_.cpp	/^   int operator () (pii x) const { return x.x*31 + x.y; }$/;"	f	struct:chash
+ordered_set	B2._TV_Subscriptions_.cpp	/^ordered_set;$/;"	t	file:
+seed	B2._TV_Subscriptions_.cpp	/^auto seed = chrono::high_resolution_clock::now().time_since_epoch().count();$/;"	v
+un	B2._TV_Subscriptions_.cpp	22;"	d	file:
+x	B2._TV_Subscriptions_.cpp	15;"	d	file:
+y	B2._TV_Subscriptions_.cpp	16;"	d	file:
