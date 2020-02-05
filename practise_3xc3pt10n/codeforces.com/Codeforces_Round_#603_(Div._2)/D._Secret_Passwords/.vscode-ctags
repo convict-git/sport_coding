@@ -1,0 +1,48 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+IOS	D._Secret_Passwords.cpp	13;"	d	file:
+IOS	D._Secret_Passwords_dfs.cpp	13;"	d	file:
+PREC	D._Secret_Passwords.cpp	14;"	d	file:
+PREC	D._Secret_Passwords_dfs.cpp	14;"	d	file:
+bg	D._Secret_Passwords.cpp	21;"	d	file:
+bg	D._Secret_Passwords_dfs.cpp	21;"	d	file:
+chash	D._Secret_Passwords.cpp	/^struct chash {$/;"	s	file:
+chash	D._Secret_Passwords_dfs.cpp	/^struct chash {$/;"	s	file:
+cnt	D._Secret_Passwords.cpp	19;"	d	file:
+cnt	D._Secret_Passwords_dfs.cpp	19;"	d	file:
+cntll	D._Secret_Passwords.cpp	20;"	d	file:
+cntll	D._Secret_Passwords_dfs.cpp	20;"	d	file:
+debug	D._Secret_Passwords.cpp	55;"	d	file:
+debug	D._Secret_Passwords_dfs.cpp	55;"	d	file:
+err	D._Secret_Passwords.cpp	/^void err(istream_iterator<string> it) {$/;"	f
+err	D._Secret_Passwords.cpp	/^void err(istream_iterator<string> it, T a, Args... args) {$/;"	f
+err	D._Secret_Passwords_dfs.cpp	/^void err(istream_iterator<string> it) {$/;"	f
+err	D._Secret_Passwords_dfs.cpp	/^void err(istream_iterator<string> it, T a, Args... args) {$/;"	f
+fR	D._Secret_Passwords.cpp	18;"	d	file:
+fR	D._Secret_Passwords_dfs.cpp	18;"	d	file:
+fr	D._Secret_Passwords.cpp	17;"	d	file:
+fr	D._Secret_Passwords_dfs.cpp	17;"	d	file:
+main	D._Secret_Passwords.cpp	/^signed main() {$/;"	f
+main	D._Secret_Passwords_dfs.cpp	/^signed main() {$/;"	f
+merge	D._Secret_Passwords.cpp	/^inline void merge (int x, int y) {$/;"	f
+mp	D._Secret_Passwords.cpp	/^gp_hash_table <pii, int, chash> mp;$/;"	v
+mp	D._Secret_Passwords_dfs.cpp	/^gp_hash_table <pii, int, chash> mp;$/;"	v
+operator ()	D._Secret_Passwords.cpp	/^  int operator () (pii x) const { return x.x*31 + x.y; }$/;"	f	struct:chash
+operator ()	D._Secret_Passwords_dfs.cpp	/^  int operator () (pii x) const { return x.x*31 + x.y; }$/;"	f	struct:chash
+ordered_set	D._Secret_Passwords.cpp	/^ordered_set;$/;"	t	file:
+ordered_set	D._Secret_Passwords_dfs.cpp	/^ordered_set;$/;"	t	file:
+pi	D._Secret_Passwords.cpp	/^int pi[26];$/;"	v
+rep	D._Secret_Passwords.cpp	/^inline int rep (int x) {$/;"	f
+seed	D._Secret_Passwords.cpp	/^auto seed = chrono::high_resolution_clock::now().time_since_epoch().count();$/;"	v
+seed	D._Secret_Passwords_dfs.cpp	/^auto seed = chrono::high_resolution_clock::now().time_since_epoch().count();$/;"	v
+un	D._Secret_Passwords.cpp	22;"	d	file:
+un	D._Secret_Passwords_dfs.cpp	22;"	d	file:
+w	D._Secret_Passwords_dfs.cpp	/^int w[26][26];$/;"	v
+x	D._Secret_Passwords.cpp	15;"	d	file:
+x	D._Secret_Passwords_dfs.cpp	15;"	d	file:
+y	D._Secret_Passwords.cpp	16;"	d	file:
+y	D._Secret_Passwords_dfs.cpp	16;"	d	file:

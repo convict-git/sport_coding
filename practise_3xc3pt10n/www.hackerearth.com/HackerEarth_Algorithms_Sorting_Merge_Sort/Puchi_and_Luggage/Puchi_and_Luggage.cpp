@@ -110,6 +110,5 @@ signed main() {
       for (int i = 0; i < n; ++i)
          cout << ans[i] << " \n" [i == n - 1];
    }
-
    return EXIT_SUCCESS;
 }

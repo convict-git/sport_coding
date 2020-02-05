@@ -33,6 +33,12 @@ class seg_less { /*{{{*/
       }
     };
 
+    static const int MXN = (int)2e5 + 10;
+    int sz;
+    int ar[MXN];
+    Node seg[4 * MXN];
+    int lz[4 * MXN];
+
     seg_less (int n, int Ar[] = nullptr) {
       sz = n;
       if (Ar == nullptr)
@@ -47,12 +53,6 @@ class seg_less { /*{{{*/
       for (int i = 0; i < sz; ar[i] = Ar[i], ++i);
       create(0, n - 1, 0);
     }
-
-    static const int MXN = (int)2e5 + 10;
-    int sz;
-    int ar[MXN];
-    Node seg[4 * MXN];
-    int lz[4 * MXN];
 
     void create (int l, int r, int x) {
       seg[x].sz = r - l + 1;
@@ -119,4 +119,3 @@ class seg_less { /*{{{*/
       return get (ql, qr, 0, sz - 1, 0, limit);
     }
 }; /*}}}*/
-

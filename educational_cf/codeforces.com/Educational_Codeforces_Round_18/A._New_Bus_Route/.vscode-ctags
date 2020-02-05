@@ -1,0 +1,29 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+IOS	A._New_Bus_Route.cpp	10;"	d	file:
+PREC	A._New_Bus_Route.cpp	11;"	d	file:
+bg	A._New_Bus_Route.cpp	14;"	d	file:
+chash	A._New_Bus_Route.cpp	/^struct chash {$/;"	s	file:
+cnt	A._New_Bus_Route.cpp	/^   int val, cnt;$/;"	m	struct:diff	file:
+debug	A._New_Bus_Route.cpp	44;"	d	file:
+diff	A._New_Bus_Route.cpp	/^struct diff{$/;"	s	file:
+err	A._New_Bus_Route.cpp	/^void err(istream_iterator<string> it) {$/;"	f
+err	A._New_Bus_Route.cpp	/^void err(istream_iterator<string> it, T a, Args... args) {$/;"	f
+main	A._New_Bus_Route.cpp	/^signed main() {$/;"	f
+mp	A._New_Bus_Route.cpp	/^gp_hash_table <pii, int, chash> mp;$/;"	v
+n	A._New_Bus_Route.cpp	/^int n;$/;"	v
+operator ()	A._New_Bus_Route.cpp	/^   int operator()(pii x) const { return x.x*31 + x.y; }$/;"	f	struct:chash
+operator <	A._New_Bus_Route.cpp	/^   bool operator < (const diff &o) const {$/;"	f	struct:diff
+operator ==	A._New_Bus_Route.cpp	/^   bool operator == (const diff &o) const {$/;"	f	struct:diff
+ordered_set	A._New_Bus_Route.cpp	/^ordered_set;$/;"	t	file:
+s	A._New_Bus_Route.cpp	/^set <diff> s;$/;"	v
+seed	A._New_Bus_Route.cpp	/^auto seed = chrono::high_resolution_clock::now().time_since_epoch().count();$/;"	v
+un	A._New_Bus_Route.cpp	15;"	d	file:
+v	A._New_Bus_Route.cpp	/^vector <int> v;$/;"	v
+val	A._New_Bus_Route.cpp	/^   int val, cnt;$/;"	m	struct:diff	file:
+x	A._New_Bus_Route.cpp	12;"	d	file:
+y	A._New_Bus_Route.cpp	13;"	d	file:

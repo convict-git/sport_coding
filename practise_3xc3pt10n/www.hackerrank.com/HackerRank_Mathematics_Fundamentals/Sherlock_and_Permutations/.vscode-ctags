@@ -1,0 +1,26 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+IOS	Sherlock_and_Permutations.cpp	13;"	d	file:
+PREC	Sherlock_and_Permutations.cpp	14;"	d	file:
+X	Sherlock_and_Permutations.cpp	15;"	d	file:
+Y	Sherlock_and_Permutations.cpp	16;"	d	file:
+bg	Sherlock_and_Permutations.cpp	22;"	d	file:
+chash	Sherlock_and_Permutations.cpp	/^struct chash {$/;"	s	file:
+cnt	Sherlock_and_Permutations.cpp	20;"	d	file:
+cntll	Sherlock_and_Permutations.cpp	21;"	d	file:
+debug	Sherlock_and_Permutations.cpp	58;"	d	file:
+err	Sherlock_and_Permutations.cpp	/^void err(istream_iterator<string> it) {$/;"	f
+err	Sherlock_and_Permutations.cpp	/^void err(istream_iterator<string> it, T a, Args... args) {$/;"	f
+fr	Sherlock_and_Permutations.cpp	18;"	d	file:
+main	Sherlock_and_Permutations.cpp	/^signed main() {$/;"	f
+mp	Sherlock_and_Permutations.cpp	/^gp_hash_table <pii, int, chash> mp;$/;"	v
+operator ()	Sherlock_and_Permutations.cpp	/^  int operator () (pii x) const { return x.X*31 + x.Y; }$/;"	f	struct:chash
+ordered_set	Sherlock_and_Permutations.cpp	/^ordered_set;$/;"	t	file:
+rv	Sherlock_and_Permutations.cpp	19;"	d	file:
+seed	Sherlock_and_Permutations.cpp	/^auto seed = chrono::high_resolution_clock::now().time_since_epoch().count();$/;"	v
+sz	Sherlock_and_Permutations.cpp	17;"	d	file:
+un	Sherlock_and_Permutations.cpp	23;"	d	file:

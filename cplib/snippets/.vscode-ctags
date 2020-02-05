@@ -1,0 +1,642 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+A	sqrt_decomp.cpp	/^   vector <int> B, A;$/;"	m	class:sqrt_root_decomp	file:
+Adj	johnsons.cpp	/^vector < vector <pii> > Adj;$/;"	v
+Adj	min_cost_K_flow.cpp	/^   vector < vector <pii> > Adj;$/;"	m	struct:max_flow	file:
+B	sqrt_decomp.cpp	/^   vector <int> B, A;$/;"	m	class:sqrt_root_decomp	file:
+Compare	prims.cpp	/^class Compare {$/;"	c	file:
+D	lca_bin.cpp	/^   const int D = 21; \/\/ for handling n upto 2e6$/;"	m	class:LCA	file:
+E	readgrapharray.cpp	/^int head[N], num, V, E;$/;"	v
+Edge	BFS.cpp	/^      struct Edge {$/;"	s	class:graph	file:
+Edge	bellmanFord.cpp	/^      struct Edge {$/;"	s	class:graph	file:
+Edge	bridges_articulation.cpp	/^      struct Edge {$/;"	s	class:graph	file:
+Edge	cc_comp.cpp	/^      struct Edge {$/;"	s	class:graph	file:
+Edge	dijkstra.cpp	/^      struct Edge {$/;"	s	class:graph	file:
+Edge	graph.cpp	/^      struct Edge {$/;"	s	class:graph	file:
+Edge	johnsons.cpp	/^struct Edge {$/;"	s	file:
+Edge	kruskals.cpp	/^      struct Edge {$/;"	s	class:graph	file:
+Edge	spfa.cpp	/^      struct Edge {$/;"	s	class:graph	file:
+G	2SAT.cpp	/^   vector < vector < int> > G, GT;$/;"	m	struct:twoSAT	file:
+GT	2SAT.cpp	/^   vector < vector < int> > G, GT;$/;"	m	struct:twoSAT	file:
+IOS	bipartite_online.cpp	13;"	d	file:
+IOS	minStackQueue.cpp	13;"	d	file:
+IOS	sparse_table.cpp	13;"	d	file:
+IS_UNDIR	BFS.cpp	/^      bool IS_UNDIR, vis[N];$/;"	m	class:graph	file:
+IS_UNDIR	bellmanFord.cpp	/^      bool IS_UNDIR, vis[N];$/;"	m	class:graph	file:
+IS_UNDIR	bridges_articulation.cpp	/^      bool IS_UNDIR, vis[N];$/;"	m	class:graph	file:
+IS_UNDIR	cc_comp.cpp	/^      bool IS_UNDIR, vis[N];$/;"	m	class:graph	file:
+IS_UNDIR	dijkstra.cpp	/^      bool IS_UNDIR, vis[N];$/;"	m	class:graph	file:
+IS_UNDIR	graph.cpp	/^      bool IS_UNDIR, vis[N];$/;"	m	class:graph	file:
+IS_UNDIR	kruskals.cpp	/^      bool IS_UNDIR, vis[N];$/;"	m	class:graph	file:
+IS_UNDIR	spfa.cpp	/^      bool IS_UNDIR, vis[N];$/;"	m	class:graph	file:
+LCA	lca_bin.cpp	/^   LCA(int n, vector <vector<pair <int, int>>> &T, int root = 0, int OP=0) {$/;"	f	class:LCA
+LCA	lca_bin.cpp	/^class LCA { \/*{{{*\/$/;"	c	file:
+LCA	lca_seg.cpp	/^   LCA (int n, vector <vector <int>> &T, int root = 0) {$/;"	f	class:LCA	file:
+LCA	lca_seg.cpp	/^class LCA { \/\/ O(N) preprocessing, O(logN) queury$/;"	c	file:
+M	mat.cpp	/^   int M[mxn][mxn];$/;"	m	struct:Mat	file:
+MAX_P	prime.cpp	/^const int MAX_P = 2101000;$/;"	v
+MCBM	MCBM.cpp	/^int MCBM() {$/;"	f
+MST	graph.cpp	/^      vector <Edge> MST;$/;"	m	class:graph	file:
+MST	kruskals.cpp	/^      vector <Edge> MST;$/;"	m	class:graph	file:
+MXN	segment_tree_less.cpp	/^    static const int MXN = (int)2e5 + 10;$/;"	m	class:seg_less	file:
+MXN	segment_tree_max.cpp	/^      static const int MXN = (int)2e5 + 10;$/;"	m	class:seg_max	file:
+MXN	segment_tree_min.cpp	/^      static const int MXN = (int)2e5 + 10;$/;"	m	class:seg_min	file:
+MXN	segment_tree_sum.cpp	/^      static const int MXN = (int)2e5 + 10;$/;"	m	class:seg_sum	file:
+Mat	mat.cpp	/^   Mat(const Mat& other) {$/;"	f	struct:Mat
+Mat	mat.cpp	/^   Mat(int n_, int val = 0) {$/;"	f	struct:Mat
+Mat	mat.cpp	/^struct Mat {$/;"	s	file:
+Mod	Mod.cpp	/^const int Mod = 1e9 + 7;$/;"	v
+Mod	mat.cpp	/^   static const int mxn = 1005, inf = (int)1e9, Mod = (int)1e9 + 7;$/;"	m	struct:Mat	file:
+Mod	polyhash.cpp	/^      static const int Mod = (int)1e9 + 123;$/;"	m	class:polyhash	file:
+Mod	polyhash_int.cpp	/^   static const int Mod = (int)1e9 + 123;$/;"	m	struct:polyhash	file:
+Mod	string.cpp	/^      static const int Mod = (int)1e9 + 123;$/;"	m	class:polyhash	file:
+Mod	sum_gp.cpp	/^const int Mod = (int)1e9 + 7;$/;"	v
+N	2SAT.cpp	/^   static const int N = (int)2e5 + 10;$/;"	m	struct:twoSAT	file:
+N	BFS.cpp	/^      static const int N = (int)2e5 + 10;$/;"	m	class:graph	file:
+N	UFDS.cpp	/^   static const int N = (int)1e6 + 10;$/;"	m	struct:UFDS	file:
+N	anti_hash_2_64.cpp	/^const int N = 1 << Q;$/;"	v
+N	bellmanFord.cpp	/^      static const int N = (int)2e5 + 10;$/;"	m	class:graph	file:
+N	bipartite_online.cpp	/^const int N = (int)1e5 + 10;$/;"	v
+N	bridges_articulation.cpp	/^      static const int N = (int)2e5 + 10;$/;"	m	class:graph	file:
+N	cc_comp.cpp	/^      static const int N = (int)2e5 + 10;$/;"	m	class:graph	file:
+N	dijkstra.cpp	/^      static const int N = (int)2e5 + 10;$/;"	m	class:graph	file:
+N	graph.cpp	/^      static const int N = (int)2e5 + 10;$/;"	m	class:graph	file:
+N	kruskals.cpp	/^      static const int N = (int)2e5 + 10;$/;"	m	class:graph	file:
+N	prefix_function.cpp	/^const int N = (int)2e6 + 10;$/;"	v
+N	spfa.cpp	/^      static const int N = (int)2e5 + 10;$/;"	m	class:graph	file:
+N	string.cpp	/^const int N = (int)1e6 + 10;$/;"	v
+N	tsp.cpp	/^   static const int N = 17;$/;"	m	struct:tsp	file:
+N	z_function.cpp	/^const int N = (int)1e6 + 10;$/;"	v
+Node	segment_tree_less.cpp	/^    struct Node {$/;"	s	class:seg_less	file:
+OP	mat.cpp	/^   constexpr static const long double OP = (long double) 1 \/ ((int)1e9 + 7);$/;"	m	struct:Mat	file:
+PREC	bipartite_online.cpp	14;"	d	file:
+PREC	minStackQueue.cpp	14;"	d	file:
+PREC	sparse_table.cpp	14;"	d	file:
+Par	dsu.cpp	/^int rk[N], sz[N], Par[N];$/;"	v
+Par	edmondsKarp.cpp	/^int Par[N];$/;"	v
+Par	min_cost_K_flow.cpp	/^   int Par[N];$/;"	m	struct:max_flow	file:
+Q	anti_hash_2_64.cpp	/^const int Q = 10;$/;"	v
+S	sqrt_decomp.cpp	/^   const int S = 1000;$/;"	m	class:sqrt_root_decomp	file:
+UFDS	UFDS.cpp	/^   UFDS (int n_) {$/;"	f	struct:UFDS
+UFDS	UFDS.cpp	/^struct UFDS {$/;"	s	file:
+V	BFS.cpp	/^      int V;$/;"	m	class:graph	file:
+V	bellmanFord.cpp	/^      int V;$/;"	m	class:graph	file:
+V	bridges_articulation.cpp	/^      int V;$/;"	m	class:graph	file:
+V	cc_comp.cpp	/^      int V;$/;"	m	class:graph	file:
+V	dijkstra.cpp	/^      int V;$/;"	m	class:graph	file:
+V	graph.cpp	/^      int V;$/;"	m	class:graph	file:
+V	kruskals.cpp	/^      int V;$/;"	m	class:graph	file:
+V	lca_bin.cpp	/^   int V;$/;"	m	class:LCA	file:
+V	lca_seg.cpp	/^   int V, euler_sz;$/;"	m	class:LCA	file:
+V	min_cost_K_flow.cpp	/^   int V;$/;"	m	struct:max_flow	file:
+V	readgrapharray.cpp	/^int head[N], num, V, E;$/;"	v
+V	spfa.cpp	/^      int V;$/;"	m	class:graph	file:
+W	floydWarshall.cpp	/^long long W[N][N];$/;"	v
+X	bipartite_online.cpp	15;"	d	file:
+X	minStackQueue.cpp	15;"	d	file:
+X	sparse_table.cpp	15;"	d	file:
+Y	bipartite_online.cpp	16;"	d	file:
+Y	minStackQueue.cpp	16;"	d	file:
+Y	sparse_table.cpp	16;"	d	file:
+a	bigint.cpp	/^    vector<int> a;$/;"	m	struct:bigint	file:
+abs	bigint.cpp	/^    bigint abs() const {$/;"	f	struct:bigint
+add	Mod.cpp	/^inline int add (int x, int y) { return (x+y) % Mod; }$/;"	f
+add	mat.cpp	/^   static inline int add(int x, int y) {$/;"	f	struct:Mat
+addEdge	edmondsKarp.cpp	/^inline void addEdge (int u, int v, int flow) {$/;"	f
+addEdge	min_cost_K_flow.cpp	/^   inline void addEdge (int u, int v, long long cost, int flow) {$/;"	f	struct:max_flow
+addEdge	readgrapharray.cpp	/^void addEdge(int u, int v, long long w = 1) {$/;"	f
+add_edge	2SAT.cpp	/^   void add_edge(int u, int v) {$/;"	f	struct:twoSAT
+add_edge	BFS.cpp	/^      inline void add_edge (int u, int v, long long w = 1, int id = -1) {$/;"	f	class:graph
+add_edge	MCBM.cpp	/^inline void add_edge(int u, int v) {$/;"	f
+add_edge	bellmanFord.cpp	/^      inline void add_edge (int u, int v, long long w = 1, int id = -1) {$/;"	f	class:graph
+add_edge	bridges_articulation.cpp	/^      inline void add_edge (int u, int v, long long w = 1, int id = -1) {$/;"	f	class:graph
+add_edge	cc_comp.cpp	/^      inline void add_edge (int u, int v, long long w = 1, int id = -1) {$/;"	f	class:graph
+add_edge	dijkstra.cpp	/^      inline void add_edge (int u, int v, long long w = 1, int id = -1) {$/;"	f	class:graph
+add_edge	graph.cpp	/^      inline void add_edge (int u, int v, long long w = 1, int id = -1) {$/;"	f	class:graph
+add_edge	kruskals.cpp	/^      inline void add_edge (int u, int v, long long w = 1, int id = -1) {$/;"	f	class:graph
+add_edge	spfa.cpp	/^      inline void add_edge (int u, int v, long long w = 1, int id = -1) {$/;"	f	class:graph
+add_val	segment_tree_less.cpp	/^      void add_val (int x) {$/;"	f	struct:seg_less::Node
+adj	BFS.cpp	/^      vector <vector <Edge>> adj, adj_rev;$/;"	m	class:graph	file:
+adj	MCBM.cpp	/^vector < vector <int> > adj;$/;"	v
+adj	bellmanFord.cpp	/^      vector <vector <Edge>> adj, adj_rev;$/;"	m	class:graph	file:
+adj	bridges_articulation.cpp	/^      vector <vector <Edge>> adj, adj_rev;$/;"	m	class:graph	file:
+adj	cc_comp.cpp	/^      vector <vector <Edge>> adj, adj_rev;$/;"	m	class:graph	file:
+adj	dijkstra.cpp	/^      vector <vector <Edge>> adj, adj_rev;$/;"	m	class:graph	file:
+adj	graph.cpp	/^      vector <vector <Edge>> adj, adj_rev;$/;"	m	class:graph	file:
+adj	kruskals.cpp	/^      vector <vector <Edge>> adj, adj_rev;$/;"	m	class:graph	file:
+adj	spfa.cpp	/^      vector <vector <Edge>> adj, adj_rev;$/;"	m	class:graph	file:
+adj_cc	cc_comp.cpp	/^      vector < set <int> > adj_cc;$/;"	m	class:graph	file:
+adj_cc	graph.cpp	/^      vector < set <int> > adj_cc;$/;"	m	class:graph	file:
+adj_rev	BFS.cpp	/^      vector <vector <Edge>> adj, adj_rev;$/;"	m	class:graph	file:
+adj_rev	bellmanFord.cpp	/^      vector <vector <Edge>> adj, adj_rev;$/;"	m	class:graph	file:
+adj_rev	bridges_articulation.cpp	/^      vector <vector <Edge>> adj, adj_rev;$/;"	m	class:graph	file:
+adj_rev	cc_comp.cpp	/^      vector <vector <Edge>> adj, adj_rev;$/;"	m	class:graph	file:
+adj_rev	dijkstra.cpp	/^      vector <vector <Edge>> adj, adj_rev;$/;"	m	class:graph	file:
+adj_rev	graph.cpp	/^      vector <vector <Edge>> adj, adj_rev;$/;"	m	class:graph	file:
+adj_rev	kruskals.cpp	/^      vector <vector <Edge>> adj, adj_rev;$/;"	m	class:graph	file:
+adj_rev	spfa.cpp	/^      vector <vector <Edge>> adj, adj_rev;$/;"	m	class:graph	file:
+ar	segment_tree_less.cpp	/^    int ar[MXN];$/;"	m	class:seg_less	file:
+ar	segment_tree_max.cpp	/^      int ar[MXN];$/;"	m	class:seg_max	file:
+ar	segment_tree_min.cpp	/^      int ar[MXN];$/;"	m	class:seg_min	file:
+ar	segment_tree_sum.cpp	/^      int ar[MXN];$/;"	m	class:seg_sum	file:
+assignment	2SAT.cpp	/^   bool used[N], assignment[N];$/;"	m	struct:twoSAT	file:
+augment	MCBM.cpp	/^bool augment(int u) {$/;"	f
+base	bigint.cpp	/^    static const int base = 1000000000;$/;"	m	struct:bigint	file:
+base_digits	bigint.cpp	/^    static const int base_digits = 9;$/;"	m	struct:bigint	file:
+bellmanFord	johnsons.cpp	/^bool bellmanFord() {$/;"	f
+bellmanford	bellmanFord.cpp	/^      bool bellmanford(int src) {$/;"	f	class:graph
+bellmanford	graph.cpp	/^      bool bellmanford(int src) {$/;"	f	class:graph
+bfs	BFS.cpp	/^      bool bfs (int src, int dest = -1) {$/;"	f	class:graph
+bfs	edmondsKarp.cpp	/^int bfs (const int &s, const int &t) {$/;"	f
+bfs	graph.cpp	/^      bool bfs (int src, int dest = -1) {$/;"	f	class:graph
+bg	bipartite_online.cpp	22;"	d	file:
+bg	minStackQueue.cpp	22;"	d	file:
+bg	sparse_table.cpp	22;"	d	file:
+bigint	bigint.cpp	/^    bigint() :$/;"	f	struct:bigint
+bigint	bigint.cpp	/^    bigint(const string &s) {$/;"	f	struct:bigint
+bigint	bigint.cpp	/^    bigint(long long v) {$/;"	f	struct:bigint
+bigint	bigint.cpp	/^struct bigint {$/;"	s	file:
+bipartite	bipartite_online.cpp	/^int rnk[N], bipartite[N], pi[N], parity[N];$/;"	v
+bridge_edges	bridges_articulation.cpp	/^      set < pair <int, int> > bridge_edges; \/\/ bridge edges stored in set$/;"	m	class:graph	file:
+bridge_edges	graph.cpp	/^      set < pair <int, int> > bridge_edges;$/;"	m	class:graph	file:
+calc_fsm	prefix_function.cpp	/^void calc_fsm(string t) {$/;"	f
+calc_fsm	string.cpp	/^void calc_fsm(string t) {$/;"	f
+calc_pow	polyhash.cpp	/^      static void calc_pow(int mx_len) {$/;"	f	class:polyhash
+calc_pow	polyhash_int.cpp	/^   static void calc_pow(int mx_len) {$/;"	f	struct:polyhash
+calc_pow	string.cpp	/^      static void calc_pow(int mx_len) {$/;"	f	class:polyhash
+cap	edmondsKarp.cpp	/^int cap[N][N], fcap[N][N];$/;"	v
+cap	min_cost_K_flow.cpp	/^   int cap[N][N], fcap[N][N];$/;"	m	struct:max_flow	file:
+cc_comp_dir	cc_comp.cpp	/^      void cc_comp_dir() {$/;"	f	class:graph
+cc_comp_dir	graph.cpp	/^      void cc_comp_dir() {$/;"	f	class:graph
+cc_comp_undir	cc_comp.cpp	/^      void cc_comp_undir () {$/;"	f	class:graph
+cc_comp_undir	graph.cpp	/^      void cc_comp_undir () {$/;"	f	class:graph
+cc_components	cc_comp.cpp	/^      vector < vector <int> > cc_components;$/;"	m	class:graph	file:
+cc_components	graph.cpp	/^      vector < vector <int> > cc_components;$/;"	m	class:graph	file:
+cc_idx	cc_comp.cpp	/^      int cc_total, cc_idx[N];$/;"	m	class:graph	file:
+cc_idx	graph.cpp	/^      int cc_total, cc_idx[N];$/;"	m	class:graph	file:
+cc_total	cc_comp.cpp	/^      int cc_total, cc_idx[N];$/;"	m	class:graph	file:
+cc_total	graph.cpp	/^      int cc_total, cc_idx[N];$/;"	m	class:graph	file:
+chash	bipartite_online.cpp	/^struct chash {$/;"	s	file:
+chash	gp_hash_table.cpp	/^struct chash {$/;"	s	file:
+chash	minStackQueue.cpp	/^struct chash {$/;"	s	file:
+chash	sparse_table.cpp	/^struct chash {$/;"	s	file:
+cnt	bipartite_online.cpp	20;"	d	file:
+cnt	minStackQueue.cpp	20;"	d	file:
+cnt	sparse_table.cpp	20;"	d	file:
+cntll	bipartite_online.cpp	21;"	d	file:
+cntll	minStackQueue.cpp	21;"	d	file:
+cntll	sparse_table.cpp	21;"	d	file:
+comp	2SAT.cpp	/^   int comp[N];$/;"	m	struct:twoSAT	file:
+compare	polyhash.cpp	/^      bool compare (int i, int len1, int j, int len2, int mx_len) {$/;"	f	class:polyhash
+compare	string.cpp	/^      bool compare (int i, int len1, int j, int len2, int mx_len) {$/;"	f	class:polyhash
+convert_base	bigint.cpp	/^    static vector<int> convert_base(const vector<int> &a, int old_digits, int new_digits) {$/;"	f	struct:bigint
+cost	prims.cpp	/^long long cost[N];$/;"	v
+create	segment_tree_less.cpp	/^    void create (int l, int r, int x) {$/;"	f	class:seg_less
+create	segment_tree_max.cpp	/^      void create (int l, int r, int x) {$/;"	f	class:seg_max
+create	segment_tree_min.cpp	/^      void create (int l, int r, int x) {$/;"	f	class:seg_min
+create	segment_tree_sum.cpp	/^      void create (int l, int r, int x) {$/;"	f	class:seg_sum
+cutEdges	edmondsKarp.cpp	/^vector <pii> cutEdges;$/;"	v
+cut_vertices	bridges_articulation.cpp	/^      set <int> cut_vertices; \/\/ articulation points store in set$/;"	m	class:graph	file:
+cut_vertices	graph.cpp	/^      set <int> cut_vertices;$/;"	m	class:graph	file:
+d	johnsons.cpp	/^int h[N], d[N][N];$/;"	v
+debug	bipartite_online.cpp	58;"	d	file:
+debug	debug.cpp	1;"	d	file:
+debug	minStackQueue.cpp	58;"	d	file:
+debug	sparse_table.cpp	58;"	d	file:
+deg	BFS.cpp	/^      int deg[N];$/;"	m	class:graph	file:
+deg	bellmanFord.cpp	/^      int deg[N];$/;"	m	class:graph	file:
+deg	bridges_articulation.cpp	/^      int deg[N];$/;"	m	class:graph	file:
+deg	cc_comp.cpp	/^      int deg[N];$/;"	m	class:graph	file:
+deg	dijkstra.cpp	/^      int deg[N];$/;"	m	class:graph	file:
+deg	graph.cpp	/^      int deg[N];$/;"	m	class:graph	file:
+deg	kruskals.cpp	/^      int deg[N];$/;"	m	class:graph	file:
+deg	spfa.cpp	/^      int deg[N];$/;"	m	class:graph	file:
+depth	lca_bin.cpp	/^   vector <int> depth;$/;"	m	class:LCA	file:
+det	mat.cpp	/^   int det() { \/\/ O(n ^ 3)$/;"	f	struct:Mat
+dfs	edmondsKarp.cpp	/^void dfs(int u) {$/;"	f
+dfs_cc	2SAT.cpp	/^   void dfs_cc(int u, int idx) {$/;"	f	struct:twoSAT
+dfs_order	2SAT.cpp	/^   void dfs_order(const int &u) {$/;"	f	struct:twoSAT
+dijkstra	dijkstra.cpp	/^      void dijkstra (int src) {$/;"	f	class:graph
+dijkstra	graph.cpp	/^      void dijkstra (int src) {$/;"	f	class:graph
+dijkstra	johnsons.cpp	/^void dijkstra(int s, int dist[]) {$/;"	f
+dist_s	BFS.cpp	/^      long long dist_s[N];$/;"	m	class:graph	file:
+dist_s	bellmanFord.cpp	/^      long long dist_s[N];$/;"	m	class:graph	file:
+dist_s	bridges_articulation.cpp	/^      long long dist_s[N];$/;"	m	class:graph	file:
+dist_s	cc_comp.cpp	/^      long long dist_s[N];$/;"	m	class:graph	file:
+dist_s	dijkstra.cpp	/^      long long dist_s[N];$/;"	m	class:graph	file:
+dist_s	graph.cpp	/^      long long dist_s[N];$/;"	m	class:graph	file:
+dist_s	kruskals.cpp	/^      long long dist_s[N];$/;"	m	class:graph	file:
+dist_s	spfa.cpp	/^      long long dist_s[N];$/;"	m	class:graph	file:
+divisors	prime.cpp	/^vector <vector <int>> divisors(int n) {$/;"	f
+divmod	bigint.cpp	/^    friend pair<bigint, bigint> divmod(const bigint &a1, const bigint &b1) {$/;"	f	struct:bigint
+dp	lca_bin.cpp	/^   vector <vector <int>> table, dp;$/;"	m	class:LCA	file:
+dp	tsp.cpp	/^   ll dp[N][1 << N];$/;"	m	struct:tsp	file:
+ds	min_cost_K_flow.cpp	/^   long long ds[N];$/;"	m	struct:max_flow	file:
+dv	Mod.cpp	/^inline int dv (int x, int y) { return mul(x, pow(y, Mod-2)); }$/;"	f
+e	readgrapharray.cpp	/^} e[M];$/;"	v	typeref:struct:edge
+edge	readgrapharray.cpp	/^struct edge {$/;"	s	file:
+edges	BFS.cpp	/^      vector <Edge> edges;$/;"	m	class:graph	file:
+edges	bellmanFord.cpp	/^      set <Edge> edges;$/;"	m	class:graph	file:
+edges	bridges_articulation.cpp	/^      set <Edge> edges;$/;"	m	class:graph	file:
+edges	cc_comp.cpp	/^      set <Edge> edges;$/;"	m	class:graph	file:
+edges	dijkstra.cpp	/^      set <Edge> edges;$/;"	m	class:graph	file:
+edges	graph.cpp	/^      vector <Edge> edges;$/;"	m	class:graph	file:
+edges	johnsons.cpp	/^vector <Edge> edges;$/;"	v
+edges	kruskals.cpp	/^      vector <Edge> edges;$/;"	m	class:graph	file:
+edges	spfa.cpp	/^      set <Edge> edges;$/;"	m	class:graph	file:
+edmondsKarpMaxFlow	edmondsKarp.cpp	/^int edmondsKarpMaxFlow(const int &s, const int &t, const int &K = infi) {$/;"	f
+encode	polyhash.cpp	/^      void encode(const string &st) {$/;"	f	class:polyhash
+encode	polyhash_int.cpp	/^   void encode(const string &st) {$/;"	f	struct:polyhash
+encode	string.cpp	/^      void encode(const string &st) {$/;"	f	class:polyhash
+err	bipartite_online.cpp	/^void err(istream_iterator<string> it) {$/;"	f
+err	bipartite_online.cpp	/^void err(istream_iterator<string> it, T a, Args... args) {$/;"	f
+err	debug.cpp	/^void err(istream_iterator<string> it) {$/;"	f
+err	debug.cpp	/^void err(istream_iterator<string> it, T a, Args... args) {$/;"	f
+err	minStackQueue.cpp	/^void err(istream_iterator<string> it) {$/;"	f
+err	minStackQueue.cpp	/^void err(istream_iterator<string> it, T a, Args... args) {$/;"	f
+err	sparse_table.cpp	/^void err(istream_iterator<string> it) {$/;"	f
+err	sparse_table.cpp	/^void err(istream_iterator<string> it, T a, Args... args) {$/;"	f
+euler	lca_seg.cpp	/^   vector <int> euler, height, f;$/;"	m	class:LCA	file:
+euler_sz	lca_seg.cpp	/^   int V, euler_sz;$/;"	m	class:LCA	file:
+f	lca_seg.cpp	/^   vector <int> euler, height, f;$/;"	m	class:LCA	file:
+fast_input	FastIO.cpp	/^inline long long fast_input(void) {$/;"	f
+fast_output	FastIO.cpp	/^inline void fast_output(long long x, int mode) {$/;"	f
+fcap	edmondsKarp.cpp	/^int cap[N][N], fcap[N][N];$/;"	v
+fcap	min_cost_K_flow.cpp	/^   int cap[N][N], fcap[N][N];$/;"	m	struct:max_flow	file:
+findCutEdges	edmondsKarp.cpp	/^void findCutEdges() {$/;"	f
+find_bridge_edges	bridges_articulation.cpp	/^      void find_bridge_edges() {$/;"	f	class:graph
+find_bridge_edges	graph.cpp	/^      void find_bridge_edges() {$/;"	f	class:graph
+find_cut_vertex	bridges_articulation.cpp	/^      void find_cut_vertex() {$/;"	f	class:graph
+find_cut_vertex	graph.cpp	/^      void find_cut_vertex() {$/;"	f	class:graph
+find_lca	lca_bin.cpp	/^   int find_lca(int u, int v) {$/;"	f	class:LCA
+find_set	UFDS.cpp	/^   int find_set(int u) {$/;"	f	struct:UFDS
+find_set	bipartite_online.cpp	/^inline int find_set (int v) {$/;"	f
+find_set	dsu.cpp	/^int find_set(int u) {$/;"	f
+find_set_size	dsu.cpp	/^int find_set_size(int u) {$/;"	f
+floydWarshall	floydWarshall.cpp	/^void floydWarshall () {$/;"	f
+fr	bipartite_online.cpp	18;"	d	file:
+fr	minStackQueue.cpp	18;"	d	file:
+fr	sparse_table.cpp	18;"	d	file:
+fsm	prefix_function.cpp	/^int fsm[26][N];$/;"	v
+fsm	string.cpp	/^int fsm[26][N];$/;"	v
+gauss	mat.cpp	/^   int gauss() {$/;"	f	struct:Mat
+gcd	bigint.cpp	/^    friend bigint gcd(const bigint &a, const bigint &b) {$/;"	f	struct:bigint
+gen_base	polyhash.cpp	/^      static int gen_base (const int l, const int r) {$/;"	f	class:polyhash
+gen_base	polyhash_int.cpp	/^   static int gen_base (const int l, const int r) {$/;"	f	struct:polyhash
+gen_base	string.cpp	/^      static int gen_base (const int l, const int r) {$/;"	f	class:polyhash
+get	segment_tree_less.cpp	/^      int get (int x) { \/\/ count of numbers strictly less than x$/;"	f	struct:seg_less::Node
+get	segment_tree_less.cpp	/^    int get (int ql, int qr, int l, int r, int x, int limit) {$/;"	f	class:seg_less
+get	segment_tree_max.cpp	/^      ll get (int ql, int qr, int l, int r, int x) {$/;"	f	class:seg_max
+get	segment_tree_min.cpp	/^      ll get (int ql, int qr, int l, int r, int x) {$/;"	f	class:seg_min
+get	segment_tree_sum.cpp	/^      ll get (int ql, int qr, int l, int r, int x) {$/;"	f	class:seg_sum
+get_lca	lca_seg.cpp	/^   int get_lca(int u, int v) { \/\/ expects 1..n indexing$/;"	f	class:LCA	file:
+get_min_edge	lca_bin.cpp	/^   int get_min_edge (int u, int v) {$/;"	f	class:LCA
+get_sum	sqrt_decomp.cpp	/^   int get_sum (int x, int y) {$/;"	f	class:sqrt_root_decomp	file:
+giveRand	giveRand.cpp	/^template <class T = int> T giveRand (const T& low, const T& high) {$/;"	f
+graph	BFS.cpp	/^      graph (int n, bool undir = true) {$/;"	f	class:graph
+graph	BFS.cpp	/^class graph { \/*{{{*\/$/;"	c	file:
+graph	bellmanFord.cpp	/^      graph (int n, bool undir = true) {$/;"	f	class:graph
+graph	bellmanFord.cpp	/^class graph {$/;"	c	file:
+graph	bridges_articulation.cpp	/^      graph (int n, bool undir = true) {$/;"	f	class:graph
+graph	bridges_articulation.cpp	/^class graph {$/;"	c	file:
+graph	cc_comp.cpp	/^      graph (int n, bool undir = true) {$/;"	f	class:graph
+graph	cc_comp.cpp	/^class graph {$/;"	c	file:
+graph	dijkstra.cpp	/^      graph (int n, bool undir = true) {$/;"	f	class:graph
+graph	dijkstra.cpp	/^class graph {$/;"	c	file:
+graph	graph.cpp	/^      graph (int n, bool undir = true) {$/;"	f	class:graph
+graph	graph.cpp	/^class graph { \/*{{{*\/$/;"	c	file:
+graph	kruskals.cpp	/^      graph (int n, bool undir = true) {$/;"	f	class:graph
+graph	kruskals.cpp	/^class graph {$/;"	c	file:
+graph	spfa.cpp	/^      graph (int n, bool undir = true) {$/;"	f	class:graph
+graph	spfa.cpp	/^class graph {$/;"	c	file:
+h	johnsons.cpp	/^int h[N], d[N][N];$/;"	v
+head	readgrapharray.cpp	/^int head[N], num, V, E;$/;"	v
+height	lca_seg.cpp	/^   vector <int> euler, height, f;$/;"	m	class:LCA	file:
+id	BFS.cpp	/^         int id;$/;"	m	struct:graph::Edge	file:
+id	bellmanFord.cpp	/^         int id;$/;"	m	struct:graph::Edge	file:
+id	bridges_articulation.cpp	/^         int id;$/;"	m	struct:graph::Edge	file:
+id	cc_comp.cpp	/^         int id;$/;"	m	struct:graph::Edge	file:
+id	dijkstra.cpp	/^         int id;$/;"	m	struct:graph::Edge	file:
+id	graph.cpp	/^         int id;$/;"	m	struct:graph::Edge	file:
+id	kruskals.cpp	/^         int id;$/;"	m	struct:graph::Edge	file:
+id	spfa.cpp	/^         int id;$/;"	m	struct:graph::Edge	file:
+inS	edmondsKarp.cpp	/^bool inS[N];$/;"	v
+inf	mat.cpp	/^   static const int mxn = 1005, inf = (int)1e9, Mod = (int)1e9 + 7;$/;"	m	struct:Mat	file:
+inf	segment_tree_max.cpp	/^      static const ll inf = (ll)1e18;$/;"	m	class:seg_max	file:
+inf	segment_tree_min.cpp	/^      static const ll inf = (ll)1e18;$/;"	m	class:seg_min	file:
+inf	tsp.cpp	/^   const ll inf = (ll) 1e18;$/;"	m	struct:tsp	file:
+inf_ext	polyhash.cpp	/^      Hash inf_ext (int i, int len, int o_len, int mx_len) {$/;"	f	class:polyhash
+inf_ext	string.cpp	/^      Hash inf_ext (int i, int len, int o_len, int mx_len) {$/;"	f	class:polyhash
+inf_int	BFS.cpp	/^      static const int inf_int = (int)1e9;$/;"	m	class:graph	file:
+inf_int	bellmanFord.cpp	/^      static const int inf_int = (int)1e9;$/;"	m	class:graph	file:
+inf_int	bridges_articulation.cpp	/^      static const int inf_int = (int)1e9;$/;"	m	class:graph	file:
+inf_int	cc_comp.cpp	/^      static const int inf_int = (int)1e9;$/;"	m	class:graph	file:
+inf_int	dijkstra.cpp	/^      static const int inf_int = (int)1e9;$/;"	m	class:graph	file:
+inf_int	graph.cpp	/^      static const int inf_int = (int)1e9;$/;"	m	class:graph	file:
+inf_int	kruskals.cpp	/^      static const int inf_int = (int)1e9;$/;"	m	class:graph	file:
+inf_int	spfa.cpp	/^      static const int inf_int = (int)1e9;$/;"	m	class:graph	file:
+inf_ll	BFS.cpp	/^      static const long long inf_ll = (long long)1e18;$/;"	m	class:graph	file:
+inf_ll	bellmanFord.cpp	/^      static const long long inf_ll = (long long)1e18;$/;"	m	class:graph	file:
+inf_ll	bridges_articulation.cpp	/^      static const long long inf_ll = (long long)1e18;$/;"	m	class:graph	file:
+inf_ll	cc_comp.cpp	/^      static const long long inf_ll = (long long)1e18;$/;"	m	class:graph	file:
+inf_ll	dijkstra.cpp	/^      static const long long inf_ll = (long long)1e18;$/;"	m	class:graph	file:
+inf_ll	graph.cpp	/^      static const long long inf_ll = (long long)1e18;$/;"	m	class:graph	file:
+inf_ll	kruskals.cpp	/^      static const long long inf_ll = (long long)1e18;$/;"	m	class:graph	file:
+inf_ll	spfa.cpp	/^      static const long long inf_ll = (long long)1e18;$/;"	m	class:graph	file:
+init	2SAT.cpp	/^   void init() {$/;"	f	struct:twoSAT
+init	MCBM.cpp	/^void init() {$/;"	f
+init	edmondsKarp.cpp	/^void init () {$/;"	f
+init	johnsons.cpp	/^void init() {$/;"	f
+init	min_cost_K_flow.cpp	/^   void init () {$/;"	f	struct:max_flow
+isZero	bigint.cpp	/^    bool isZero() const {$/;"	f	struct:bigint
+is_bipartite	bipartite_online.cpp	/^bool is_bipartite (int v) {$/;"	f
+johnsons	johnsons.cpp	/^bool johnsons() {$/;"	f
+karatsubaMultiply	bigint.cpp	/^    static vll karatsubaMultiply(const vll &a, const vll &b) {$/;"	f	struct:bigint
+kruskals	graph.cpp	/^      long long kruskals () {$/;"	f	class:graph
+kruskals	kruskals.cpp	/^      long long kruskals () {$/;"	f	class:graph
+lcm	bigint.cpp	/^    friend bigint lcm(const bigint &a, const bigint &b) {$/;"	f	struct:bigint
+longValue	bigint.cpp	/^    long long longValue() const {$/;"	f	struct:bigint
+lz	segment_tree_less.cpp	/^    int lz[4 * MXN];$/;"	m	class:seg_less	file:
+lz	segment_tree_max.cpp	/^      ll seg[4 * MXN], lz[4 * MXN];$/;"	m	class:seg_max	file:
+lz	segment_tree_min.cpp	/^      ll seg[4 * MXN], lz[4 * MXN];$/;"	m	class:seg_min	file:
+lz	segment_tree_sum.cpp	/^      ll seg[4 * MXN], lz[4 * MXN];$/;"	m	class:seg_sum	file:
+lz_upd	segment_tree_less.cpp	/^    void lz_upd(int l, int r, int x) {$/;"	f	class:seg_less
+lz_upd	segment_tree_max.cpp	/^      void lz_upd(int l, int r, int x) {$/;"	f	class:seg_max
+lz_upd	segment_tree_min.cpp	/^      void lz_upd(int l, int r, int x) {$/;"	f	class:seg_min
+lz_upd	segment_tree_sum.cpp	/^      void lz_upd(int l, int r, int x) {$/;"	f	class:seg_sum
+m	edmondsKarp.cpp	/^int n, m;$/;"	v
+m	johnsons.cpp	/^int n, m;$/;"	v
+main	bipartite_online.cpp	/^signed main() {$/;"	f
+main	mat.cpp	/^   int main() {$/;"	f
+main	minStackQueue.cpp	/^signed main() {$/;"	f
+main	sparse_table.cpp	/^signed main() {$/;"	f
+make_I	mat.cpp	/^   void make_I() {$/;"	f	struct:Mat
+make_set	UFDS.cpp	/^   void make_set() {$/;"	f	struct:UFDS
+make_set	dsu.cpp	/^void make_set () {$/;"	f
+match	MCBM.cpp	/^int match[N];$/;"	v
+max_flow	min_cost_K_flow.cpp	/^   max_flow(int V_) {$/;"	f	struct:max_flow
+max_flow	min_cost_K_flow.cpp	/^struct max_flow {$/;"	s	file:
+merge_set	UFDS.cpp	/^   void merge_set(int u, int v) {$/;"	f	struct:UFDS
+merge_set	dsu.cpp	/^void merge_set(int u, int v) {$/;"	f
+min_cost_K_flow	min_cost_K_flow.cpp	/^   long long min_cost_K_flow (int s, int t, int K = infi) {$/;"	f	struct:max_flow
+mn_op	mat.cpp	/^   Mat mn_op (const Mat &other) {$/;"	f	struct:Mat
+mp	bipartite_online.cpp	/^gp_hash_table <pii, int, chash> mp;$/;"	v
+mp	gp_hash_table.cpp	/^gp_hash_table <pair <int, int> , int, chash> mp;$/;"	v
+mp	minStackQueue.cpp	/^gp_hash_table <pii, int, chash> mp;$/;"	v
+mp	sparse_table.cpp	/^gp_hash_table <pii, int, chash> mp;$/;"	v
+mul	Mod.cpp	/^inline int mul (int x, int y) { return static_cast <int> (1ll*x*y % Mod); }$/;"	f
+mul	mat.cpp	/^   static inline int mul(int a, int b){$/;"	f	struct:Mat
+mx_op	mat.cpp	/^   Mat mx_op (const Mat &other) {$/;"	f	struct:Mat
+mxn	mat.cpp	/^   static const int mxn = 1005, inf = (int)1e9, Mod = (int)1e9 + 7;$/;"	m	struct:Mat	file:
+n	2SAT.cpp	/^   int n; \/\/ total number of variables * 2$/;"	m	struct:twoSAT	file:
+n	MCBM.cpp	/^int n, nl, nr; \/\/ first 0, ..., nl - 1 vertices in left nl, ..., nr - 1 in right$/;"	v
+n	UFDS.cpp	/^   int n;$/;"	m	struct:UFDS	file:
+n	edmondsKarp.cpp	/^int n, m;$/;"	v
+n	johnsons.cpp	/^int n, m;$/;"	v
+n	sqrt_decomp.cpp	/^   int n;$/;"	m	class:sqrt_root_decomp	file:
+n	tsp.cpp	/^   int n;$/;"	m	struct:tsp	file:
+nl	MCBM.cpp	/^int n, nl, nr; \/\/ first 0, ..., nl - 1 vertices in left nl, ..., nr - 1 in right$/;"	v
+nr	MCBM.cpp	/^int n, nl, nr; \/\/ first 0, ..., nl - 1 vertices in left nl, ..., nr - 1 in right$/;"	v
+num	readgrapharray.cpp	/^int head[N], num, V, E;$/;"	v
+nxt	readgrapharray.cpp	/^    int nxt;$/;"	m	struct:edge	file:
+operator !=	bigint.cpp	/^    bool operator!=(const bigint &v) const {$/;"	f	struct:bigint
+operator %	bigint.cpp	/^    bigint operator%(const bigint &v) const {$/;"	f	struct:bigint
+operator %	bigint.cpp	/^    int operator%(int v) const {$/;"	f	struct:bigint
+operator ()	bipartite_online.cpp	/^  int operator () (pii x) const { return x.X*31 + x.Y; }$/;"	f	struct:chash
+operator ()	gp_hash_table.cpp	/^   int operator()(pair <int, int> x) const { return x.first* 31 + x.second; }$/;"	f	struct:chash
+operator ()	minStackQueue.cpp	/^  int operator () (pii x) const { return x.X*31 + x.Y; }$/;"	f	struct:chash
+operator ()	polyhash.cpp	/^      inline Hash operator()$/;"	f	class:polyhash
+operator ()	polyhash_int.cpp	/^   inline int operator()$/;"	f	struct:polyhash
+operator ()	prims.cpp	/^      bool operator () (const int &u, const int &v) {$/;"	f	class:Compare
+operator ()	sparse_table.cpp	/^  int operator () (pii x) const { return x.X*31 + x.Y; }$/;"	f	struct:chash
+operator ()	string.cpp	/^      inline Hash operator()$/;"	f	class:polyhash
+operator *	bigint.cpp	/^    bigint operator*(const bigint &v) const {$/;"	f	struct:bigint
+operator *	bigint.cpp	/^    bigint operator*(int v) const {$/;"	f	struct:bigint
+operator *	bigint.cpp	/^    bigint operator*(long long v) const {$/;"	f	struct:bigint
+operator *	mat.cpp	/^   Mat operator*(const Mat &other) { \/\/ O(n^3) {$/;"	f	struct:Mat
+operator *=	bigint.cpp	/^    void operator*=(const bigint &v) {$/;"	f	struct:bigint
+operator *=	bigint.cpp	/^    void operator*=(int v) {$/;"	f	struct:bigint
+operator *=	bigint.cpp	/^    void operator*=(long long v) {$/;"	f	struct:bigint
+operator +	bigint.cpp	/^    bigint operator+(const bigint &v) const {$/;"	f	struct:bigint
+operator +	mat.cpp	/^   Mat operator+(const Mat &other) {\/\/ O(n^2)$/;"	f	struct:Mat
+operator +=	bigint.cpp	/^    void operator+=(const bigint &v) {$/;"	f	struct:bigint
+operator -	bigint.cpp	/^    bigint operator-() const {$/;"	f	struct:bigint
+operator -	bigint.cpp	/^    bigint operator-(const bigint &v) const {$/;"	f	struct:bigint
+operator -=	bigint.cpp	/^    void operator-=(const bigint &v) {$/;"	f	struct:bigint
+operator /	bigint.cpp	/^    bigint operator\/(const bigint &v) const {$/;"	f	struct:bigint
+operator /	bigint.cpp	/^    bigint operator\/(int v) const {$/;"	f	struct:bigint
+operator /=	bigint.cpp	/^    void operator\/=(const bigint &v) {$/;"	f	struct:bigint
+operator /=	bigint.cpp	/^    void operator\/=(int v) {$/;"	f	struct:bigint
+operator <	BFS.cpp	/^         inline bool operator < (const Edge &o) const {$/;"	f	struct:graph::Edge
+operator <	bellmanFord.cpp	/^         inline bool operator < (const Edge &o) const {$/;"	f	struct:graph::Edge
+operator <	bigint.cpp	/^    bool operator<(const bigint &v) const {$/;"	f	struct:bigint
+operator <	bridges_articulation.cpp	/^         inline bool operator < (const Edge &o) const {$/;"	f	struct:graph::Edge
+operator <	cc_comp.cpp	/^         inline bool operator < (const Edge &o) const {$/;"	f	struct:graph::Edge
+operator <	dijkstra.cpp	/^         inline bool operator < (const Edge &o) const {$/;"	f	struct:graph::Edge
+operator <	graph.cpp	/^         inline bool operator < (const Edge &o) const {$/;"	f	struct:graph::Edge
+operator <	johnsons.cpp	/^   inline bool operator < (const Edge &o) const {$/;"	f	struct:Edge
+operator <	kruskals.cpp	/^         inline bool operator < (const Edge &o) const {$/;"	f	struct:graph::Edge
+operator <	spfa.cpp	/^         inline bool operator < (const Edge &o) const {$/;"	f	struct:graph::Edge
+operator <<	bigint.cpp	/^    friend ostream& operator<<(ostream &stream, const bigint &v) {$/;"	f	struct:bigint
+operator <<	mat.cpp	/^   friend ostream& operator << (ostream &os, const Mat& o) {$/;"	f	struct:Mat
+operator <=	bigint.cpp	/^    bool operator<=(const bigint &v) const {$/;"	f	struct:bigint
+operator =	bigint.cpp	/^    void operator=(const bigint &v) {$/;"	f	struct:bigint
+operator =	bigint.cpp	/^    void operator=(long long v) {$/;"	f	struct:bigint
+operator ==	bigint.cpp	/^    bool operator==(const bigint &v) const {$/;"	f	struct:bigint
+operator >	bigint.cpp	/^    bool operator>(const bigint &v) const {$/;"	f	struct:bigint
+operator >=	bigint.cpp	/^    bool operator>=(const bigint &v) const {$/;"	f	struct:bigint
+operator >>	bigint.cpp	/^    friend istream& operator>>(istream &stream, bigint &v) {$/;"	f	struct:bigint
+operator >>	mat.cpp	/^   friend istream& operator >> (istream &is, Mat& o) {$/;"	f	struct:Mat
+operator ^	bigint.cpp	/^    bigint operator ^(const bigint &v){$/;"	f	struct:bigint
+order	2SAT.cpp	/^   vector <int> order;$/;"	m	struct:twoSAT	file:
+ordered_set	bipartite_online.cpp	/^ordered_set;$/;"	t	file:
+ordered_set	minStackQueue.cpp	/^ordered_set;$/;"	t	file:
+ordered_set	sparse_table.cpp	/^ordered_set;$/;"	t	file:
+p	polyhash.cpp	/^      static int p; \/\/ take p such that a[i] < p < Mod, gcd(p, Mod) = 1$/;"	m	class:polyhash	file:
+p	polyhash.cpp	/^int polyhash::p = polyhash::gen_base(256, polyhash::Mod);$/;"	m	class:polyhash	file:
+p	polyhash_int.cpp	/^   static int p; \/\/ take p such that a[i] < p < Mod, gcd(p, Mod) = 1$/;"	m	struct:polyhash	file:
+p	polyhash_int.cpp	/^int polyhash::p = polyhash::gen_base((int)256, polyhash::Mod);$/;"	m	class:polyhash	file:
+p	string.cpp	/^      static int p; \/\/ take p such that a[i] < p < Mod, gcd(p, Mod) = 1$/;"	m	class:polyhash	file:
+p	string.cpp	/^int polyhash::p = polyhash::gen_base(256, polyhash::Mod);$/;"	m	class:polyhash	file:
+par	tsp.cpp	/^   int par[N][1 << N], start[N][1 << N], wgt[N][N];$/;"	m	struct:tsp	file:
+parity	bipartite_online.cpp	/^int rnk[N], bipartite[N], pi[N], parity[N];$/;"	v
+path_vector_s	BFS.cpp	/^      vector <int> path_vector_s (int dest) {$/;"	f	class:graph
+path_vector_s	bellmanFord.cpp	/^      vector <int> path_vector_s (int dest) {$/;"	f	class:graph
+path_vector_s	dijkstra.cpp	/^      vector <int> path_vector_s (int dest) {$/;"	f	class:graph
+path_vector_s	graph.cpp	/^      vector <int> path_vector_s (int dest) {$/;"	f	class:graph
+path_vector_s	spfa.cpp	/^      vector <int> path_vector_s (int dest) {$/;"	f	class:graph
+perm_idx	perm_idx.cpp	/^template <typename T> int perm_idx(const T &s) { \/\/ O(n^2)$/;"	f
+pi	BFS.cpp	/^      int pi[N];$/;"	m	class:graph	file:
+pi	bellmanFord.cpp	/^      int pi[N];$/;"	m	class:graph	file:
+pi	bipartite_online.cpp	/^int rnk[N], bipartite[N], pi[N], parity[N];$/;"	v
+pi	bridges_articulation.cpp	/^      int pi[N];$/;"	m	class:graph	file:
+pi	cc_comp.cpp	/^      int pi[N];$/;"	m	class:graph	file:
+pi	dijkstra.cpp	/^      int pi[N];$/;"	m	class:graph	file:
+pi	graph.cpp	/^      int pi[N];$/;"	m	class:graph	file:
+pi	kruskals.cpp	/^      int pi[N];$/;"	m	class:graph	file:
+pi	prefix_function.cpp	/^int pi[N];$/;"	v
+pi	spfa.cpp	/^      int pi[N];$/;"	m	class:graph	file:
+pi	string.cpp	/^int pi[N];$/;"	v
+polyhash	polyhash.cpp	/^      polyhash (const string &st) : sz((int)st.size()) {$/;"	f	class:polyhash
+polyhash	polyhash.cpp	/^class polyhash {$/;"	c	file:
+polyhash	polyhash_int.cpp	/^   polyhash (const string &st) : sz((int)st.size())$/;"	f	struct:polyhash
+polyhash	polyhash_int.cpp	/^struct polyhash {$/;"	s	file:
+polyhash	string.cpp	/^      polyhash (const string &st) : sz((int)st.size()) {$/;"	f	class:polyhash
+polyhash	string.cpp	/^class polyhash {$/;"	c	file:
+pow	Mod.cpp	/^inline int pow (int x, int y) {$/;"	f
+pow	mat.cpp	/^   Mat pow(long long k) { \/\/ O(n^3*logk)$/;"	f	struct:Mat
+pow_int	polyhash.cpp	/^      static vector <int> pow_int;$/;"	m	class:polyhash	file:
+pow_int	polyhash_int.cpp	/^   static vector <int> pow_int;$/;"	m	struct:polyhash	file:
+pow_int	string.cpp	/^      static vector <int> pow_int;$/;"	m	class:polyhash	file:
+pow_ull	polyhash.cpp	/^      static vector <ull> pow_ull;$/;"	m	class:polyhash	file:
+pow_ull	string.cpp	/^      static vector <ull> pow_ull;$/;"	m	class:polyhash	file:
+powers	prime.cpp	/^vector <int> primes = {2}, powers;$/;"	v
+pref_func	prefix_function.cpp	/^void pref_func (string &s) {$/;"	f
+pref_func	string.cpp	/^void pref_func (string &s) {$/;"	f
+pref_int	polyhash.cpp	/^      vector <int> pref_int;$/;"	m	class:polyhash	file:
+pref_int	polyhash_int.cpp	/^   vector <int> pref_int;$/;"	m	struct:polyhash	file:
+pref_int	string.cpp	/^      vector <int> pref_int;$/;"	m	class:polyhash	file:
+pref_ull	polyhash.cpp	/^      vector <ull> pref_ull;$/;"	m	class:polyhash	file:
+pref_ull	string.cpp	/^      vector <ull> pref_ull;$/;"	m	class:polyhash	file:
+primes	prime.cpp	/^vector <int> primes = {2}, powers;$/;"	v
+prims	prims.cpp	/^bool prims () {$/;"	f
+query_max	segment_tree_max.cpp	/^      ll query_max (int ql, int qr) {$/;"	f	class:seg_max
+query_min	segment_tree_min.cpp	/^      ll query_min (int ql, int qr) {$/;"	f	class:seg_min
+query_range_less	segment_tree_less.cpp	/^    int query_range_less (int ql, int qr, int limit) {$/;"	f	class:seg_less
+query_range_sum	segment_tree_sum.cpp	/^      ll query_range_sum (int ql, int qr) {$/;"	f	class:seg_sum
+read	bigint.cpp	/^    void read(const string &s) {$/;"	f	struct:bigint
+read	readgrapharray.cpp	/^void read() {$/;"	f
+rep	UFDS.cpp	/^   int rep[N], rnk[N], sz[N];$/;"	m	struct:UFDS	file:
+rk	dsu.cpp	/^int rk[N], sz[N], Par[N];$/;"	v
+rnk	UFDS.cpp	/^   int rep[N], rnk[N], sz[N];$/;"	m	struct:UFDS	file:
+rnk	bipartite_online.cpp	/^int rnk[N], bipartite[N], pi[N], parity[N];$/;"	v
+rv	bipartite_online.cpp	19;"	d	file:
+rv	minStackQueue.cpp	19;"	d	file:
+rv	sparse_table.cpp	19;"	d	file:
+s	polyhash.cpp	/^      vector <int> s;$/;"	m	class:polyhash	file:
+s	polyhash_int.cpp	/^   vector <int> s;$/;"	m	struct:polyhash	file:
+s	string.cpp	/^      vector <int> s;$/;"	m	class:polyhash	file:
+seed	bipartite_online.cpp	/^auto seed = chrono::high_resolution_clock::now().time_since_epoch().count();$/;"	v
+seed	minStackQueue.cpp	/^auto seed = chrono::high_resolution_clock::now().time_since_epoch().count();$/;"	v
+seed	sparse_table.cpp	/^auto seed = chrono::high_resolution_clock::now().time_since_epoch().count();$/;"	v
+seg	lca_seg.cpp	/^   vector <int> seg;$/;"	m	class:LCA	file:
+seg	segment_tree_less.cpp	/^    Node seg[4 * MXN];$/;"	m	class:seg_less	file:
+seg	segment_tree_max.cpp	/^      ll seg[4 * MXN], lz[4 * MXN];$/;"	m	class:seg_max	file:
+seg	segment_tree_min.cpp	/^      ll seg[4 * MXN], lz[4 * MXN];$/;"	m	class:seg_min	file:
+seg	segment_tree_sum.cpp	/^      ll seg[4 * MXN], lz[4 * MXN];$/;"	m	class:seg_sum	file:
+seg_less	segment_tree_less.cpp	/^    seg_less (int n, int Ar[] = nullptr) {$/;"	f	class:seg_less
+seg_less	segment_tree_less.cpp	/^    seg_less(int n, vector <int> Ar) {$/;"	f	class:seg_less
+seg_less	segment_tree_less.cpp	/^class seg_less { \/*{{{*\/$/;"	c	file:
+seg_max	segment_tree_max.cpp	/^      seg_max (int n, int Ar[] = nullptr) {$/;"	f	class:seg_max
+seg_max	segment_tree_max.cpp	/^class seg_max { \/*{{{*\/$/;"	c	file:
+seg_min	segment_tree_min.cpp	/^      seg_min (int n, int Ar[] = nullptr) {$/;"	f	class:seg_min
+seg_min	segment_tree_min.cpp	/^class seg_min { \/*{{{*\/$/;"	c	file:
+seg_sum	segment_tree_sum.cpp	/^      seg_sum (int n, int Ar[] = nullptr) {$/;"	f	class:seg_sum
+seg_sum	segment_tree_sum.cpp	/^      seg_sum(int n, vector <int> Ar) {$/;"	f	class:seg_sum
+seg_sum	segment_tree_sum.cpp	/^class seg_sum { \/*{{{*\/$/;"	c	file:
+set	mat.cpp	/^   void set(int val) {$/;"	f	struct:Mat
+sieve	prime.cpp	/^void sieve() {$/;"	f
+sign	bigint.cpp	/^    int sign;$/;"	m	struct:bigint	file:
+size	bigint.cpp	/^    int size(){$/;"	f	struct:bigint
+solve	2SAT.cpp	/^   pair <bool, vector <int>> solve() {$/;"	f	struct:twoSAT
+solve	tsp.cpp	/^   ll solve() {$/;"	f	struct:tsp
+spfa	graph.cpp	/^      bool spfa (int src) {$/;"	f	class:graph
+spfa	min_cost_K_flow.cpp	/^   int spfa (int s, int t) {$/;"	f	struct:max_flow
+spfa	spfa.cpp	/^      bool spfa (int src) {$/;"	f	class:graph
+sqrt_root_decomp	sqrt_decomp.cpp	/^   sqrt_root_decomp (int n_, vector <int> a) {$/;"	f	class:sqrt_root_decomp	file:
+sqrt_root_decomp	sqrt_decomp.cpp	/^class sqrt_root_decomp {$/;"	c	file:
+start	tsp.cpp	/^   int par[N][1 << N], start[N][1 << N], wgt[N][N];$/;"	m	struct:tsp	file:
+sub	Mod.cpp	/^inline int sub (int x, int y) { return (x-y+Mod) % Mod; }$/;"	f
+sub	mat.cpp	/^   static inline int sub(int x, int y) {$/;"	f	struct:Mat
+sum_gp	sum_gp.cpp	/^int sum_gp (int a, int k) {$/;"	f
+sumof	bigint.cpp	/^    int sumof(){$/;"	f	struct:bigint
+sz	UFDS.cpp	/^   int rep[N], rnk[N], sz[N];$/;"	m	struct:UFDS	file:
+sz	bipartite_online.cpp	17;"	d	file:
+sz	dsu.cpp	/^int rk[N], sz[N], Par[N];$/;"	v
+sz	mat.cpp	/^   int sz;$/;"	m	struct:Mat	file:
+sz	minStackQueue.cpp	17;"	d	file:
+sz	polyhash.cpp	/^      const int sz;$/;"	m	class:polyhash	file:
+sz	polyhash_int.cpp	/^   const int sz;$/;"	m	struct:polyhash	file:
+sz	segment_tree_less.cpp	/^      int sz;$/;"	m	struct:seg_less::Node	file:
+sz	segment_tree_less.cpp	/^    int sz;$/;"	m	class:seg_less	file:
+sz	segment_tree_max.cpp	/^      int sz;$/;"	m	class:seg_max	file:
+sz	segment_tree_min.cpp	/^      int sz;$/;"	m	class:seg_min	file:
+sz	segment_tree_sum.cpp	/^      int sz;$/;"	m	class:seg_sum	file:
+sz	sparse_table.cpp	17;"	d	file:
+sz	string.cpp	/^      const int sz;$/;"	m	class:polyhash	file:
+table	lca_bin.cpp	/^   vector <vector <int>> table, dp;$/;"	m	class:LCA	file:
+to_string	bigint.cpp	/^    string to_string(){$/;"	f	struct:bigint
+topological_order	cc_comp.cpp	/^      vector <int> topological_order;$/;"	m	class:graph	file:
+topological_order	graph.cpp	/^      vector <int> topological_order;$/;"	m	class:graph	file:
+topological_sort	cc_comp.cpp	/^      void topological_sort () {$/;"	f	class:graph
+topological_sort	graph.cpp	/^      void topological_sort () {$/;"	f	class:graph
+total_divisors	prime.cpp	/^int total_divisors(int n) {$/;"	f
+trim	bigint.cpp	/^    void trim() {$/;"	f	struct:bigint
+tsp	tsp.cpp	/^struct tsp {$/;"	s	file:
+twoSAT	2SAT.cpp	/^   twoSAT (int _n) : n(_n) {$/;"	f	struct:twoSAT
+twoSAT	2SAT.cpp	/^struct twoSAT {$/;"	s	file:
+u	BFS.cpp	/^         int u, v;$/;"	m	struct:graph::Edge	file:
+u	bellmanFord.cpp	/^         int u, v;$/;"	m	struct:graph::Edge	file:
+u	bridges_articulation.cpp	/^         int u, v;$/;"	m	struct:graph::Edge	file:
+u	cc_comp.cpp	/^         int u, v;$/;"	m	struct:graph::Edge	file:
+u	dijkstra.cpp	/^         int u, v;$/;"	m	struct:graph::Edge	file:
+u	graph.cpp	/^         int u, v;$/;"	m	struct:graph::Edge	file:
+u	johnsons.cpp	/^   int u, v, w;$/;"	m	struct:Edge	file:
+u	kruskals.cpp	/^         int u, v;$/;"	m	struct:graph::Edge	file:
+u	readgrapharray.cpp	/^    int u, v;$/;"	m	struct:edge	file:
+u	spfa.cpp	/^         int u, v;$/;"	m	struct:graph::Edge	file:
+un	bipartite_online.cpp	23;"	d	file:
+un	minStackQueue.cpp	23;"	d	file:
+un	sparse_table.cpp	23;"	d	file:
+upd	segment_tree_less.cpp	/^    void upd(int ql, int qr, int val, int l, int r, int x) {$/;"	f	class:seg_less
+upd	segment_tree_max.cpp	/^      void upd(int ql, int qr, ll val, int l, int r, int x) {$/;"	f	class:seg_max
+upd	segment_tree_min.cpp	/^      void upd(int ql, int qr, ll val, int l, int r, int x) {$/;"	f	class:seg_min
+upd	segment_tree_sum.cpp	/^      void upd(int ql, int qr, ll val, int l, int r, int x) {$/;"	f	class:seg_sum
+update	sqrt_decomp.cpp	/^   void update (int x, int y, int val) {$/;"	f	class:sqrt_root_decomp	file:
+update_max	segment_tree_max.cpp	/^      void update_max (int ql, int qr, ll val) {$/;"	f	class:seg_max
+update_min	segment_tree_min.cpp	/^      void update_min (int ql, int qr, ll val) {$/;"	f	class:seg_min
+update_node	segment_tree_less.cpp	/^      void update_node(Node left, Node right) {$/;"	f	struct:seg_less::Node
+update_range	segment_tree_less.cpp	/^    void update_range (int ql, int qr, int val) {$/;"	f	class:seg_less
+update_range	segment_tree_sum.cpp	/^      void update_range (int ql, int qr, ll val) {$/;"	f	class:seg_sum
+used	2SAT.cpp	/^   bool used[N], assignment[N];$/;"	m	struct:twoSAT	file:
+v	BFS.cpp	/^         int u, v;$/;"	m	struct:graph::Edge	file:
+v	bellmanFord.cpp	/^         int u, v;$/;"	m	struct:graph::Edge	file:
+v	bridges_articulation.cpp	/^         int u, v;$/;"	m	struct:graph::Edge	file:
+v	cc_comp.cpp	/^         int u, v;$/;"	m	struct:graph::Edge	file:
+v	dijkstra.cpp	/^         int u, v;$/;"	m	struct:graph::Edge	file:
+v	graph.cpp	/^         int u, v;$/;"	m	struct:graph::Edge	file:
+v	johnsons.cpp	/^   int u, v, w;$/;"	m	struct:Edge	file:
+v	kruskals.cpp	/^         int u, v;$/;"	m	struct:graph::Edge	file:
+v	readgrapharray.cpp	/^    int u, v;$/;"	m	struct:edge	file:
+v	segment_tree_less.cpp	/^      int *v;$/;"	m	struct:seg_less::Node	file:
+v	spfa.cpp	/^         int u, v;$/;"	m	struct:graph::Edge	file:
+vis	BFS.cpp	/^      bool IS_UNDIR, vis[N];$/;"	m	class:graph	file:
+vis	bellmanFord.cpp	/^      bool IS_UNDIR, vis[N];$/;"	m	class:graph	file:
+vis	bridges_articulation.cpp	/^      bool IS_UNDIR, vis[N];$/;"	m	class:graph	file:
+vis	cc_comp.cpp	/^      bool IS_UNDIR, vis[N];$/;"	m	class:graph	file:
+vis	dijkstra.cpp	/^      bool IS_UNDIR, vis[N];$/;"	m	class:graph	file:
+vis	graph.cpp	/^      bool IS_UNDIR, vis[N];$/;"	m	class:graph	file:
+vis	kruskals.cpp	/^      bool IS_UNDIR, vis[N];$/;"	m	class:graph	file:
+vis	readgrapharray.cpp	/^bool vis[N];$/;"	v
+vis	spfa.cpp	/^      bool IS_UNDIR, vis[N];$/;"	m	class:graph	file:
+vll	bigint.cpp	/^    typedef vector<long long> vll;$/;"	t	struct:bigint	file:
+w	BFS.cpp	/^         long long w;$/;"	m	struct:graph::Edge	file:
+w	bellmanFord.cpp	/^         long long w;$/;"	m	struct:graph::Edge	file:
+w	bridges_articulation.cpp	/^         long long w;$/;"	m	struct:graph::Edge	file:
+w	cc_comp.cpp	/^         long long w;$/;"	m	struct:graph::Edge	file:
+w	dijkstra.cpp	/^         long long w;$/;"	m	struct:graph::Edge	file:
+w	graph.cpp	/^         long long w;$/;"	m	struct:graph::Edge	file:
+w	johnsons.cpp	/^   int u, v, w;$/;"	m	struct:Edge	file:
+w	kruskals.cpp	/^         long long w;$/;"	m	struct:graph::Edge	file:
+w	readgrapharray.cpp	/^    long long w;$/;"	m	struct:edge	file:
+w	spfa.cpp	/^         long long w;$/;"	m	struct:graph::Edge	file:
+walk	lca_bin.cpp	/^   inline int walk(int u, int k) {$/;"	f	class:LCA
+wgt	tsp.cpp	/^   int par[N][1 << N], start[N][1 << N], wgt[N][N];$/;"	m	struct:tsp	file:
+z	string.cpp	/^int z[N];$/;"	v
+z	z_function.cpp	/^int z[N];$/;"	v
+z_function	string.cpp	/^void z_function(const string &st) {$/;"	f
+z_function	z_function.cpp	/^void z_function(const string &st) {$/;"	f

@@ -104,8 +104,46 @@ signed main() {
    ll k;
    cin >> n >> q >> k;
 
-   vvl d1, d2;
+   vl D[2];
+   fr(i, 0, n - 1) {
+      int d; ll dist;
+      cin >> d >> dist;
+      --d;
+      D[d].push_back(dist);
+   }
 
+
+   fr(i, 0, -D[0].size()+n-1)
+      D[1].push_back(D[1][i] + k);
+
+   fr(i, 0, 1) sort(D[i].begin(), D[i].end());
+
+   while (q--) {
+      ll t;
+      ll ans = 0;
+      cin >> t;
+      ll tdist = 2ll * t;
+      ans += ((tdist / k) * D[0].size() * D[1].size()) / 2;
+
+      tdist %= k;
+      int a = 0, b = 0;
+      fr(i, 0, D[0].size() - 1)
+      {
+         while (a < (int)D[1].size() && D[0][i] > D[1][a])
+            ++a;
+
+         while (b < (int)D[1].size() && D[1][b] - D[0][i] <= tdist)
+            ++b;
+
+         if (a < (int)D[1].size() && b < (int)D[1].size()
+         && D[1][a] - D[0][i] <= tdist
+         && D[1][b-1] - D[0][i] <= tdist)
+         {
+            ans += (b - 1) - a + 1;
+         }
+      }
+      cout << ans << '\n';
+   }
 
    return EXIT_SUCCESS;
 }

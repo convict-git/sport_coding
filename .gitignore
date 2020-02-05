@@ -15,3 +15,5 @@
 ./.git/objects/9f/634a096be9be99f8ff669401e645ae3289b721
 ./.git/objects/e8/56e4409fd530f736c790fc06887dbfb0ce4d88
 *.out
+./.vscode
+*pconfig.json

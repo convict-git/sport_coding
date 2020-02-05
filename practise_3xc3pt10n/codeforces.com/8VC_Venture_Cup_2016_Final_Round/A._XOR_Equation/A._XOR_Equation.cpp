@@ -30,8 +30,8 @@ gp_hash_table <pii, int, chash> mp;
 
 seed_seq seq{
    (uint64_t) chrono::duration_cast<chrono::nanoseconds>
-      (chrono::high_resolution_clock::now().time_since_epoch()).count(),
-      (uint64_t) __builtin_ia32_rdtsc(),
+     (chrono::high_resolution_clock::now().time_since_epoch()).count(),
+     (uint64_t) __builtin_ia32_rdtsc(),
       (uint64_t) (uintptr_t) make_unique<char>().get()
 };
 mt19937 rng(seq); //uniform_int_distribution<int> (l, h)(rng); //[low, high]

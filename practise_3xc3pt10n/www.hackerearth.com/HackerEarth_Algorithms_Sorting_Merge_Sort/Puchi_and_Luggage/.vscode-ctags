@@ -1,0 +1,25 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+IOS	Puchi_and_Luggage.cpp	10;"	d	file:
+N	Puchi_and_Luggage.cpp	/^const int N = (int)1e6 + 10;$/;"	v
+PREC	Puchi_and_Luggage.cpp	11;"	d	file:
+bg	Puchi_and_Luggage.cpp	14;"	d	file:
+chash	Puchi_and_Luggage.cpp	/^struct chash {$/;"	s	file:
+debug	Puchi_and_Luggage.cpp	44;"	d	file:
+err	Puchi_and_Luggage.cpp	/^void err(istream_iterator<string> it) {$/;"	f
+err	Puchi_and_Luggage.cpp	/^void err(istream_iterator<string> it, T a, Args... args) {$/;"	f
+get	Puchi_and_Luggage.cpp	/^int get (int l, int r, int x, int ql, int qr) {$/;"	f
+main	Puchi_and_Luggage.cpp	/^signed main() {$/;"	f
+mp	Puchi_and_Luggage.cpp	/^gp_hash_table <pii, int, chash> mp;$/;"	v
+operator ()	Puchi_and_Luggage.cpp	/^   int operator()(pii x) const { return x.x*31 + x.y; }$/;"	f	struct:chash
+ordered_set	Puchi_and_Luggage.cpp	/^ordered_set;$/;"	t	file:
+seed	Puchi_and_Luggage.cpp	/^auto seed = chrono::high_resolution_clock::now().time_since_epoch().count();$/;"	v
+seg	Puchi_and_Luggage.cpp	/^int seg[4 * N];$/;"	v
+un	Puchi_and_Luggage.cpp	15;"	d	file:
+update	Puchi_and_Luggage.cpp	/^void update (int l, int r, int x, int q) {$/;"	f
+x	Puchi_and_Luggage.cpp	12;"	d	file:
+y	Puchi_and_Luggage.cpp	13;"	d	file:

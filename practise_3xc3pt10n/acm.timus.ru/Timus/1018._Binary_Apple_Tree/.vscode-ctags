@@ -1,0 +1,30 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+IOS	1018._Binary_Apple_Tree.cpp	9;"	d	file:
+N	1018._Binary_Apple_Tree.cpp	/^const int N = 105;$/;"	v
+PREC	1018._Binary_Apple_Tree.cpp	10;"	d	file:
+adj	1018._Binary_Apple_Tree.cpp	/^vector <vector <pii>> adj, ed;$/;"	v
+apples	1018._Binary_Apple_Tree.cpp	/^int apples[N], cnt[N];$/;"	v
+bg	1018._Binary_Apple_Tree.cpp	11;"	d	file:
+cnt	1018._Binary_Apple_Tree.cpp	/^int apples[N], cnt[N];$/;"	v
+create	1018._Binary_Apple_Tree.cpp	/^void create(int u, int x, vector <bool> &vis) {$/;"	f
+debug	1018._Binary_Apple_Tree.cpp	18;"	d	file:
+dfs	1018._Binary_Apple_Tree.cpp	/^void dfs(int u, vector <bool> &vis) {$/;"	f
+dfs_cnt	1018._Binary_Apple_Tree.cpp	/^void dfs_cnt(int u, vector <bool>&vis) {$/;"	f
+dp	1018._Binary_Apple_Tree.cpp	/^int dp[N][N]; \/\/ max apples$/;"	v
+ed	1018._Binary_Apple_Tree.cpp	/^vector <vector <pii>> adj, ed;$/;"	v
+err	1018._Binary_Apple_Tree.cpp	/^void err(istream_iterator<string> it)$/;"	f
+err	1018._Binary_Apple_Tree.cpp	/^void err(istream_iterator<string> it, T a, Args... args)$/;"	f
+main	1018._Binary_Apple_Tree.cpp	/^signed main()$/;"	f
+n	1018._Binary_Apple_Tree.cpp	/^int n, q;$/;"	v
+new_x	1018._Binary_Apple_Tree.cpp	/^int new_x = 0;$/;"	v
+q	1018._Binary_Apple_Tree.cpp	/^int n, q;$/;"	v
+read	1018._Binary_Apple_Tree.cpp	/^void read() {$/;"	f
+root_at	1018._Binary_Apple_Tree.cpp	/^void root_at(int u, int pr, vector <bool> &vis,$/;"	f
+solve	1018._Binary_Apple_Tree.cpp	/^void solve() {$/;"	f
+x	1018._Binary_Apple_Tree.cpp	12;"	d	file:
+y	1018._Binary_Apple_Tree.cpp	13;"	d	file:

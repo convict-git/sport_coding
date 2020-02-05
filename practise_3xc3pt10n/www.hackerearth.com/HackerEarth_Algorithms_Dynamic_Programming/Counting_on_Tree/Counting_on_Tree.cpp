@@ -135,6 +135,5 @@ signed main()
    int tc;
    cin >> tc;
    while (tc--) read(), solve();
-
    return EXIT_SUCCESS;
 }

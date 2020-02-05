@@ -1,0 +1,35 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+IOS	Sereja_and_D.cpp	13;"	d	file:
+LOG	Sereja_and_D.cpp	/^int st[N][LOGN], a[N], LOG[N];$/;"	v
+LOGN	Sereja_and_D.cpp	/^const int LOGN = 26;$/;"	v
+N	Sereja_and_D.cpp	/^const int N = (int)1e5 + 10;$/;"	v
+PREC	Sereja_and_D.cpp	14;"	d	file:
+X	Sereja_and_D.cpp	15;"	d	file:
+Y	Sereja_and_D.cpp	16;"	d	file:
+a	Sereja_and_D.cpp	/^int st[N][LOGN], a[N], LOG[N];$/;"	v
+bg	Sereja_and_D.cpp	22;"	d	file:
+chash	Sereja_and_D.cpp	/^struct chash {$/;"	s	file:
+cnt	Sereja_and_D.cpp	20;"	d	file:
+cntll	Sereja_and_D.cpp	21;"	d	file:
+debug	Sereja_and_D.cpp	58;"	d	file:
+err	Sereja_and_D.cpp	/^void err(istream_iterator<string> it) {$/;"	f
+err	Sereja_and_D.cpp	/^void err(istream_iterator<string> it, T a, Args... args) {$/;"	f
+fr	Sereja_and_D.cpp	18;"	d	file:
+get_max	Sereja_and_D.cpp	/^int get_max(int l, int r) {$/;"	f
+m	Sereja_and_D.cpp	/^int n, m;$/;"	v
+main	Sereja_and_D.cpp	/^signed main() {$/;"	f
+mini	Sereja_and_D.cpp	/^int mini (int t, int d) {$/;"	f
+mp	Sereja_and_D.cpp	/^gp_hash_table <pii, int, chash> mp;$/;"	v
+n	Sereja_and_D.cpp	/^int n, m;$/;"	v
+operator ()	Sereja_and_D.cpp	/^  int operator () (pii x) const { return x.X*31 + x.Y; }$/;"	f	struct:chash
+ordered_set	Sereja_and_D.cpp	/^ordered_set;$/;"	t	file:
+rv	Sereja_and_D.cpp	19;"	d	file:
+seed	Sereja_and_D.cpp	/^auto seed = chrono::high_resolution_clock::now().time_since_epoch().count();$/;"	v
+st	Sereja_and_D.cpp	/^int st[N][LOGN], a[N], LOG[N];$/;"	v
+sz	Sereja_and_D.cpp	17;"	d	file:
+un	Sereja_and_D.cpp	23;"	d	file:

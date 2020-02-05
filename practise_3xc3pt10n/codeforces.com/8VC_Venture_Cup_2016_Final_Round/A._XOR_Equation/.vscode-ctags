@@ -1,0 +1,25 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+IOS	A._XOR_Equation.cpp	10;"	d	file:
+N	A._XOR_Equation.cpp	/^const int N = 44;$/;"	v
+PREC	A._XOR_Equation.cpp	11;"	d	file:
+ar	A._XOR_Equation.cpp	/^ll ar[N][2];$/;"	v
+bg	A._XOR_Equation.cpp	14;"	d	file:
+chash	A._XOR_Equation.cpp	/^struct chash {$/;"	s	file:
+debug	A._XOR_Equation.cpp	39;"	d	file:
+err	A._XOR_Equation.cpp	/^void err(istream_iterator<string> it) {$/;"	f
+err	A._XOR_Equation.cpp	/^void err(istream_iterator<string> it, T a, Args... args) {$/;"	f
+main	A._XOR_Equation.cpp	/^signed main() {$/;"	f
+mp	A._XOR_Equation.cpp	/^gp_hash_table <pii, int, chash> mp;$/;"	v
+operator ()	A._XOR_Equation.cpp	/^   int operator()(pii x) const { return x.x*31 + x.y; }$/;"	f	struct:chash
+ordered_set	A._XOR_Equation.cpp	/^ordered_set;$/;"	t	file:
+s	A._XOR_Equation.cpp	/^ll s, x;$/;"	v
+solve	A._XOR_Equation.cpp	/^void solve() {$/;"	f
+un	A._XOR_Equation.cpp	15;"	d	file:
+x	A._XOR_Equation.cpp	/^ll s, x;$/;"	v
+x	A._XOR_Equation.cpp	12;"	d	file:
+y	A._XOR_Equation.cpp	13;"	d	file:

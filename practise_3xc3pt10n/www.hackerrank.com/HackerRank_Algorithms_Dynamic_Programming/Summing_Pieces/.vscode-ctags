@@ -1,0 +1,26 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+IOS	Summing_Pieces.cpp	13;"	d	file:
+PREC	Summing_Pieces.cpp	14;"	d	file:
+X	Summing_Pieces.cpp	15;"	d	file:
+Y	Summing_Pieces.cpp	16;"	d	file:
+bg	Summing_Pieces.cpp	22;"	d	file:
+chash	Summing_Pieces.cpp	/^struct chash {$/;"	s	file:
+cnt	Summing_Pieces.cpp	20;"	d	file:
+cntll	Summing_Pieces.cpp	21;"	d	file:
+debug	Summing_Pieces.cpp	58;"	d	file:
+err	Summing_Pieces.cpp	/^void err(istream_iterator<string> it) {$/;"	f
+err	Summing_Pieces.cpp	/^void err(istream_iterator<string> it, T a, Args... args) {$/;"	f
+fr	Summing_Pieces.cpp	18;"	d	file:
+main	Summing_Pieces.cpp	/^signed main() {$/;"	f
+mp	Summing_Pieces.cpp	/^gp_hash_table <pii, int, chash> mp;$/;"	v
+operator ()	Summing_Pieces.cpp	/^  int operator () (pii x) const { return x.X*31 + x.Y; }$/;"	f	struct:chash
+ordered_set	Summing_Pieces.cpp	/^ordered_set;$/;"	t	file:
+rv	Summing_Pieces.cpp	19;"	d	file:
+seed	Summing_Pieces.cpp	/^auto seed = chrono::high_resolution_clock::now().time_since_epoch().count();$/;"	v
+sz	Summing_Pieces.cpp	17;"	d	file:
+un	Summing_Pieces.cpp	23;"	d	file:

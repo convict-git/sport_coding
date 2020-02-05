@@ -1,0 +1,26 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+IOS	A._Treasure_Hunt.cpp	13;"	d	file:
+PREC	A._Treasure_Hunt.cpp	14;"	d	file:
+X	A._Treasure_Hunt.cpp	15;"	d	file:
+Y	A._Treasure_Hunt.cpp	16;"	d	file:
+bg	A._Treasure_Hunt.cpp	22;"	d	file:
+chash	A._Treasure_Hunt.cpp	/^struct chash {$/;"	s	file:
+cnt	A._Treasure_Hunt.cpp	20;"	d	file:
+cntll	A._Treasure_Hunt.cpp	21;"	d	file:
+debug	A._Treasure_Hunt.cpp	58;"	d	file:
+err	A._Treasure_Hunt.cpp	/^void err(istream_iterator<string> it) {$/;"	f
+err	A._Treasure_Hunt.cpp	/^void err(istream_iterator<string> it, T a, Args... args) {$/;"	f
+fr	A._Treasure_Hunt.cpp	18;"	d	file:
+main	A._Treasure_Hunt.cpp	/^signed main() {$/;"	f
+mp	A._Treasure_Hunt.cpp	/^gp_hash_table <pii, int, chash> mp;$/;"	v
+operator ()	A._Treasure_Hunt.cpp	/^  int operator () (pii x) const { return x.X*31 + x.Y; }$/;"	f	struct:chash
+ordered_set	A._Treasure_Hunt.cpp	/^ordered_set;$/;"	t	file:
+rv	A._Treasure_Hunt.cpp	19;"	d	file:
+seed	A._Treasure_Hunt.cpp	/^auto seed = chrono::high_resolution_clock::now().time_since_epoch().count();$/;"	v
+sz	A._Treasure_Hunt.cpp	17;"	d	file:
+un	A._Treasure_Hunt.cpp	23;"	d	file:

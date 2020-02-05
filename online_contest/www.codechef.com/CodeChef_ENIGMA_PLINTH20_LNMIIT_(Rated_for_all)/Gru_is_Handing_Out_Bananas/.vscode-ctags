@@ -1,0 +1,26 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+IOS	Gru_is_Handing_Out_Bananas.cpp	13;"	d	file:
+PREC	Gru_is_Handing_Out_Bananas.cpp	14;"	d	file:
+X	Gru_is_Handing_Out_Bananas.cpp	15;"	d	file:
+Y	Gru_is_Handing_Out_Bananas.cpp	16;"	d	file:
+bg	Gru_is_Handing_Out_Bananas.cpp	22;"	d	file:
+chash	Gru_is_Handing_Out_Bananas.cpp	/^struct chash {$/;"	s	file:
+cnt	Gru_is_Handing_Out_Bananas.cpp	20;"	d	file:
+cntll	Gru_is_Handing_Out_Bananas.cpp	21;"	d	file:
+debug	Gru_is_Handing_Out_Bananas.cpp	58;"	d	file:
+err	Gru_is_Handing_Out_Bananas.cpp	/^void err(istream_iterator<string> it) {$/;"	f
+err	Gru_is_Handing_Out_Bananas.cpp	/^void err(istream_iterator<string> it, T a, Args... args) {$/;"	f
+fr	Gru_is_Handing_Out_Bananas.cpp	18;"	d	file:
+main	Gru_is_Handing_Out_Bananas.cpp	/^signed main() {$/;"	f
+mp	Gru_is_Handing_Out_Bananas.cpp	/^gp_hash_table <pii, int, chash> mp;$/;"	v
+operator ()	Gru_is_Handing_Out_Bananas.cpp	/^  int operator () (pii x) const { return x.X*31 + x.Y; }$/;"	f	struct:chash
+ordered_set	Gru_is_Handing_Out_Bananas.cpp	/^ordered_set;$/;"	t	file:
+rv	Gru_is_Handing_Out_Bananas.cpp	19;"	d	file:
+seed	Gru_is_Handing_Out_Bananas.cpp	/^auto seed = chrono::high_resolution_clock::now().time_since_epoch().count();$/;"	v
+sz	Gru_is_Handing_Out_Bananas.cpp	17;"	d	file:
+un	Gru_is_Handing_Out_Bananas.cpp	23;"	d	file:

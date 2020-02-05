@@ -128,6 +128,7 @@ signed main() {
          cin >> aj[i];
       }
 
+
       for (int i = 0; i < n; ++i) {
          ai[i] = prefix.query(aj[i]);
          prefix.update(aj[i]);

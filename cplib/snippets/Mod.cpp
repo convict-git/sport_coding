@@ -8,4 +8,3 @@ inline int pow (int x, int y) {
   return res;
 }
 inline int dv (int x, int y) { return mul(x, pow(y, Mod-2)); }
-

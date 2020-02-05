@@ -1,0 +1,324 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+A	LIS.cpp	/^int A[N], L[N], Par[N], idx[N];$/;"	v
+Ar	max_1D_range_sum.cpp	/^int dp[N][2], Par[N][2], Ar[N];$/;"	v
+IOS	LIS.cpp	7;"	d	file:
+IOS	backtrack_n_queens.cpp	7;"	d	file:
+IOS	create_lexi_unique_strings_backtrack.cpp	10;"	d	file:
+IOS	divideconquerdp.cpp	7;"	d	file:
+IOS	divisors.cpp	13;"	d	file:
+IOS	gen.cpp	10;"	d	file:
+IOS	interview_bit.cpp	13;"	d	file:
+IOS	iterative_n_queens.cpp	7;"	d	file:
+IOS	main.cpp	10;"	d	file:
+IOS	main2.cpp	10;"	d	file:
+IOS	max_1D_range_sum.cpp	7;"	d	file:
+IOS	max_2d_range_sum.cpp	7;"	d	file:
+IOS	queue.cpp	13;"	d	file:
+IOS	tester.cpp	10;"	d	file:
+IOS	travelling_salesman.cpp	7;"	d	file:
+IOS	trial.cpp	10;"	d	file:
+IOS	z.cpp	10;"	d	file:
+L	LIS.cpp	/^int A[N], L[N], Par[N], idx[N];$/;"	v
+LIS	LIS.cpp	/^void LIS() {$/;"	f
+LOG	interview_bit.cpp	/^const int LOG = 26;$/;"	v
+M	divideconquerdp.cpp	/^const int M = 4e3 + 10, N = 1e3 + 10;$/;"	v
+MAX_P	divisors.cpp	/^const int MAX_P = 2101000;$/;"	v
+MAX_P	interview_bit.cpp	/^const int MAX_P = 2101000;$/;"	v
+Mod	interview_bit.cpp	/^const int Mod = 1e9 + 7;$/;"	v
+N	LIS.cpp	/^const int N = (int)1e6 + 10;$/;"	v
+N	backtrack_n_queens.cpp	/^const int N = 15;$/;"	v
+N	crap.cpp	/^const int N = (int)2e6 + 10;$/;"	v
+N	divideconquerdp.cpp	/^const int M = 4e3 + 10, N = 1e3 + 10;$/;"	v
+N	interview_bit.cpp	/^const int N = (int)1e5 + 10;$/;"	v
+N	max_1D_range_sum.cpp	/^const int N = (int)1e6 + 10;$/;"	v
+N	max_2d_range_sum.cpp	/^const int N = 200;$/;"	v
+N	travelling_salesman.cpp	/^const int N = 17;$/;"	v
+PREC	LIS.cpp	8;"	d	file:
+PREC	backtrack_n_queens.cpp	8;"	d	file:
+PREC	create_lexi_unique_strings_backtrack.cpp	11;"	d	file:
+PREC	divideconquerdp.cpp	8;"	d	file:
+PREC	divisors.cpp	14;"	d	file:
+PREC	gen.cpp	11;"	d	file:
+PREC	interview_bit.cpp	14;"	d	file:
+PREC	iterative_n_queens.cpp	8;"	d	file:
+PREC	main.cpp	11;"	d	file:
+PREC	main2.cpp	11;"	d	file:
+PREC	max_1D_range_sum.cpp	8;"	d	file:
+PREC	max_2d_range_sum.cpp	8;"	d	file:
+PREC	queue.cpp	14;"	d	file:
+PREC	tester.cpp	11;"	d	file:
+PREC	travelling_salesman.cpp	8;"	d	file:
+PREC	trial.cpp	11;"	d	file:
+PREC	z.cpp	11;"	d	file:
+Par	LIS.cpp	/^int A[N], L[N], Par[N], idx[N];$/;"	v
+Par	max_1D_range_sum.cpp	/^int dp[N][2], Par[N][2], Ar[N];$/;"	v
+X	interview_bit.cpp	15;"	d	file:
+Y	interview_bit.cpp	16;"	d	file:
+add	interview_bit.cpp	/^inline int add (int x, int y) { return (x+y) % Mod; }$/;"	f
+ans	crap.cpp	/^long long ans = 0;$/;"	v
+ar	crap.cpp	/^int cnt[N], dp[N], ar[N];$/;"	v
+ar	divideconquerdp.cpp	/^int ar[N];$/;"	v
+ar	interview_bit.cpp	/^int ar[N], val[N], mx[N][26], logn[N];$/;"	v
+back_track	max_1D_range_sum.cpp	/^vector <int> back_track(int idx) {$/;"	f
+backtrack	backtrack_n_queens.cpp	/^void backtrack(int c) {$/;"	f
+backtrack	create_lexi_unique_strings_backtrack.cpp	/^void backtrack(int n, int idx, string &alpha, vector <char>& stck, vector <string>& solutions) {$/;"	f
+bg	LIS.cpp	9;"	d	file:
+bg	backtrack_n_queens.cpp	9;"	d	file:
+bg	create_lexi_unique_strings_backtrack.cpp	14;"	d	file:
+bg	divideconquerdp.cpp	9;"	d	file:
+bg	divisors.cpp	19;"	d	file:
+bg	gen.cpp	14;"	d	file:
+bg	interview_bit.cpp	22;"	d	file:
+bg	iterative_n_queens.cpp	9;"	d	file:
+bg	main.cpp	12;"	d	file:
+bg	main2.cpp	14;"	d	file:
+bg	max_1D_range_sum.cpp	9;"	d	file:
+bg	max_2d_range_sum.cpp	9;"	d	file:
+bg	queue.cpp	17;"	d	file:
+bg	tester.cpp	14;"	d	file:
+bg	travelling_salesman.cpp	9;"	d	file:
+bg	trial.cpp	14;"	d	file:
+bg	z.cpp	14;"	d	file:
+board	backtrack_n_queens.cpp	/^int board[N][N] = {0};$/;"	v
+chash	create_lexi_unique_strings_backtrack.cpp	/^struct chash {$/;"	s	file:
+chash	divisors.cpp	/^struct chash {$/;"	s	file:
+chash	gen.cpp	/^struct chash {$/;"	s	file:
+chash	interview_bit.cpp	/^struct chash {$/;"	s	file:
+chash	main.cpp	/^struct chash {$/;"	s	file:
+chash	main2.cpp	/^struct chash {$/;"	s	file:
+chash	queue.cpp	/^struct chash {$/;"	s	file:
+chash	tester.cpp	/^struct chash {$/;"	s	file:
+chash	trial.cpp	/^struct chash {$/;"	s	file:
+chash	z.cpp	/^struct chash {$/;"	s	file:
+cnt	crap.cpp	/^int cnt[N], dp[N], ar[N];$/;"	v
+cnt	interview_bit.cpp	20;"	d	file:
+cntll	interview_bit.cpp	21;"	d	file:
+compute	divideconquerdp.cpp	/^void compute (int i, int l, int r, int opt_l, int opt_r)$/;"	f
+cur	crap.cpp	/^int n, cur;$/;"	v
+debug	LIS.cpp	14;"	d	file:
+debug	backtrack_n_queens.cpp	13;"	d	file:
+debug	create_lexi_unique_strings_backtrack.cpp	44;"	d	file:
+debug	divideconquerdp.cpp	16;"	d	file:
+debug	divisors.cpp	50;"	d	file:
+debug	gen.cpp	44;"	d	file:
+debug	interview_bit.cpp	58;"	d	file:
+debug	iterative_n_queens.cpp	13;"	d	file:
+debug	main.cpp	33;"	d	file:
+debug	main2.cpp	44;"	d	file:
+debug	max_1D_range_sum.cpp	14;"	d	file:
+debug	max_2d_range_sum.cpp	14;"	d	file:
+debug	queue.cpp	47;"	d	file:
+debug	tester.cpp	44;"	d	file:
+debug	travelling_salesman.cpp	16;"	d	file:
+debug	trial.cpp	39;"	d	file:
+debug	z.cpp	39;"	d	file:
+dp	crap.cpp	/^int cnt[N], dp[N], ar[N];$/;"	v
+dp	divideconquerdp.cpp	/^ll dp[M][N];$/;"	v
+dp	max_1D_range_sum.cpp	/^int dp[N][2], Par[N][2], Ar[N];$/;"	v
+dp	max_2d_range_sum.cpp	/^int dp[N][N];$/;"	v
+dp	travelling_salesman.cpp	/^ll dp[N][1 << N];$/;"	v
+dv	interview_bit.cpp	/^inline int dv (int x, int y) { return mul(x, pow(y, Mod-2)); }$/;"	f
+dx	main2.cpp	/^int dx[] = {1, -1, 0, 0};$/;"	v
+dy	main2.cpp	/^int dy[] = {0, 0, -1, 1};$/;"	v
+err	LIS.cpp	/^void err(istream_iterator<string> it) { it->empty();$/;"	f
+err	LIS.cpp	/^void err(istream_iterator<string> it, T a, Args... args) {$/;"	f
+err	backtrack_n_queens.cpp	/^void err(istream_iterator<string> it) { it->empty();$/;"	f
+err	backtrack_n_queens.cpp	/^void err(istream_iterator<string> it, T a, Args... args) {$/;"	f
+err	create_lexi_unique_strings_backtrack.cpp	/^void err(istream_iterator<string> it) {$/;"	f
+err	create_lexi_unique_strings_backtrack.cpp	/^void err(istream_iterator<string> it, T a, Args... args) {$/;"	f
+err	divideconquerdp.cpp	/^void err(istream_iterator<string> it)$/;"	f
+err	divideconquerdp.cpp	/^void err(istream_iterator<string> it, T a, Args... args)$/;"	f
+err	divisors.cpp	/^void err(istream_iterator<string> it) {$/;"	f
+err	divisors.cpp	/^void err(istream_iterator<string> it, T a, Args... args) {$/;"	f
+err	gen.cpp	/^void err(istream_iterator<string> it) {$/;"	f
+err	gen.cpp	/^void err(istream_iterator<string> it, T a, Args... args) {$/;"	f
+err	interview_bit.cpp	/^void err(istream_iterator<string> it) {$/;"	f
+err	interview_bit.cpp	/^void err(istream_iterator<string> it, T a, Args... args) {$/;"	f
+err	iterative_n_queens.cpp	/^void err(istream_iterator<string> it) { it->empty();$/;"	f
+err	iterative_n_queens.cpp	/^void err(istream_iterator<string> it, T a, Args... args) {$/;"	f
+err	main.cpp	/^void err(istream_iterator<string> it) {$/;"	f
+err	main.cpp	/^void err(istream_iterator<string> it, T a, Args... args) {$/;"	f
+err	main2.cpp	/^void err(istream_iterator<string> it) {$/;"	f
+err	main2.cpp	/^void err(istream_iterator<string> it, T a, Args... args) {$/;"	f
+err	max_1D_range_sum.cpp	/^void err(istream_iterator<string> it) { it->empty();$/;"	f
+err	max_1D_range_sum.cpp	/^void err(istream_iterator<string> it, T a, Args... args) {$/;"	f
+err	max_2d_range_sum.cpp	/^void err(istream_iterator<string> it) { it->empty();$/;"	f
+err	max_2d_range_sum.cpp	/^void err(istream_iterator<string> it, T a, Args... args) {$/;"	f
+err	queue.cpp	/^void err(istream_iterator<string> it) {$/;"	f
+err	queue.cpp	/^void err(istream_iterator<string> it, T a, Args... args) {$/;"	f
+err	tester.cpp	/^void err(istream_iterator<string> it) {$/;"	f
+err	tester.cpp	/^void err(istream_iterator<string> it, T a, Args... args) {$/;"	f
+err	travelling_salesman.cpp	/^void err(istream_iterator<string> it) { it->empty();$/;"	f
+err	travelling_salesman.cpp	/^void err(istream_iterator<string> it, T a, Args... args) {$/;"	f
+err	trial.cpp	/^void err(istream_iterator<string> it) {$/;"	f
+err	trial.cpp	/^void err(istream_iterator<string> it, T a, Args... args) {$/;"	f
+err	z.cpp	/^void err(istream_iterator<string> it) {$/;"	f
+err	z.cpp	/^void err(istream_iterator<string> it, T a, Args... args) {$/;"	f
+fR	divisors.cpp	18;"	d	file:
+fr	divisors.cpp	17;"	d	file:
+fr	interview_bit.cpp	18;"	d	file:
+get_max	interview_bit.cpp	/^inline int get_max(int l, int r) {$/;"	f
+giveRand	gen.cpp	/^template <class T = int> T giveRand (const T& low, const T& high) {$/;"	f
+gval	interview_bit.cpp	/^vector <pair <int, int>> gval;$/;"	v
+idx	LIS.cpp	/^int A[N], L[N], Par[N], idx[N];$/;"	v
+inf	divideconquerdp.cpp	/^const ll inf = (ll) 1e18;$/;"	v
+inf	travelling_salesman.cpp	/^const ll inf = (ll) 1e18;$/;"	v
+l_diag	backtrack_n_queens.cpp	/^bitset <30> row, l_diag, r_diag;$/;"	v
+logn	interview_bit.cpp	/^int ar[N], val[N], mx[N][26], logn[N];$/;"	v
+m	divideconquerdp.cpp	/^int n, m;$/;"	v
+m	max_2d_range_sum.cpp	/^int n, m;$/;"	v
+main	LIS.cpp	/^signed main() {$/;"	f
+main	backtrack_n_queens.cpp	/^signed main() {$/;"	f
+main	crap.cpp	/^int main() {$/;"	f
+main	create_lexi_unique_strings_backtrack.cpp	/^signed main() {$/;"	f
+main	divideconquerdp.cpp	/^signed main()$/;"	f
+main	divisors.cpp	/^signed main() {$/;"	f
+main	gen.cpp	/^signed main() {$/;"	f
+main	her.cpp	/^int main () {$/;"	f
+main	interview_bit.cpp	/^signed main() {$/;"	f
+main	iterative_n_queens.cpp	/^signed main() {$/;"	f
+main	main.c	/^int main () {$/;"	f
+main	main.cpp	/^signed main() {$/;"	f
+main	main.s	/^main:$/;"	l
+main	main2.cpp	/^signed main() {$/;"	f
+main	mainlkasjdfl.cpp	/^int main () {$/;"	f
+main	max_1D_range_sum.cpp	/^signed main() {$/;"	f
+main	max_2d_range_sum.cpp	/^signed main() {$/;"	f
+main	queue.cpp	/^signed main() {$/;"	f
+main	tester.cpp	/^signed main() {$/;"	f
+main	travelling_salesman.cpp	/^signed main() {$/;"	f
+main	trial.cpp	/^signed main() {$/;"	f
+main	z.cpp	/^signed main() {$/;"	f
+mat	max_2d_range_sum.cpp	/^int mat[N][N];$/;"	v
+max_1D_range_sum	max_1D_range_sum.cpp	/^int max_1D_range_sum() {$/;"	f
+max_2D_range_sum	max_2d_range_sum.cpp	/^int max_2D_range_sum() {$/;"	f
+mp	create_lexi_unique_strings_backtrack.cpp	/^gp_hash_table <pii, int, chash> mp;$/;"	v
+mp	divisors.cpp	/^gp_hash_table <pii, int, chash> mp;$/;"	v
+mp	gen.cpp	/^gp_hash_table <pii, int, chash> mp;$/;"	v
+mp	interview_bit.cpp	/^gp_hash_table <pii, int, chash> mp;$/;"	v
+mp	main.cpp	/^gp_hash_table <pii, int, chash> mp;$/;"	v
+mp	main2.cpp	/^gp_hash_table <pii, int, chash> mp;$/;"	v
+mp	queue.cpp	/^gp_hash_table <pii, int, chash> mp;$/;"	v
+mp	tester.cpp	/^gp_hash_table <pii, int, chash> mp;$/;"	v
+mp	trial.cpp	/^gp_hash_table <pii, int, chash> mp;$/;"	v
+mp	z.cpp	/^gp_hash_table <pii, int, chash> mp;$/;"	v
+mul	interview_bit.cpp	/^inline int mul (int x, int y) { return static_cast <int> (1ll*x*y % Mod); }$/;"	f
+mx	interview_bit.cpp	/^int ar[N], val[N], mx[N][26], logn[N];$/;"	v
+n	LIS.cpp	/^int n, sz;$/;"	v
+n	backtrack_n_queens.cpp	/^int n;$/;"	v
+n	crap.cpp	/^int n, cur;$/;"	v
+n	divideconquerdp.cpp	/^int n, m;$/;"	v
+n	interview_bit.cpp	/^int n;$/;"	v
+n	max_1D_range_sum.cpp	/^int n;$/;"	v
+n	max_2d_range_sum.cpp	/^int n, m;$/;"	v
+n	travelling_salesman.cpp	/^int n;$/;"	v
+naive_solve	divideconquerdp.cpp	/^void naive_solve()$/;"	f
+operator ()	create_lexi_unique_strings_backtrack.cpp	/^   int operator()(pii x) const { return x.x*31 + x.y; }$/;"	f	struct:chash
+operator ()	divisors.cpp	/^   int operator () (pii x) const { return x.x*31 + x.y; }$/;"	f	struct:chash
+operator ()	gen.cpp	/^   int operator()(pii x) const { return x.x*31 + x.y; }$/;"	f	struct:chash
+operator ()	interview_bit.cpp	/^  int operator () (pii x) const { return x.X*31 + x.Y; }$/;"	f	struct:chash
+operator ()	main.cpp	/^   int operator()(pii x) const { return x.x*31 + x.y; }$/;"	f	struct:chash
+operator ()	main2.cpp	/^   int operator()(pii x) const { return x.x*31 + x.y; }$/;"	f	struct:chash
+operator ()	queue.cpp	/^   int operator () (pii x) const { return x.x*31 + x.y; }$/;"	f	struct:chash
+operator ()	tester.cpp	/^   int operator()(pii x) const { return x.x*31 + x.y; }$/;"	f	struct:chash
+operator ()	trial.cpp	/^   int operator()(pii x) const { return x.x*31 + x.y; }$/;"	f	struct:chash
+operator ()	z.cpp	/^   int operator()(pii x) const { return x.x*31 + x.y; }$/;"	f	struct:chash
+ordered_set	create_lexi_unique_strings_backtrack.cpp	/^ordered_set;$/;"	t	file:
+ordered_set	divisors.cpp	/^ordered_set;$/;"	t	file:
+ordered_set	gen.cpp	/^ordered_set;$/;"	t	file:
+ordered_set	interview_bit.cpp	/^ordered_set;$/;"	t	file:
+ordered_set	main.cpp	/^ordered_set;$/;"	t	file:
+ordered_set	main2.cpp	/^ordered_set;$/;"	t	file:
+ordered_set	queue.cpp	/^ordered_set;$/;"	t	file:
+ordered_set	tester.cpp	/^ordered_set;$/;"	t	file:
+ordered_set	trial.cpp	/^ordered_set;$/;"	t	file:
+ordered_set	z.cpp	/^ordered_set;$/;"	t	file:
+p	main.cpp	/^string s, t, p;$/;"	v
+par	travelling_salesman.cpp	/^int par[N][1 << N], start[N][1 << N], wgt[N][N];$/;"	v
+pow	interview_bit.cpp	/^inline int pow (int x, int y) {$/;"	f
+powers	divisors.cpp	/^vector <int> primes = {2}, powers;$/;"	v
+powers	interview_bit.cpp	/^vector <int> primes = {2}, powers;$/;"	v
+pref	divideconquerdp.cpp	/^ll pref[N];$/;"	v
+primes	divisors.cpp	/^vector <int> primes = {2}, powers;$/;"	v
+primes	interview_bit.cpp	/^vector <int> primes = {2}, powers;$/;"	v
+queens_n	iterative_n_queens.cpp	/^int queens_n(int n) {$/;"	f
+r_diag	backtrack_n_queens.cpp	/^bitset <30> row, l_diag, r_diag;$/;"	v
+read	divideconquerdp.cpp	/^void read() {$/;"	f
+row	backtrack_n_queens.cpp	/^bitset <30> row, l_diag, r_diag;$/;"	v
+rv	interview_bit.cpp	19;"	d	file:
+s	main.cpp	/^string s, t, p;$/;"	v
+s	tester.cpp	/^string s;$/;"	v
+seed	create_lexi_unique_strings_backtrack.cpp	/^auto seed = chrono::high_resolution_clock::now().time_since_epoch().count();$/;"	v
+seed	divisors.cpp	/^auto seed = chrono::high_resolution_clock::now().time_since_epoch().count();$/;"	v
+seed	gen.cpp	/^auto seed = chrono::high_resolution_clock::now().time_since_epoch().count();$/;"	v
+seed	interview_bit.cpp	/^auto seed = chrono::high_resolution_clock::now().time_since_epoch().count();$/;"	v
+seed	main.cpp	/^auto seed = chrono::high_resolution_clock::now().time_since_epoch().count();$/;"	v
+seed	main2.cpp	/^auto seed = chrono::high_resolution_clock::now().time_since_epoch().count();$/;"	v
+seed	queue.cpp	/^auto seed = chrono::high_resolution_clock::now().time_since_epoch().count();$/;"	v
+seed	tester.cpp	/^auto seed = chrono::high_resolution_clock::now().time_since_epoch().count();$/;"	v
+sieve	divisors.cpp	/^void sieve() {$/;"	f
+sieve	interview_bit.cpp	/^void sieve() {$/;"	f
+sol	backtrack_n_queens.cpp	/^int sol = 0;$/;"	v
+solve	her.cpp	/^void solve (int arr[], int n) {$/;"	f
+solve	main.cpp	/^void solve() {$/;"	f
+solve_bs	tester.cpp	/^void solve_bs() {$/;"	f
+start	travelling_salesman.cpp	/^int par[N][1 << N], start[N][1 << N], wgt[N][N];$/;"	v
+store	trial.cpp	/^struct store {$/;"	s	file:
+sub	interview_bit.cpp	/^inline int sub (int x, int y) { return (x-y+Mod) % Mod; }$/;"	f
+sz	LIS.cpp	/^int n, sz;$/;"	v
+sz	interview_bit.cpp	17;"	d	file:
+t	main.cpp	/^string s, t, p;$/;"	v
+total_divisors	divisors.cpp	/^int total_divisors(int n) {$/;"	f
+total_divisors	interview_bit.cpp	/^int total_divisors(int n) {$/;"	f
+tsp	travelling_salesman.cpp	/^ll tsp() {$/;"	f
+un	create_lexi_unique_strings_backtrack.cpp	15;"	d	file:
+un	divisors.cpp	20;"	d	file:
+un	gen.cpp	15;"	d	file:
+un	interview_bit.cpp	23;"	d	file:
+un	main2.cpp	15;"	d	file:
+un	queue.cpp	18;"	d	file:
+un	tester.cpp	15;"	d	file:
+un	trial.cpp	15;"	d	file:
+un	z.cpp	15;"	d	file:
+val	interview_bit.cpp	/^int ar[N], val[N], mx[N][26], logn[N];$/;"	v
+wgt	travelling_salesman.cpp	/^int par[N][1 << N], start[N][1 << N], wgt[N][N];$/;"	v
+x	LIS.cpp	10;"	d	file:
+x	backtrack_n_queens.cpp	10;"	d	file:
+x	create_lexi_unique_strings_backtrack.cpp	12;"	d	file:
+x	divideconquerdp.cpp	10;"	d	file:
+x	divisors.cpp	15;"	d	file:
+x	gen.cpp	12;"	d	file:
+x	iterative_n_queens.cpp	10;"	d	file:
+x	main.cpp	13;"	d	file:
+x	main2.cpp	12;"	d	file:
+x	max_1D_range_sum.cpp	10;"	d	file:
+x	max_2d_range_sum.cpp	10;"	d	file:
+x	queue.cpp	15;"	d	file:
+x	tester.cpp	12;"	d	file:
+x	travelling_salesman.cpp	10;"	d	file:
+x	trial.cpp	/^   int x, y, z;$/;"	m	struct:store	file:
+x	trial.cpp	12;"	d	file:
+x	z.cpp	12;"	d	file:
+y	LIS.cpp	11;"	d	file:
+y	backtrack_n_queens.cpp	11;"	d	file:
+y	create_lexi_unique_strings_backtrack.cpp	13;"	d	file:
+y	divideconquerdp.cpp	11;"	d	file:
+y	divisors.cpp	16;"	d	file:
+y	gen.cpp	13;"	d	file:
+y	iterative_n_queens.cpp	11;"	d	file:
+y	main.cpp	14;"	d	file:
+y	main2.cpp	13;"	d	file:
+y	max_1D_range_sum.cpp	11;"	d	file:
+y	max_2d_range_sum.cpp	11;"	d	file:
+y	queue.cpp	16;"	d	file:
+y	tester.cpp	13;"	d	file:
+y	travelling_salesman.cpp	11;"	d	file:
+y	trial.cpp	/^   int x, y, z;$/;"	m	struct:store	file:
+y	trial.cpp	13;"	d	file:
+y	z.cpp	13;"	d	file:
+z	trial.cpp	/^   int x, y, z;$/;"	m	struct:store	file:

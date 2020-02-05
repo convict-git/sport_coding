@@ -128,7 +128,5 @@ signed main() {
       final_ans += cnt;
    }
    cout << final_ans/2 << '\n';
-
-
    return EXIT_SUCCESS;
 }

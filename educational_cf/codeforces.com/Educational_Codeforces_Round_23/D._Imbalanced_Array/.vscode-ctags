@@ -1,0 +1,34 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+IOS	D._Imbalanced_Array.cpp	13;"	d	file:
+LOG	D._Imbalanced_Array.cpp	/^int mn[N][LOGN], mx[N][LOGN], LOG[N], a[N];$/;"	v
+LOGN	D._Imbalanced_Array.cpp	/^const int LOGN = 26;$/;"	v
+N	D._Imbalanced_Array.cpp	/^const int N = (int)1e6 + 10;$/;"	v
+PREC	D._Imbalanced_Array.cpp	14;"	d	file:
+X	D._Imbalanced_Array.cpp	15;"	d	file:
+Y	D._Imbalanced_Array.cpp	16;"	d	file:
+a	D._Imbalanced_Array.cpp	/^int mn[N][LOGN], mx[N][LOGN], LOG[N], a[N];$/;"	v
+bg	D._Imbalanced_Array.cpp	22;"	d	file:
+chash	D._Imbalanced_Array.cpp	/^struct chash {$/;"	s	file:
+cnt	D._Imbalanced_Array.cpp	20;"	d	file:
+cntll	D._Imbalanced_Array.cpp	21;"	d	file:
+debug	D._Imbalanced_Array.cpp	58;"	d	file:
+err	D._Imbalanced_Array.cpp	/^void err(istream_iterator<string> it) {$/;"	f
+err	D._Imbalanced_Array.cpp	/^void err(istream_iterator<string> it, T a, Args... args) {$/;"	f
+fr	D._Imbalanced_Array.cpp	18;"	d	file:
+get_max	D._Imbalanced_Array.cpp	/^inline int get_max(int l, int r) {$/;"	f
+get_min	D._Imbalanced_Array.cpp	/^inline int get_min(int l, int r) {$/;"	f
+main	D._Imbalanced_Array.cpp	/^signed main()$/;"	f
+mn	D._Imbalanced_Array.cpp	/^int mn[N][LOGN], mx[N][LOGN], LOG[N], a[N];$/;"	v
+mp	D._Imbalanced_Array.cpp	/^gp_hash_table <pii, int, chash> mp;$/;"	v
+mx	D._Imbalanced_Array.cpp	/^int mn[N][LOGN], mx[N][LOGN], LOG[N], a[N];$/;"	v
+operator ()	D._Imbalanced_Array.cpp	/^  int operator () (pii x) const { return x.X*31 + x.Y; }$/;"	f	struct:chash
+ordered_set	D._Imbalanced_Array.cpp	/^ordered_set;$/;"	t	file:
+rv	D._Imbalanced_Array.cpp	19;"	d	file:
+seed	D._Imbalanced_Array.cpp	/^auto seed = chrono::high_resolution_clock::now().time_since_epoch().count();$/;"	v
+sz	D._Imbalanced_Array.cpp	17;"	d	file:
+un	D._Imbalanced_Array.cpp	23;"	d	file:
