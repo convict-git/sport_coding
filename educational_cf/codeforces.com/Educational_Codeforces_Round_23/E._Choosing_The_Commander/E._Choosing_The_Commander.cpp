@@ -98,7 +98,7 @@ void err(istream_iterator<string> it, T a, Args... args) {
 /*****************************************************************************/
 //Don’t practice until you get it right. Practice until you can’t get it wrong
 
-const int N = (int)1e5 + 10;
+const int N = (int)1e6 + 10;
 int idx = 0;
 int f[30 * N], pi[30 * N][2];
 

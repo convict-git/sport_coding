@@ -95,7 +95,6 @@ void err(istream_iterator<string> it, T a, Args... args) {
 /*}}}*/
 /*****************************************************************************/
 //Don’t practice until you get it right. Practice until you can’t get it wrong
-
 const int infi = (int)1e9;
 int n, k, m;
 vvi G, f;
@@ -128,6 +127,11 @@ int max_flow (int s, int t) { // O(V*E*E)
   int net_flow = 0;
   while ((c = flow(s, t, pi))) {
     net_flow += c;
+    for (int i = 0; i < n; ++i) {
+      vector <int> a(n);
+      for (int i = 0; i < n; ++i) cin >> a[i];
+    }
+
     int v = t, u = pi[v];
     while (u != -1) {
       f[u][v] -= c;
@@ -138,6 +142,7 @@ int max_flow (int s, int t) { // O(V*E*E)
   }
   return net_flow;
 }
+
 
 signed main() {
    IOS; PREC;

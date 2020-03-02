@@ -83,6 +83,7 @@ signed main() {
       }
    }
 
+
    function <bool(int)> iterate;
    iterate = [&] (int len) -> bool {
       int line = 0;

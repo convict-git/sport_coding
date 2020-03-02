@@ -101,8 +101,7 @@ void err(istream_iterator<string> it, T a, Args... args) {
 
 const int N = (int)1e6 + 10;
 int seg[4 * N], ez[4 * N], fl[4 * N];
-map <ll, int> mp;
-ll demap[N];
+vector <ll> demap;
 vector <pair <int, pll>> queries;
 vector <ll> qs{1};
 int n, q, idx = 0;
@@ -164,7 +163,6 @@ int bs (int x, int l, int r) {
 
 signed main() {
   IOS; PREC;
-  mp.clear();
   memset(seg, 0, sizeof(seg));
   memset(ez, 0, sizeof(ez));
   memset(fl, 0, sizeof(fl));
@@ -179,15 +177,9 @@ signed main() {
   }
   un(qs);
 
-  for (ll el : qs)  {
-    if (mp.find(el) == mp.end()) {
-      mp[el] = idx;
-      demap[idx] = el;
-      ++idx;
-    }
-  }
+  n = (int)qs.size();
+  for (ll el : qs) demap.push_back(el);
 
-  n = idx;
   for (auto el : queries) {
     int l = (int) (lower_bound(qs.begin(), qs.end(), el.Y.X) - qs.begin());
     int r = (int) (lower_bound(qs.begin(), qs.end(), el.Y.Y) - qs.begin());
@@ -201,9 +193,8 @@ signed main() {
 
     int res = bs (0, 0, n - 1);
     cout << demap[res] << '\n';
-    // show(0, 0, n-1); cerr << "\n";
+    /// show(0, n-1, 0); cerr << "\n";
   }
-
   return EXIT_SUCCESS;
 }
 

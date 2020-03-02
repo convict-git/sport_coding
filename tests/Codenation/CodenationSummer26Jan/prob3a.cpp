@@ -121,7 +121,8 @@ int calc (int i, int j, int last_taken) {
   if (s[i] - 'a' + 1 == last_taken)
     return dp[i][j][last_taken] = calc(i + 1, j, last_taken);
 
-  int prvj = lower_bound(g[s[i] - 'a'].begin(), g[s[i] - 'a'].end(), j) - g[s[i] - 'a'].begin();
+  int prvj = (int) (lower_bound(g[s[i] - 'a'].begin(), g[s[i] - 'a'].end(), j)
+    - g[s[i] - 'a'].begin());
 
   if (prvj == sz(g[s[i] - 'a']) || g[s[i] - 'a'][prvj] > j)
     --prvj;
@@ -133,7 +134,8 @@ int calc (int i, int j, int last_taken) {
   if (prvj == i)
     return dp[i][j][last_taken] = calc(i + 1, j, last_taken);
 
-  return dp[i][j][last_taken] = max(calc(i + 1, j, last_taken), 2 + calc(i + 1, prvj - 1, s[i] - 'a' + 1));
+  return dp[i][j][last_taken] =
+    max(calc(i + 1, j, last_taken), 2 + calc(i + 1, prvj - 1, s[i] - 'a' + 1));
 }
 
 signed main() {

@@ -54,6 +54,7 @@ void upd (int s, int e, int qs, int qe, int x) {
 }
 
 int A[maxn];
+
 int solve (int s, int e, int x) {
 	if (e < s) return 0;
 	int l = solve (s, e - 1, x + 1) + A[e]*x;

@@ -7,6 +7,7 @@
 using namespace std;
 
 class sqrt_root_decomp {
+  public:
    const int S = 1000;
    int n;
    vector <int> B, A;
