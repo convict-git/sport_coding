@@ -109,10 +109,8 @@ class KuchBhiDedo {
       cout << n << '\n';
       vector <int> isomorph = gvPerm(n);
 
-      /* // uncomment to have NODE VALUES
-         vector <T> nodeValue = gvVec(n, low, high);
-         for (T x : nodeValue) { cout << x << ' '; } cout << '\n';
-         */
+       vector <T> nodeValue = gvVec(n, low, high);
+      // for (T x : nodeValue) { cout << x << ' '; } cout << '\n';  // uncomment to have NODE VALUES
 
       vector <pair <int, int>> edges;
       for (int u = 1; u < n; ++u) {
