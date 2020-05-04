@@ -41,14 +41,15 @@ class Rand {
 
 template <class T = int>
 class KuchBhiDedo {
-  private:
-    static constexpr T __LOW = numeric_limits<T>::min();
-    static constexpr T __HIGH = numeric_limits<T>::max();
+  public:
+    static const T __LOW = numeric_limits<T>::min();
+    static const T __HIGH = numeric_limits<T>::max();
     Rand <T> rndT;
     Rand <int> rndInt;
 
-  public:
-    KuchBhiDedo() { srand(static_cast <unsigned>(time(0))); }
+    KuchBhiDedo() {
+      srand(static_cast <unsigned>(time(0)));
+    }
 
     vector <T> gvVec(int n, const T& low = __LOW, const T& high = __HIGH) {
       vector <T> v(n);
@@ -159,11 +160,11 @@ class KuchBhiDedo {
 
 signed main() {
   IOS; PREC;
-  KuchBhiDedo <float> k;
+  KuchBhiDedo <int> k;
   int tc = 1;
   cout << tc << '\n';
   while (tc--) {
-    k.gvDag(1, 1e2);
+    k.gvDag(1, 100, 100, 1000);
   }
   return EXIT_SUCCESS;
 }
