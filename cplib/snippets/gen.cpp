@@ -1,48 +1,7 @@
-
-#include      <bits/stdc++.h> /*{{{*/
-#include      <ext/pb_ds/assoc_container.hpp>
-#include      <ext/pb_ds/tree_policy.hpp>
+#include <bits/stdc++.h>
 using namespace std;
-using namespace __gnu_pbds;
-
-#ifndef CONVICTION
-#pragma GCC       optimize ("Ofast")
-#pragma GCC       optimize ("unroll-loops")
-#pragma GCC       target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")
-#endif
-
 #define IOS       ios_base::sync_with_stdio(false); cin.tie (nullptr)
 #define PREC      cout.precision (10); cout << fixed
-#define X         first
-#define Y         second
-#define sz(x)     (int)x.size()
-#define fr(i,x,y) for (int i = (int)x; i <= (int)y; ++i)
-#define rv(i,x,y) for (int i = (int)x; i >= (int)y; --i)
-#define bcnt(x)   __builtin_popcount(x)
-#define bcntll(x) __builtin_popcountll(x)
-#define bg(x)     " [ " << #x << " : " << (x) << " ] "
-#define un(x)     sort(x.begin(), x.end()), \
-  x.erase(unique(x.begin(), x.end()), x.end())
-using   ll  =     long long;
-using   ull =     unsigned long long;
-using   ff  =     long double;
-using   pii =     pair<int,int>;
-using   pil =     pair<int,ll>;
-using   pll =     pair<ll,ll>;
-using   vi  =     vector <int>;
-using   vl  =     vector<ll>;
-using   vvi =     vector <vi>;
-using   vvl =     vector <vl>;
-using   vp  =     vector <pii>;
-using   vvp =     vector <vp>;
-typedef tree
-< int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update>
-ordered_set;
-
-struct chash {
-  int operator () (pii x) const { return x.X*31 + x.Y; }
-};
-gp_hash_table <pii, int, chash> gmp;
 
 #if __cplusplus > 201103L
 seed_seq seq{
@@ -51,67 +10,160 @@ seed_seq seq{
     (uint64_t) __builtin_ia32_rdtsc(),
     (uint64_t) (uintptr_t) make_unique<char>().get()
 };
-mt19937 rng(seq); //uniform_int_distribution<int> (l, h)(rng); //[low, high]
+mt19937 rng(seq);
 #else
 auto seed = chrono::high_resolution_clock::now().time_since_epoch().count();
 mt19937 rng(seed);
 #endif
 
-#define debug(args...) { \
-  /* WARNING : do NOT compile this debug func calls with following flags: // \
-   * // -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -D_FORTIFY_SOURCE=2*/ \
-  string _s = #args; replace(_s.begin(), _s.end(), ',', ' ');\
-  stringstream _ss(_s); \
-  istream_iterator<string> _it(_ss); err(_it, args); \
-}
-void err(istream_iterator<string> it) {
-  it->empty(); cerr << " (Line : " << __LINE__ << ")" << '\n';
-}
-template<typename T, typename... Args>
-void err(istream_iterator<string> it, T a, Args... args) {
-  cerr << fixed << setprecision(15)
-    << " [ " <<  *it << " : " << a  << " ] "<< ' ';
-  err(++it, args...);
-}
-//         __                                           __
-//        (**)                                         (**)
-//        IIII                                         IIII
-//        ####                                         ####
-//        HHHH     Madness comes, and madness goes     HHHH
-//        HHHH    An insane place, with insane moves   HHHH
-//        ####   Battles without, for battles within   ####
-//     ___IIII___        Where evil lives,          ___IIII___
-//  .-`_._"**"_._`-.      and evil rules         .-`_._"**"_._`-.
-// |/``  .`\/`.  ``\|    Breaking them up,      |/``  .`\/`.  ``\|
-// `     }    {     '  just breaking them in    `     }    {     '
-//       ) () (  Quickest way out, quickest way wins  ) () (
-//       ( :: )      Never disclose, never betray     ( :: )
-//       | :: |   Cease to speak or cease to breath   | :: |
-//       | )( |        And when you kill a man,       | )( |
-//       | || |          you're a murderer            | || |
-//       | || |             Kill many                 | || |
-//       | || |        and you're a conqueror         | || |
-//       | || |        Kill them all ... Ooh..        | || |
-//       | || |           Oh you're a God!            | || |
-//       ( () )                       -Megadeth       ( () )
-//        \  /                                         \  /
-//         \/                                           \/
-/*}}}*/
-/*****************************************************************************/
-//Don’t practice until you get it right. Practice until you can’t get it wrong
-template <class T = int> T giveRand (const T& low, const T& high) {
-   auto seed = chrono::high_resolution_clock::now().time_since_epoch().count();
-   mt19937 mt_rand(seed);
-   return uniform_int_distribution<T> (low, high)(mt_rand); //closed interval [low, high]
-}
+template <class F = int>
+class Rand {
+  private:
+    static constexpr F __LOW = numeric_limits<F>::min();
+    static constexpr F __HIGH = numeric_limits<F>::max();
+
+  public:
+    inline F gvFineRand (const F& low = __LOW, const F& high = __HIGH) {
+      assert(low <= high);
+      return low + (rand() % (high - low + 1));
+    }
+
+    inline F gvUnifRand (const F& low = __LOW, const F& high = __HIGH) {
+      assert(low <= high);
+      return uniform_int_distribution <F> (low, high)(rng); //closed interval [low, high]
+    }
+
+    inline F gvRand (const F& low = __LOW, const F& high = __HIGH) {
+      if (is_floating_point<F>::value) return gvUnifRand (low, high);
+      else return gvFineRand (low, high);
+    }
+};
+
+template <class T = int>
+class KuchBhiDedo {
+  private:
+    static constexpr T __LOW = numeric_limits<T>::min();
+    static constexpr T __HIGH = numeric_limits<T>::max();
+    Rand <T> rndT;
+    Rand <int> rndInt;
+
+  public:
+    KuchBhiDedo() { srand(static_cast <unsigned>(time(0))); }
+
+    vector <T> gvVec(int n, const T& low = __LOW, const T& high = __HIGH) {
+      vector <T> v(n);
+      for_each(v.begin(), v.end(), [&] (T &x) -> void { x = rndT.gvRand (low, high); });
+      return v;
+    }
+
+    set <T> gvSet (int n, const T& low = __LOW, const T& high = __HIGH) {
+      assert(high - low + 1 >= n);
+      set <T> s;
+      while (static_cast <int> (s.size()) != n)
+        s.insert(rndT.gvRand (low, high));
+      return s;
+    }
+
+    vector <T> gvVecUnique (int n, const T& low = __LOW, const T& high = __HIGH) {
+      set <T> s = gvSet(n, low, high);
+      vector <T> v (s.begin(), s.end());
+      random_shuffle(v.begin(), v.end());
+      return v;
+    }
+
+    string gvString (int n, bool lowerCaseOnly = true) {
+      string s(n, 'x');
+      for (char &ch : s) {
+        if (lowerCaseOnly) ch = static_cast <char>('a' + rndInt.gvRand (0, 25));
+        else {
+          bool up = rndInt.gvRand (0, 1);
+          ch = static_cast <char> ((up ? 'A' : 'a') + rndInt.gvRand (0, 25));
+        }
+      }
+      return s;
+    }
+
+    vector <vector <T>> gvMat (int mnn, int mxn, const T& low = __LOW, const T& high = __HIGH) {
+      int n = rndInt.gvRand (mnn, mxn), m = rndInt.gvRand (mnn, mxn);
+      vector <vector <T>> mat(n, vector <T> (m));
+
+      cout << n << ' ' << m << '\n';
+      for (auto &row : mat) {
+        for (T& c : row)
+          cout << (c = rndT.gvRand (low, high)) << ' ';
+        cout << '\n';
+      }
+      return mat;
+    }
+
+    vector <int> gvPerm (int n) {
+      vector <int> pi(n);
+      iota(pi.begin(), pi.end(), 0);
+      random_shuffle(pi.begin(), pi.end());
+      return pi;
+    }
+
+    void gvTree (int mnn, int mxn, const T& low = __LOW, const T& high = __HIGH) {
+      int n = rndInt.gvRand (mnn, mxn);
+      cout << n << '\n';
+      vector <int> isomorph = gvPerm(n);
+
+      /* // uncomment to have NODE VALUES
+         vector <T> nodeValue = gvVec(n, low, high);
+         for (T x : nodeValue) { cout << x << ' '; } cout << '\n';
+         */
+
+      vector <pair <int, int>> edges;
+      for (int u = 1; u < n; ++u) {
+        bool swp = rndInt.gvRand (0, 1);
+        int pr = rndInt.gvRand (0, u - 1);
+        edges.push_back(swp ? make_pair(isomorph[u], isomorph[pr]) : make_pair(isomorph[pr], isomorph[u])); // undirected edge
+      }
+      random_shuffle(edges.begin(), edges.end());
+      for (auto e : edges) {
+        cout << e.first + 1 << ' ' << e.second + 1 <<
+          // ' ' << rndT.gvRand (low, high) <<  // uncomment to have EDGE VALUES
+          "\n";
+      }
+    }
+
+    void gvDag (int mnn, int mxn, const T& low = __LOW, const T& high = __HIGH) {
+      int n = rndInt.gvRand (mnn, mxn);
+      int m = 0;
+      vector <int> isomorph = gvPerm(n);
+      vector <pair <int, int>> edges;
+
+      for (int u = 0; u < n - 1; ++u) {
+        int remVer = n - 1 - u;
+        int k = rndInt.gvRand (0, remVer);
+        m += k;
+
+        set <int> neigh = gvSet(k, u + 1, n - 1);
+        for (int v : neigh)
+          edges.push_back(make_pair(isomorph[u], isomorph[v])); // directed edge
+      }
+      random_shuffle(edges.begin(), edges.end());
+
+      cout << n << ' ' << m << '\n';
+
+       vector <T> nodeValue = gvVec(n, low, high);
+      // for (T x : nodeValue) { cout << x << ' '; } cout << '\n';  // uncomment to have NODE VALUES
+
+      for (auto e : edges) {
+        cout << e.first + 1 << ' ' << e.second + 1 <<
+          // ' ' << rndT.gvRand (low, high) <<  // uncomment to have EDGE VALUES
+          "\n";
+      }
+    }
+};
 
 signed main() {
   IOS; PREC;
-
-  string s = "";
-  int M = 1e5;
-  while (M--) cout << char('a' + giveRand(0, 25));
+  KuchBhiDedo <float> k;
+  int tc = 1;
+  cout << tc << '\n';
+  while (tc--) {
+    k.gvDag(1, 1e2);
+  }
   return EXIT_SUCCESS;
 }
-
-
