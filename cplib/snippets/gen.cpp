@@ -23,17 +23,20 @@ class Rand {
     static constexpr F __HIGH = numeric_limits<F>::max();
 
   public:
-    inline F gvFineRand (const F& low = __LOW, const F& high = __HIGH) {
+
+    Rand() { srand(static_cast <unsigned>(time(0))); }
+
+    F gvFineRand (const F& low = __LOW, const F& high = __HIGH) {
       assert(low <= high);
       return low + (rand() % (high - low + 1));
     }
 
-    inline F gvUnifRand (const F& low = __LOW, const F& high = __HIGH) {
+    F gvUnifRand (const F& low = __LOW, const F& high = __HIGH) {
       assert(low <= high);
       return uniform_int_distribution <F> (low, high)(rng); //closed interval [low, high]
     }
 
-    inline F gvRand (const F& low = __LOW, const F& high = __HIGH) {
+    F gvRand (const F& low = __LOW, const F& high = __HIGH) {
       if (is_floating_point<F>::value) return gvUnifRand (low, high);
       else return gvFineRand (low, high);
     }
@@ -46,10 +49,6 @@ class KuchBhiDedo {
     static constexpr T __HIGH = numeric_limits<T>::max();
     Rand <T> rndT;
     Rand <int> rndInt;
-
-    KuchBhiDedo() {
-      srand(static_cast <unsigned>(time(0)));
-    }
 
     vector <T> gvVec(int n, const T& low = __LOW, const T& high = __HIGH) {
       vector <T> v(n);
