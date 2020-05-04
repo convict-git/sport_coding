@@ -2,18 +2,24 @@
 using namespace std;
 
 #define T(x) (1 << (x))
-template <typename F, typename T = int>
+template <typename F = int>
 class sparse_table {
+  class binop {
+    public:
+      F operator () (const F &x, const F &y) {
+        return max(x, y);
+      }
+  };
   public:
     static const int D = 21;
     int n;
-    vector <vector <T>> dp, who;
+    vector <vector <F>> dp, who;
     vector <int> LOG;
 
-    sparse_table (const vector <T> &v) {
+    sparse_table (const vector <F> &v) {
       n = static_cast <int> (v.size());
-      dp.assign(D + 1, vector <T> (n));
-      who.assign(D + 1, vector <T> (n));
+      dp.assign(D + 1, vector <F> (n));
+      who.assign(D + 1, vector <F> (n));
       LOG.assign(n + 1, 0);
 
       for (int i = 0; i < n; ++i)
@@ -23,8 +29,8 @@ class sparse_table {
       for (int k = 1; k <= D; ++k)
         for (int i = 0; i < n; ++i)
           if (i + T(k) - 1 < n) {
-            T lt = dp[k - 1][i], rt = dp[k - 1][i + T(k - 1)];
-            if (F()(lt, rt) == lt) { // max
+            F lt = dp[k - 1][i], rt = dp[k - 1][i + T(k - 1)];
+            if (binop(lt, rt) == lt) { // max or min
               who[k][i] = who[k - 1][i];
               dp[k][i] = lt;
             }
@@ -38,10 +44,10 @@ class sparse_table {
         LOG[i] = LOG[i / 2] + 1;
     }
 
-    pair <T, int> get (int l, int r) {
+    pair <F, int> get (int l, int r) {
       int k = LOG[r - l + 1];
-      T lt = dp[k][l], rt = dp[k][r - T(k) + 1];
-      return (F ()(lt, rt) == lt ? make_pair(who[k][l], lt) : make_pair(who[k][r - T(k) + 1], rt)); // max
+      F lt = dp[k][l], rt = dp[k][r - T(k) + 1];
+      return (binop(lt, rt) == lt ? make_pair(who[k][l], lt) : make_pair(who[k][r - T(k) + 1], rt)); // max or min
     }
 
     pair <int, int> get_range (int idx) {
@@ -59,12 +65,4 @@ class sparse_table {
 };
 #undef T
 
-template <typename T = int>
-class binop {
-  public:
-    T operator () (const T &x, const T &y) {
-      return max(x, y);
-    }
-};
-
-// sparse_table <binop <int>, int> ST(v);
+// sparse_table <int> ST(v); // or sparse_table ST(v); // or sparse_table <long long> ST(v);
