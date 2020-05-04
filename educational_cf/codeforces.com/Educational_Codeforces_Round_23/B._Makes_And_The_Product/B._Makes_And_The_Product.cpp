@@ -118,7 +118,7 @@ signed main() {
   y = (i-1) - x + 1;
   while (i < n && a[i] == a[x + y])
     ++i;
-  z = (i-1) - (x + y) + 1;
+  z = (i - 1) - (x + y) + 1;
   // debug(x, y, z);
 
   if (x == 1 && y == 1)
@@ -131,6 +131,5 @@ signed main() {
     cout << (1ll*x*(x-1)*(x-2))/(3*2) << '\n';
 
   return EXIT_SUCCESS;
-
 }
 

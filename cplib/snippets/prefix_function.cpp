@@ -1,10 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
-const int N = (int)2e6 + 10;
-int pi[N];
-int fsm[26][N];
 
-void pref_func (string &s) {
+vector <int> pref_func (string &s) { // O(|s|)
+  int n = (int)s.size();
+  vector <int> pi(n);
    pi[0] = 0;
    int sz = (int)s.size();
    for (int i = 1; i < sz; ++i) {
@@ -18,22 +17,23 @@ void pref_func (string &s) {
          ++len_j;
       pi[i] = len_j;
    }
+   return pi;
 }
 
-void calc_fsm(string t) {
-   t += '#';
-   int sz = (int)t.size();
-   pref_func(t);
-
-   for (int len = 0, j; len < sz; ++len) {
-      for (int ch = 0; ch < 26; ++ch) {
-         if (len > 0 && t[len] !=  char('a' + ch)) {
-            fsm[ch][len] = fsm[ch][pi[len - 1]];
-         }
-         else {
-            fsm[ch][len] = len + (t[len] == char('a' + ch));
-         }
-      }
-   }
+// each state represents prefix length
+// transition : length * char -> length
+vector <vector <int>> calc_fsm(string t) { // O(|s| * 26)
+  int n = (int)t.size();
+  t += '#';
+  vector <vector <int>> fsm(n + 1, vector <int> (26));
+  vector <int> pi = pref_func(t);
+  for (int len = 0; len <= n; ++len) {
+    for (int ch = 0; ch < 26; ++ch) {
+      if (len == 0 || t[len] == char('a' + ch))
+        fsm[len][ch] = len + (t[len] == char('a' + ch));
+      else
+        fsm[len][ch] = fsm[pi[len - 1]][ch];
+    }
+  }
+  return fsm;
 }
-

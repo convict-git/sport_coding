@@ -1,8 +1,7 @@
 #include      <bits/stdc++.h>
 #include      <ext/pb_ds/assoc_container.hpp>
 #include      <ext/pb_ds/tree_policy.hpp>
-using namespace std;
-using namespace __gnu_pbds;
+using namespace std; using namespace __gnu_pbds;
 #pragma GCC   optimize ("Ofast")
 #pragma GCC   optimize ("unroll-loops")
 #pragma GCC   target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")

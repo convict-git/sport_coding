@@ -89,7 +89,6 @@ void dfs(int u, vector <bool> &vis) {
   vis[u] = true;
   int nchild = (int)ed[u].size();
   vector <vector <int>> pref(nchild, vector <int>(q+1));
-
   for (auto v_pair : ed[u]) {
     int v = v_pair.x;
     if (!vis[v])

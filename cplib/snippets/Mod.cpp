@@ -1,7 +1,8 @@
+#WARNING Is it 998244353?
 const int Mod = (int)1e9 + 7;
-inline int add (int x, int y) { return (x + y) % Mod; }
-inline int sub (int x, int y) { return (x - y + Mod) % Mod; }
-inline int mul (int x, int y) { return (int) (1ll*x*y % Mod); }
+inline int add (int x, int y) { return (1ll * x + y + (Mod << 1)) % Mod; }
+inline int sub (int x, int y) { return (1ll * x - y + (Mod << 1)) % Mod; }
+inline int mul (int x, int y) { return (int) (1ll*(x + Mod) * (y + Mod) % Mod); }
 inline int pow (int x, int y) {
   int res = 1;
   while (y) {

@@ -95,50 +95,51 @@ void err(istream_iterator<string> it, T a, Args... args) {
 /*}}}*/
 /*****************************************************************************/
 //Don’t practice until you get it right. Practice until you can’t get it wrong
+//
 
-inline bool check (int x, int y) {
-  return (abs (x - y) == 1 || abs(x - y) % 7 == 0);
-}
+const int N = (int)5e3 + 10, M = (int)1e5 + 10;
+int n;
+int ar[N], dp[N][N];
+int dpmod[7], dpnum[M];
 
 signed main() {
    IOS; PREC;
 
-   int n;
+   memset(dp, 0, sizeof(dp));
+   memset(dpmod, 0, sizeof(dpmod));
+   memset(dpnum, 0, sizeof(dpnum));
+
    cin >> n;
-   vi a(n);
-   fr (i, 0, n-1) cin >> a[i];
+   for (int i = 1; i <= n; ++i) {
+     cin >> ar[i];
+   }
 
-   vi pref(n, 1), suff(n, 1), pmax(n), smax(n);
+   int mx = 0;
+   for (int j = 0; j <= n; ++j) {
+     for (int i = 1; i <= n; ++i) {
+       dpmod[ar[i] % 7] = 0;
+       dpnum[ar[i] - 1] = dpnum[ar[i] + 1] = 0;
+     }
+     for (int i = j + 1; i <= n; ++i) {
+       /*
+       for (int k = 0; k < i; ++k) {
+         if (k == 0 || abs(ar[i] - ar[k]) ==  1 || ar[i] % 7 == ar[k] % 7) {
+           if (k > j) dp[i][j] = max(dp[k][j] + 1, dp[i][j]);
+           else dp[i][j] = max(dp[j][k] + 1, dp[i][j]);
+         }
+       }
+       mx = max(mx, dp[i][j]);
+       */
 
-   fr (i, 1, n-1) {
-     if (check(a[i], a[i-1])) {
-       pref[i] = pref[i-1] + 1;
+       // debug(i, j, dp[i][j], dpmod[ar[i]%7], dpnum[ar[i]-1], dpnum[ar[i]+1], dp[j][0]);
+       dp[i][j] = max({dpmod[ar[i] % 7], dpnum[ar[i] - 1], dpnum[ar[i] + 1], dp[j][0]}) + 1;
+       dpmod[ar[i] % 7] = max(dpmod[ar[i] % 7], dp[i][j]);
+       dpnum[ar[i]] = max(dpnum[ar[i]], dp[i][j]);
+       // cerr << "dp(" << i << ", " << j << ") = " << dp[i][j] << '\n';
+       mx = max(mx, dp[i][j]);
      }
    }
-
-   rv (i, n-2, 0) {
-     if (check(a[i], a[i+1])) {
-       suff[i] = suff[i+1] + 1;
-     }
-   }
-
-   fr (i, 1, n-1) {
-     pmax[i] = max(pmax[i-1], pref[i]);
-   }
-
-   rv (i, n-2, 0) {
-     smax[i] = max(smax[i-1], suff[i]);
-   }
-
-   fr (i, 0, n-1) {
-     debug(a[i], pref[i], suff[i], pmax[i], smax[i]);
-   }
-
-   int ans = 0;
-   fr (i, 1, n-1) {
-     ans = max(ans, pmax[i-1] + smax[i]);
-   }
-   cout << ans << '\n';
+   cout << mx << '\n';
 
 
    return EXIT_SUCCESS;

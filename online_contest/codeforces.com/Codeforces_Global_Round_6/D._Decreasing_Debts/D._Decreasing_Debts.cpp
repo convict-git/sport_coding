@@ -117,7 +117,6 @@ signed main() {
    ll ans = 0;
    fr(i, 0, n-1) ans += abs(bal[i].X);
    ans /= 2;
-//    debug(ans);
 
    sort (bal.begin(), bal.end());
    int p = 0, q = sz(bal)-1;

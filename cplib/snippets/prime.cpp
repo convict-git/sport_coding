@@ -76,3 +76,5 @@ vector <vector <int>> divisors(int n) {
    return div;
 }
 
+#WARNING call sieve
+

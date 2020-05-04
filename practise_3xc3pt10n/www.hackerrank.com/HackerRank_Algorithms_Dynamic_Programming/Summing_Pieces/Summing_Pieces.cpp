@@ -100,6 +100,14 @@ void err(istream_iterator<string> it, T a, Args... args) {
 
 signed main() {
   IOS; PREC;
+  int n;
+  cin >> n;
+  vector <int> ar(n);
+  for (int i = 0; i < n; ++i)
+    cin >> ar[i];
+
+
+
 
   return EXIT_SUCCESS;
 }

@@ -102,44 +102,7 @@ void err(istream_iterator<string> it, T a, Args... args) {
 signed main() {
   IOS; PREC;
 
-  int n, m;
-  cin >> n >> m;
-  vector <vector <int>> g(n, vector <int> ());
-  vector <int> indeg(n);
-  set <pair <int, int>, greater <pair <int, int>>> s;
-
-  for (int i = 0; i < m; ++i) {
-    int u, v;
-    cin >> u >> v;
-    --u, --v;
-    g[v].push_back(u);
-    ++indeg[u];
-  }
-
-  vector <int> vis(n, false), label(n);
-  for (int i = 0; i < n; ++i) {
-    s.insert(make_pair(-indeg[i], i));
-  }
-  int idx = n;
-
-  while (!s.empty()) {
-    auto el = s.begin();
-    s.erase(s.begin());
-    int u = el->second;
-    vis[u] = true;
-    label[u] = idx--;
-
-    for (int v : g[u]) if (!vis[v]) {
-      s.erase(make_pair(-indeg[v], v));
-      ++indeg[v];
-      s.insert(make_pair(-indeg[v], v));
-    }
-  }
-
-  for (int i = 0; i < n; ++i) {
-    cout << label[i] << ' ';
-  }
-  cout << '\n';
   return EXIT_SUCCESS;
 }
+
 

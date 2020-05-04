@@ -106,7 +106,7 @@ signed main() {
   string s;
   cin >> s;
 
-  int cur = 0, res = 0, sep = false;
+  int cur = 0, res = 0;
   for (int i = 0; i <= n; ++i) {
     if (i == n) {
       res = 10 * res + cur;

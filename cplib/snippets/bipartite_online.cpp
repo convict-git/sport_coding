@@ -136,7 +136,7 @@ void union_edge (int u, int v) {
     }
     pi[rv] = ru;
     parity[rv] = pu ^ pv ^ 1;
-    bipartite[ru] &= bipartite[rv]; // finally is this component bipartite 
+    bipartite[ru] &= bipartite[rv]; // finally is this component bipartite
     if (rnk[ru] == rnk[rv])
       ++rnk[ru];
   }

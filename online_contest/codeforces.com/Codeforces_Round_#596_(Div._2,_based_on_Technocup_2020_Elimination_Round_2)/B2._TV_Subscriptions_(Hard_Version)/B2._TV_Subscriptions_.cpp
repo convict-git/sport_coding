@@ -111,7 +111,5 @@ signed main() {
       fr(i, (n - 1) - (d - 1), n - 1) fq[a[i]] = 0;
       cout << mn << '\n';
    }
-
-
    return EXIT_SUCCESS;
 }
