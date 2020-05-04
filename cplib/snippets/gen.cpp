@@ -42,8 +42,8 @@ class Rand {
 template <class T = int>
 class KuchBhiDedo {
   public:
-    static const T __LOW = numeric_limits<T>::min();
-    static const T __HIGH = numeric_limits<T>::max();
+    static constexpr T __LOW = numeric_limits<T>::min();
+    static constexpr T __HIGH = numeric_limits<T>::max();
     Rand <T> rndT;
     Rand <int> rndInt;
 
