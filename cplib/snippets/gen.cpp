@@ -162,6 +162,7 @@ signed main() {
   cout << tc << '\n';
   while (tc--) {
     k.gvDag(1, 100, 100, 1000);
+    // k.gvDag(1, 100); // Uncomment this to see the compiler complaining TODO
   }
   return EXIT_SUCCESS;
 }
