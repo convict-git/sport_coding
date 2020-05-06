@@ -146,15 +146,6 @@ std::istream& operator>>(std::istream& stream, Modular<T>& number) {
   return stream;
 }
 
+// constexpr int md = 998244353;
 constexpr int md = (int) 1e9 + 7;
 using Int = Modular<std::integral_constant<decay<decltype(md)>::type, md>>;
-#define int Int
-
-
-signed main() {
-  int n;
-  cin >> n;
-  int ar[n]:
-
-  return EXIT_SUCCESS;
-}
