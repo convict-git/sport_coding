@@ -2,24 +2,26 @@
 using namespace std;
 
 #define T(x) (1 << (x))
-template <typename F = int>
+template <typename __S = int>
+class binop {
+  public:
+    __S operator () (const __S &x, const __S &y) {
+      return max(x, y);
+    }
+};
+
+template <class __F = long long, class __B = binop <__F>>
 class sparse_table {
-  class binop {
-    public:
-      F operator () (const F &x, const F &y) {
-        return max(x, y);
-      }
-  };
   public:
     static const int D = 21;
     int n;
-    vector <vector <F>> dp, who;
+    vector <vector <__F>> dp, who;
     vector <int> LOG;
 
-    sparse_table (const vector <F> &v) {
+    sparse_table (const vector <__F> &v) {
       n = static_cast <int> (v.size());
-      dp.assign(D + 1, vector <F> (n));
-      who.assign(D + 1, vector <F> (n));
+      dp.assign(D + 1, vector <__F> (n));
+      who.assign(D + 1, vector <__F> (n));
       LOG.assign(n + 1, 0);
 
       for (int i = 0; i < n; ++i)
@@ -29,8 +31,8 @@ class sparse_table {
       for (int k = 1; k <= D; ++k)
         for (int i = 0; i < n; ++i)
           if (i + T(k) - 1 < n) {
-            F lt = dp[k - 1][i], rt = dp[k - 1][i + T(k - 1)];
-            if (binop(lt, rt) == lt) { // max or min
+            __F lt = dp[k - 1][i], rt = dp[k - 1][i + T(k - 1)];
+            if (__B() (lt, rt) == lt) { // max or min
               who[k][i] = who[k - 1][i];
               dp[k][i] = lt;
             }
@@ -44,10 +46,10 @@ class sparse_table {
         LOG[i] = LOG[i / 2] + 1;
     }
 
-    pair <F, int> get (int l, int r) {
+    pair <__F, int> get (int l, int r) {
       int k = LOG[r - l + 1];
-      F lt = dp[k][l], rt = dp[k][r - T(k) + 1];
-      return (binop(lt, rt) == lt ? make_pair(who[k][l], lt) : make_pair(who[k][r - T(k) + 1], rt)); // max or min
+      __F lt = dp[k][l], rt = dp[k][r - T(k) + 1];
+      return (__B () (lt, rt) == lt ? make_pair(who[k][l], lt) : make_pair(who[k][r - T(k) + 1], rt)); // max or min
     }
 
     pair <int, int> get_range (int idx) {
