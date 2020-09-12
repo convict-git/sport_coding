@@ -15,16 +15,7 @@ struct UFDS {
    }
 
    int find_set(int u) {
-      int ru = u;
-      while (ru != rep[ru])
-         ru = rep[ru];
-
-      while (u != rep[u]) {
-         int tmp = rep[u];
-         rep[u] = ru;
-         u = tmp;
-      }
-      return ru;
+      return u == rep[u] ? u : rep[u] = find_set(rep[u]);
    }
 
    void merge_set(int u, int v) {
