@@ -15,7 +15,7 @@ inline int pw (int x, long long y) {
    }
    return res;
 }
-inline int inv (int x) { return pw(x, 1ll*Mod - 2); }
+inline int inv (int x) { return pw(x, Mod - 2); }
 inline int dv (int x, int y) { return mul(x, inv(y)); }
 
 const int MAXFAC = (int)2e6 + 10;
