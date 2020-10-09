@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 struct UFDS {
-   static const int N = (int)1e6 + 10;
+   static const int N = (int)2e6 + 10;
    UFDS (int n_) {
       n = n_;
       make_set();
