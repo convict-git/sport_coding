@@ -117,18 +117,18 @@ void solve() {
     cin >> ar[i];
 
   vector <int> F, S;
-  int __n = n/2;
-  for (int mask = 0; mask < (1 << __n); ++mask) {
+  int nn = n/2;
+  for (int mask = 0; mask < (1 << nn); ++mask) {
     int res = 0;
-    for (int i = 0; i < __n; ++i)
+    for (int i = 0; i < nn; ++i)
       if (mask & (1 << i)) res += ar[i], res %= m;
     F.push_back(res);
   }
 
-  for (int mask = 0; mask < (1 << (n - __n)); ++mask) {
+  for (int mask = 0; mask < (1 << (n - nn)); ++mask) {
     int res = 0;
-    for (int i = __n; i < n; ++i)
-      if (mask & (1 << (i - __n))) res += ar[i], res %= m;
+    for (int i = nn; i < n; ++i)
+      if (mask & (1 << (i - nn))) res += ar[i], res %= m;
     S.push_back(res);
   }
 
