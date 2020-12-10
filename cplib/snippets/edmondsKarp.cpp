@@ -1,18 +1,20 @@
 #include <bits/stdc++.h>
 using namespace std;
+using pii = pair <int, int>
 vector < vector <int> > Adj;
 vector <pii> cutEdges;
 bool inS[N];
 int Par[N];
-int cap[N][N], fcap[N][N];
+int cap[N][N], f[N][N];
 int n, m;
+const int infi = 1e9;
 
 void init () {
    assert(n);
    Adj.assign(n, vector <int> ());
    for (int i = 0; i < n; ++i)
       for (int j = 0; j < n; ++j)
-         fcap[i][j] = cap[i][j] = 0;
+         f[i][j] = cap[i][j] = 0;
    cutEdges.clear();
    fill (inS, inS + n, false);
 }
@@ -30,9 +32,9 @@ int bfs (const int &s, const int &t) {
       int u = tmp.x, flow = tmp.y;
 
       for (int v : Adj[u]) {
-         if (Par[v] == -1 && fcap[u][v]) {
+         if (Par[v] == -1 && f[u][v]) {
             Par[v] = u;
-            int newFlow = min(flow, fcap[u][v]);
+            int newFlow = min(flow, f[u][v]);
             if (v == t) {
                return newFlow;
             }
@@ -46,7 +48,7 @@ int bfs (const int &s, const int &t) {
 int edmondsKarpMaxFlow(const int &s, const int &t, const int &K = infi) {
    for (int i = 0; i < n; ++i)
       for (int j = 0; j < n; ++j)
-         fcap[i][j] = cap[i][j];
+         f[i][j] = cap[i][j];
 
    int flow = 0;
    int newFlow;
@@ -57,8 +59,8 @@ int edmondsKarpMaxFlow(const int &s, const int &t, const int &K = infi) {
       int cur = t;
       while (cur != s) {
          int prv = Par[cur];
-         fcap[prv][cur] -= newFlow;
-         fcap[cur][prv] += newFlow;
+         f[prv][cur] -= newFlow;
+         f[cur][prv] += newFlow;
          cur = prv;
       }
    }
@@ -80,7 +82,7 @@ void findCutEdges() {
       if (!inS[u]) continue;
       for (int v : Adj[u]) {
          if (inS[v]) continue;
-         if (fcap[u][v] == 0) cutEdges.push_back(pii(u, v));
+         if (f[u][v] == 0) cutEdges.push_back(pii(u, v));
       }
    }
 }

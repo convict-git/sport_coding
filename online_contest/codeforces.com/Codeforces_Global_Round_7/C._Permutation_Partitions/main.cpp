@@ -146,10 +146,5 @@ signed main() {
     res = mul(res, marks[i + 1] - 1 - marks[i] + 1);
   }
   cout << sm << ' ' << res << '\n';
-
-
-
   return EXIT_SUCCESS;
 }
-
-

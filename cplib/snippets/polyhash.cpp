@@ -5,6 +5,8 @@ using namespace std;
 #warning "Optimization flags kill polyhash, use it wisely!"
 using ull = unsigned long long;
 using Hash = pair <int, ull>;
+
+#if __cplusplus > 201103L
 seed_seq seq{
   (uint64_t) chrono::duration_cast<chrono::nanoseconds>
     (chrono::high_resolution_clock::now().time_since_epoch()).count(),
@@ -12,6 +14,10 @@ seed_seq seq{
     (uint64_t) (uintptr_t) make_unique<char>().get()
 };
 mt19937 rng(seq); //uniform_int_distribution<int> (l, h)(rng); //[low, high]
+#else
+auto seed = chrono::high_resolution_clock::now().time_since_epoch().count();
+mt19937 rng(seed);
+#endif
 
 class polyhash {
   public:

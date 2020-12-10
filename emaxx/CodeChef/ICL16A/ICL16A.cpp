@@ -70,7 +70,6 @@ int kruskals () {
       MST.push_back(e);
       ++cnt;
    }
-
    assert (cnt == n - 1);
    return cost;
 }

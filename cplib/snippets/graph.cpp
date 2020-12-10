@@ -1,11 +1,12 @@
 #include <bits/stdc++.h>
+#include <vector>
 using namespace std;
 
+// @Brief : GRAPH library contains bellman ford, bfs, connected components, dijkstra, bridges,
+// // // // // // articulation points, spfa, kruskals, topological sort . . .
+// This library is created by Priyanshu Shrivastav (mr.convict)
+// https://github.com/convict-git/sport_coding/blob/master/cplib/snippets/graph.cpp
 class graph { /*{{{*/
-   // GRAPH library contains bellman ford, bfs, connected components, dijkstra, bridges,
-   // // // // // // articulation points, spfa, kruskals, topological sort . . .
-   // This library is created by Priyanshu Shrivastav (mr.convict)
-   // https://github.com/convict-git/sport_coding/blob/master/cplib/snippets/graph.cpp
    public:
       static const int N = (int)2e5 + 10;
       static const int inf_int = (int)1e9;
@@ -440,3 +441,11 @@ class graph { /*{{{*/
 };
 /* -------------------------------------------------------------------------- */
  /*}}}*/
+
+signed main() {
+   int N;
+   cin >> N;
+   std::vector <int> ar(N);
+   for_each(ar.begin(), ar.end(), [&] (int &p) { cin >> p; });
+   sort(ar.begin(), ar.end());
+}

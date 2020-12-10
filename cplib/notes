@@ -1,37 +1,45 @@
-# INDEX
-* priority_queue in C++ STL
+Recently I've seen a lot of applications of the priority queue. But using priority queue in C++ is kind of tricky if you are unaware of the internals.
+I thought I should share my notes on that, it might help someone.
 
-##################################################################################################
-
-///* PRIORITY_QUEUE IN C++ STL *///
-/*
+This is how it looks:
+```c++
+/* PRIORITY_QUEUE IN C++ STL */
 #include <queue>
 template <class T, class Container = vector<T>,
   class Compare = less<typename Container::value_type> > class priority_queue
-  (first iterator of container, last iterator of container, Compare class object);
+(first iterator of container, last iterator of container, Compare class object);
+```
 
-# priority_queue's first element is the greatest element according to the weak ordering criteria
-# Default parameters for Container (vector) and Compare (less)
-# How to use the Compare parameter?
-# # # i) Write a class and overload operator() for it. Then you can simply pass this class name as Compare.
-# # # ii) Use a comparator function and use polymorphic function wrapping with std::function
-# # # iii) Use a comparator function and use decltype
-# Priority_queue has a constructor which takes [first, last) iterators and the comparison object
+**Some points:**
+i) Priority_queue's first element is the greatest element according to the weak ordering criteria. Read about weak ordering here : https://medium.com/@shiansu/strict-weak-ordering-and-the-c-stl-f7dcfa4d4e07
+ii) Default parameters for Container is `std::vector` and Compare is `std::less`
+iii) Priority_queue has a constructor which takes [first, last) iterators and the comparison object
+
+**Different ways to use the Compare parameter?**
+i) Write a class and overload `operator()` for it. Then you can simply pass this class name as Compare.
+ii) Use a comparator function and use polymorphic function wrapping with `std::function`
+iii) Use a comparator function and use `decltype`
+
 Below are some examples for priority_queue for user defined data-type
-NOTE: You can use the same techinique to design custom comparator for sets and other STLs
-*/
+**NOTE:** You can use the same techinique to design custom comparator for `std::set` and other STLs
 
+```c++
+
+/* Point is a user-defined datatype to capture 2D point with integer coordinates (x,y) */
 struct Point {
 	int x, y;
-	friend ostream& operator << (ostream &os, const Point &p1) {
+	friend ostream& operator << (ostream &os, const Point &p1) { /* Ignore this */
 		os << p1.x << ' ' << p1.y;
 		return os;
 	}
 };
 
+/* This is the Type (i) by create a cmp class and overloading `()` operator.
+   Use of flag is to give more flexibility */
 class cmp {
 	public:
-		bool flag; cmp (bool f=false) : flag(f){}
+		bool flag;
+      cmp (bool f=false) : flag(f){}
 
 		bool operator ()(const Point& p1, const Point& p2) {
 			if (flag) return p1.x > p2.x || (p1.x == p2.x && p1.y > p2.y);
@@ -39,21 +47,33 @@ class cmp {
 		}
 };
 
+/* Here are few ways to use the type i) */
+// Using the constructor of cmp with the default value of flag
+priority_queue <Point, vector <Point>, cmp> Q;
+// OR
+// Using the constructor of cmp with providing value of flag
+priority_queue <Point, vector <Point>, cmp> Q (cmp(true));
+// OR
+// Using iii) of Some points, use std::vector <Point>::iterator and providing value of flag to cmp
+priority_queue <Point, vector <Point>, cmp> Q(V.begin(), V.end(), cmp(true));
+```
+
+```c++
+
+/* This is a standard comparator function which we will use for Type (ii) and Type (iii)
+   instead the cmp class in Type (i) */
 bool compar (const Point& p1, const Point& p2) {
 	return p1.x > p2.x || (p1.x == p2.x && p1.y > p2.y);
 }
 
-priority_queue <Point, vector <Point>, cmp> Q;
-priority_queue <Point, vector <Point>, cmp> Q (cmp(true));
-priority_queue <Point, vector <Point>, cmp> Q(V.begin(), V.end(), cmp(true)); //from a vector using make_heap algorithm
-
+// Type ii)  Use a comparator function and use polymorphic function wrapping with std::function
 priority_queue <Point, vector <Point>, function<bool(Point, Point)> > Q(compar);
+// Type iii) Use a comparator function and use decltype
 priority_queue <Point, vector <Point>, decltype(&compar) > Q(compar);
+```
 
-
+For std classes (datatypes) like `std::pair`, you don't need to do all this as they have `std::greater` and `std::less` defined for them already.
+```c++
 using pii = pair <int, int>;
 priority_queue <pii, vector <pii>, greater<pii> > Q;
-
-##################################################################################################
-
-# Problem based on prefix suffix sum dp on tree - SPOJ - EAGLE1
+```

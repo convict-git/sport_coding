@@ -109,6 +109,72 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 /*****************************************************************************/
 //Don’t practice until you get it right. Practice until you can’t get it wrong
 
+#define T(x) (1 << (x))
+template <typename __S = int>
+class binop {
+  public:
+    __S operator () (const __S &x, const __S &y) {
+      return min(x, y);
+    }
+};
+
+template <class __F = long long, class __B = binop <__F>>
+class sparse_table {
+  public:
+    static const int D = 21;
+    int n;
+    vector <vector <__F>> dp, who;
+    vector <int> LOG;
+
+    sparse_table (const vector <__F> &v) {
+      n = static_cast <int> (v.size());
+      dp.assign(D + 1, vector <__F> (n));
+      who.assign(D + 1, vector <__F> (n));
+      LOG.assign(n + 1, 0);
+
+      for (int i = 0; i < n; ++i)
+        dp[0][i] = v[i];
+      iota(who[0].begin(), who[0].end(), 0);
+
+      for (int k = 1; k <= D; ++k)
+        for (int i = 0; i < n; ++i)
+          if (i + T(k) - 1 < n) {
+            __F lt = dp[k - 1][i], rt = dp[k - 1][i + T(k - 1)];
+            if (__B() (lt, rt) == lt) { // max or min
+              who[k][i] = who[k - 1][i];
+              dp[k][i] = lt;
+            }
+            else {
+              who[k][i] = who[k - 1][i + T(k - 1)];
+              dp[k][i] = rt;
+            }
+          }
+
+      for (int i = 2; i <= n; ++i)
+        LOG[i] = LOG[i / 2] + 1;
+    }
+
+    pair <__F, int> get (int l, int r) {
+      int k = LOG[r - l + 1];
+      __F lt = dp[k][l], rt = dp[k][r - T(k) + 1];
+      return (__B () (lt, rt) == lt ? make_pair(who[k][l], lt) : make_pair(who[k][r - T(k) + 1], rt)); // max or min
+    }
+
+    pair <int, int> get_range (int idx) {
+      int L = idx, R = idx;
+      for (int k = D; k >= 0; --k)
+        if (R + T(k) - 1 < n && dp[k][R] >= dp[0][idx])
+          R += T(k);
+      --R;
+      for (int k = D; k >= 0; --k)
+        if (L - T(k) + 1 >= 0 && dp[k][L - T(k) + 1] >= dp[0][idx])
+          L -= T(k);
+      ++L;
+      return make_pair(L, R);
+    }
+};
+#undef T
+
 struct suffix_array {
   const int Log = 20;
 
@@ -187,7 +253,6 @@ struct suffix_array {
 
 #define T(x) (1 << (x))
 void solve() {
-  const int D = 20;
   int n;
   string s, idx;
   cin >> n >> s >> idx;
@@ -212,35 +277,14 @@ void solve() {
   for (int i = 0; i < sz - 1; ++i) {
     lcp[i] = S.lcp(use[i], use[i + 1]); } // debug(use, lcp);
 
-  vector <vector <int>> dp(sz - 1, vector <int> (D + 1));
-  {
-    for (int i = 0; i < sz - 1; ++i)
-      dp[i][0] = lcp[i];
-    for (int k = 1; k <= D; ++k) {
-      for (int i = 0; i < sz - 1; ++i) {
-        if (i + T(k) - 1 < sz - 1)
-          dp[i][k] = min(dp[i][k - 1], dp[i + T(k - 1)][k - 1]);
-      }
-    }
-  }
-
+  sparse_table <int, binop<int>> ST(lcp);
   long long mx = 0;
   {
     for (int i = 0; i < sz - 1; ++i) {
-      if (dp[i][0] == 0) continue;
-      int L = i, R = i;
-      for (int k = D; k >= 0; --k) {
-        if (R + T(k) - 1 < sz - 1 && dp[R][k] >= dp[i][0])
-          R += T(k);
-      }
-      --R;
-      for (int k = D; k >= 0; --k) {
-        if (L - T(k) + 1 >= 0 && dp[L - T(k) + 1][k] >= dp[i][0])
-          L -= T(k);
-      }
-      ++L;
-      // debug(i, L, R, dp[i][0]);
-      mx = max(mx, 1ll * (R - L + 2) * dp[i][0]);
+      if (lcp[i] == 0) continue;
+      pair <int, int> rg = ST.get_range(i);
+      int L = rg.first, R = rg.second;
+      mx = max(mx, 1ll * (R - L + 2) * lcp[i]);
     }
     for (int i = 0; i < sz; ++i)
       mx = max(mx, 1ll * n - use[i]);

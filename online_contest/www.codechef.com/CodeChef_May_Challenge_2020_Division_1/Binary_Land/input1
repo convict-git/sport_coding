@@ -1,0 +1,10 @@
+5 9
+add 11101
+path 1 2
+add 01110
+path 3 2
+add 00100
+path 3 3
+add 10110
+remove
+path 1 2

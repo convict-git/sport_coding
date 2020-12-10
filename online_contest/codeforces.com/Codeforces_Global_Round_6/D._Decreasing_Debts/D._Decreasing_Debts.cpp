@@ -122,6 +122,7 @@ signed main() {
    int p = 0, q = sz(bal)-1;
    vector <tuple<int, int, ll>> edges;
 
+
    while (p < q) {
      if (bal[p].X == 0) {
        ++p;

@@ -4,7 +4,7 @@
 using namespace std;
 using namespace __gnu_pbds;
 
-#ifndef CONVICTION
+#ifdef CONVICTION
 #pragma GCC       optimize ("Ofast")
 #pragma GCC       optimize ("unroll-loops")
 #pragma GCC       target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")
@@ -109,8 +109,72 @@ void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v..
 /*****************************************************************************/
 //Don’t practice until you get it right. Practice until you can’t get it wrong
 
+typedef __int128_t Int;
+#define T(x) (Int(1) << (x))
+
 void solve() {
+  int n, m, k;
+  cin >> n >> m >> k;
+
+  struct edge { int u, p, v, q; };
+
+  vector <edge> e(n);
+  vector <int> gain(m);
+  vector <Int> edgesTaken(m);
+  vector <Int> neighEdgesTaken(m);
+  vector <long long> vertexTaken(m);
+
+  int worse = 0, res;
+  Int cover = T(m) - 1;
+  bool coverPossible = false;
+
+  for (int i = 0; i < n; ++i) {
+    int u, p, v, q;
+    cin >> u >> p >> v >> q;
+    --u, --v;
+    gain[u] += max(q - p, 0);
+    gain[v] += max(p - q, 0);
+    worse += max(p, q);
+    edgesTaken[u] |= T(i);
+    edgesTaken[v] |= T(i);
+    vertexTaken[u] |= (1ll << v);
+    vertexTaken[v] |= (1ll << u);
+  }
+  res = worse;
+
+  for (int u = 0; u < m; ++u)
+    for (int v = 0; v < m; ++v)
+      if (u != v && (vertexTaken[u] & (1ll << v)))
+        neighEdgesTaken[u] |= edgesTaken[v];
+
+  function <void(int, long long, Int, int)> rec = [&] (int x, long long vertMask, Int edgeMask, int curGain) {
+    if (__builtin_popcountll(vertMask) > k || x >= m)
+      return;
+
+    if (edgeMask == cover) {
+      coverPossible = true;
+      res = min(res, worse - curGain);
+    }
+
+    if (!(vertMask & (1ll << x))) {  // if already not taken
+      // take this vertex
+      rec(x + 1, vertMask | (1ll << x), edgeMask | edgesTaken[x], curGain + gain[x]);
+
+      // don't take this vertex
+      int neighGain = 0;
+      for (int v = 0; v < m; ++v)
+        if (!(vertMask & (1ll << v)))
+          neighGain += gain[v];
+
+      rec(x + 1, vertMask | vertexTaken[x], edgeMask | neighEdgesTaken[x], curGain + neighGain);
+    }
+    else
+      rec(x + 1, vertMask, edgeMask, curGain);
+  };
+  rec(0, 0, 0, 0);
+  cout << (coverPossible ? res : -1) << '\n';
 }
+#undef T
 
 signed main() {
   IOS; PREC;
@@ -122,4 +186,3 @@ signed main() {
   }
   return EXIT_SUCCESS;
 }
-

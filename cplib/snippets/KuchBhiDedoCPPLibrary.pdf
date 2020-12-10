@@ -1,0 +1,2127 @@
+%!PS-Adobe-3.0
+%%Title: gen.cpp
+%%For: convict
+%%Creator: VIM - Vi IMproved 8.1 (2018 May 18)
+%%CreationDate: Wed Sep 23 14:15:21 2020
+%%DocumentData: Clean8Bit
+%%Orientation: Portrait
+%%Pages: (atend)
+%%PageOrder: Ascend
+%%BoundingBox: 59 49 564 800
+%%DocumentMedia: A4 595 842 0 () ()
+%%DocumentNeededResources: font Courier
+%%+ font Courier-Bold
+%%+ font Courier-Oblique
+%%+ font Courier-BoldOblique
+%%DocumentSuppliedResources: procset VIM-Prolog 1.4 1
+%%+ encoding VIM-latin1 1.0 0
+%%Requirements: duplex collate color
+%%EndComments
+%%BeginDefaults
+%%PageResources: font Courier
+%%+ font Courier-Bold
+%%+ font Courier-Oblique
+%%+ font Courier-BoldOblique
+%%PageMedia: A4
+%%EndDefaults
+%%BeginProlog
+%%BeginResource: procset VIM-Prolog
+%%BeginDocument: /usr/share/vim/vim81/print/prolog.ps
+%!PS-Adobe-3.0 Resource-ProcSet
+%%Title: VIM-Prolog
+%%Version: 1.4 1
+%%EndComments
+% Editing of this file is NOT RECOMMENDED.  You run a very good risk of causing
+% all PostScript printing from VIM failing if you do.  PostScript is not called
+% a write-only language for nothing!
+/packedarray where not{userdict begin/setpacking/pop load def/currentpacking
+false def end}{pop}ifelse/CP currentpacking def true setpacking
+/bd{bind def}bind def/ld{load def}bd/ed{exch def}bd/d/def ld
+/db{dict begin}bd/cde{currentdict end}bd
+/T true d/F false d
+/SO null d/sv{/SO save d}bd/re{SO restore}bd
+/L2 systemdict/languagelevel 2 copy known{get exec}{pop pop 1}ifelse 2 ge d
+/m/moveto ld/s/show ld /ms{m s}bd /g/setgray ld/r/setrgbcolor ld/sp{showpage}bd
+/gs/gsave ld/gr/grestore ld/cp/currentpoint ld
+/ul{gs UW setlinewidth cp UO add 2 copy newpath m 3 1 roll add exch lineto
+stroke gr}bd
+/bg{gs r cp BO add 4 -2 roll rectfill gr}bd
+/sl{90 rotate 0 exch translate}bd
+L2{
+/sspd{mark exch{setpagedevice}stopped cleartomark}bd
+/nc{1 db/NumCopies ed cde sspd}bd
+/sps{3 db/Orientation ed[3 1 roll]/PageSize ed/ImagingBBox null d cde sspd}bd
+/dt{2 db/Tumble ed/Duplex ed cde sspd}bd
+/c{1 db/Collate ed cde sspd}bd
+}{
+/nc{/#copies ed}bd
+/sps{statusdict/setpage get exec}bd
+/dt{statusdict/settumble 2 copy known{get exec}{pop pop pop}ifelse
+statusdict/setduplexmode 2 copy known{get exec}{pop pop pop}ifelse}bd
+/c{pop}bd
+}ifelse
+/ffs{findfont exch scalefont d}bd/sf{setfont}bd
+/ref{1 db findfont dup maxlength dict/NFD ed{exch dup/FID ne{exch NFD 3 1 roll
+put}{pop pop}ifelse}forall/Encoding findresource dup length 256 eq{NFD/Encoding
+3 -1 roll put}{pop}ifelse NFD dup/FontType get 3 ne{/CharStrings}{/CharProcs}
+ifelse 2 copy known{2 copy get dup maxlength dict copy[/questiondown/space]{2
+copy known{2 copy get 2 index/.notdef 3 -1 roll put pop exit}if pop}forall put
+}{pop pop}ifelse dup NFD/FontName 3 -1 roll put NFD definefont pop end}bd
+CP setpacking
+(\004)cvn{}bd
+% vim:ff=unix:
+%%EOF
+%%EndDocument
+%%EndResource
+%%BeginResource: encoding VIM-latin1
+%%BeginDocument: /usr/share/vim/vim81/print/latin1.ps
+%!PS-Adobe-3.0 Resource-Encoding
+%%Title: VIM-latin1
+%%Version: 1.0 0
+%%EndComments
+/VIM-latin1[
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/space /exclam /quotedbl /numbersign /dollar /percent /ampersand /quotesingle
+/parenleft /parenright /asterisk /plus /comma /minus /period /slash
+/zero /one /two /three /four /five /six /seven
+/eight /nine /colon /semicolon /less /equal /greater /question
+/at /A /B /C /D /E /F /G
+/H /I /J /K /L /M /N /O
+/P /Q /R /S /T /U /V /W
+/X /Y /Z /bracketleft /backslash /bracketright /asciicircum /underscore
+/grave /a /b /c /d /e /f /g
+/h /i /j /k /l /m /n /o
+/p /q /r /s /t /u /v /w
+/x /y /z /braceleft /bar /braceright /asciitilde /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/space /exclamdown /cent /sterling /currency /yen /brokenbar /section
+/dieresis /copyright /ordfeminine /guillemotleft /logicalnot /hyphen /registered /macron
+/degree /plusminus /twosuperior /threesuperior /acute /mu /paragraph /periodcentered
+/cedilla /onesuperior /ordmasculine /guillemotright /onequarter /onehalf /threequarters /questiondown
+/Agrave /Aacute /Acircumflex /Atilde /Adieresis /Aring /AE /Ccedilla
+/Egrave /Eacute /Ecircumflex /Edieresis /Igrave /Iacute /Icircumflex /Idieresis
+/Eth /Ntilde /Ograve /Oacute /Ocircumflex /Otilde /Odieresis /multiply
+/Oslash /Ugrave /Uacute /Ucircumflex /Udieresis /Yacute /Thorn /germandbls
+/agrave /aacute /acircumflex /atilde /adieresis /aring /ae /ccedilla
+/egrave /eacute /ecircumflex /edieresis /igrave /iacute /icircumflex /idieresis
+/eth /ntilde /ograve /oacute /ocircumflex /otilde /odieresis /divide
+/oslash /ugrave /uacute /ucircumflex /udieresis /yacute /thorn /ydieresis]
+/Encoding defineresource pop
+% vim:ff=unix:
+%%EOF
+%%EndDocument
+%%EndResource
+%%EndProlog
+%%BeginSetup
+595 842 0 sps
+1 nc
+T F dt
+T c
+%%IncludeResource: font Courier
+/_F0 /VIM-latin1 /Courier ref
+/F0 10 /_F0 ffs
+%%IncludeResource: font Courier-Bold
+/_F1 /VIM-latin1 /Courier-Bold ref
+/F1 10 /_F1 ffs
+%%IncludeResource: font Courier-Oblique
+/_F2 /VIM-latin1 /Courier-Oblique ref
+/F2 10 /_F2 ffs
+%%IncludeResource: font Courier-BoldOblique
+/_F3 /VIM-latin1 /Courier-BoldOblique ref
+/F3 10 /_F3 ffs
+/UO -1 d
+/UW 0.5 d
+/BO -2.5 d
+%%EndSetup
+%%Page: 1 1
+%%BeginPageSetup
+sv
+0 g
+F0 sf
+%%EndPageSetup
+F1 sf
+(gen.cpp                                                                       Page 1)59.5 792.4 ms
+F0 sf
+0.376 0.376 1 r
+(// Author: Priyanshu Shrivastav)59.5 772.4 ms
+(// Library KuchBhiDedo: \(In Hindi, means 'Give out anything random'\))59.5 762.4 ms
+(// Library to create random test cases like)59.5 752.4 ms
+(// random graphs, trees, arrays, numbers)59.5 742.4 ms
+(// Hosted on: https://github.com/convict-git/sport_coding/blob/master/cplib/snippets)59.5 732.4 ms
+(/gen.cpp)59.5 722.4 ms
+(// Work In Progress)59.5 712.4 ms
+0 0.502 0 r
+(#include )59.5 692.4 ms
+0.502 g
+(<bits/stdc++.h>)s
+(using)59.5 682.4 ms
+0 g
+( )s
+F1 sf
+(namespace)s
+F0 sf
+( )s
+F1 sf
+0 0.502 0 r
+(std)s
+F0 sf
+0 g
+(;)s
+(#define IOS       )59.5 672.4 ms
+F1 sf
+(ios_base)s
+F0 sf
+(::)s
+F1 sf
+(sync_with_stdio\()s
+0 0.502 0 r
+(false)s
+0 g
+(\))s
+F0 sf
+(; )s
+F1 sf
+0 0.502 0 r
+(cin)s
+F0 sf
+0 g
+(.)s
+F1 sf
+(tie)s
+F0 sf
+( )s
+F1 sf
+(\()s
+0 0.502 0 r
+(nullptr)s
+0 g
+(\))s
+F0 sf
+(#define PREC      )59.5 662.4 ms
+F1 sf
+0 0.502 0 r
+(cout)s
+F0 sf
+0 g
+(.)s
+F1 sf
+(precision)s
+F0 sf
+( )s
+F1 sf
+(\()s
+0 0.502 0 r
+(10)s
+0 g
+(\))s
+F0 sf
+(; )s
+F1 sf
+0 0.502 0 r
+(cout)s
+F0 sf
+0 g
+( << fixed)s
+0.753 0 0 r
+(#if __cplusplus > )59.5 642.4 ms
+F1 sf
+0 0.502 0 r
+(201103L)s
+0 g
+(seed_seq)59.5 632.4 ms
+F0 sf
+( )s
+F1 sf
+0 0.502 0 r
+(seq)s
+0 g
+({)s
+F0 sf
+(  )59.5 622.4 ms
+F1 sf
+(\()s
+0.502 g
+(uint64_t)s
+0 g
+(\))s
+F0 sf
+( )s
+F1 sf
+0 0.502 0 r
+(chrono)s
+F0 sf
+0 g
+(::)s
+0.502 g
+(duration_cast)s
+0 g
+(<)s
+F1 sf
+0 0.502 0 r
+(chrono)s
+F0 sf
+0 g
+(::)s
+F1 sf
+(nanoseconds)s
+F0 sf
+(>)s
+(    )59.5 612.4 ms
+F1 sf
+(\()s
+0 0.502 0 r
+(chrono)s
+F0 sf
+0 g
+(::)s
+F1 sf
+(high_resolution_clock)s
+F0 sf
+(::)s
+F1 sf
+(now\(\))s
+F0 sf
+(.)s
+F1 sf
+(time_since_epoch\(\)\))s
+F0 sf
+(.)s
+F1 sf
+(count\(\))s
+F0 sf
+(,)s
+(    )59.5 602.4 ms
+F1 sf
+(\()s
+0.502 g
+(uint64_t)s
+0 g
+(\))s
+F0 sf
+( )s
+F1 sf
+(__builtin_ia32_rdtsc\(\))s
+F0 sf
+(,)s
+(    )59.5 592.4 ms
+F1 sf
+(\()s
+0.502 g
+(uint64_t)s
+0 g
+(\))s
+F0 sf
+( )s
+F1 sf
+(\()s
+0.502 g
+(uintptr_t)s
+0 g
+(\))s
+F0 sf
+( )s
+F1 sf
+(make_unique)s
+F0 sf
+(<)s
+F1 sf
+0.502 g
+(char)s
+F0 sf
+0 g
+(>)s
+F1 sf
+(\(\))s
+F0 sf
+(.)s
+F1 sf
+(get\(\))s
+(})59.5 582.4 ms
+F0 sf
+(;)s
+F1 sf
+(mt19937)59.5 572.4 ms
+F0 sf
+( )s
+F1 sf
+(rng\()s
+0 0.502 0 r
+(seq)s
+0 g
+(\))s
+F0 sf
+(;)s
+0.753 0 0 r
+(#else)59.5 562.4 ms
+F1 sf
+0.502 g
+(auto)59.5 552.4 ms
+F0 sf
+0 g
+( seed = )s
+F1 sf
+0 0.502 0 r
+(chrono)s
+F0 sf
+0 g
+(::)s
+F1 sf
+(high_resolution_clock)s
+F0 sf
+(::)s
+F1 sf
+(now\(\))s
+F0 sf
+(.)s
+F1 sf
+(time_since_epoch\(\))s
+F0 sf
+(.)s
+F1 sf
+(count\(\))s
+F0 sf
+(;)s
+F1 sf
+(mt19937)59.5 542.4 ms
+F0 sf
+( )s
+F1 sf
+(rng\()s
+F0 sf
+(seed)s
+F1 sf
+(\))s
+F0 sf
+(;)s
+0.753 0 0 r
+(#endif)59.5 532.4 ms
+F1 sf
+0 g
+(template)59.5 512.4 ms
+F0 sf
+( <class F = int>)s
+F1 sf
+(class Rand)59.5 502.4 ms
+F0 sf
+( )s
+F1 sf
+({)s
+F0 sf
+(  )59.5 492.4 ms
+0.502 g
+(private)s
+0 g
+(:)s
+(    )59.5 482.4 ms
+F1 sf
+0 0.502 0 r
+(static)s
+F0 sf
+0 g
+( )s
+F1 sf
+0 0.502 0 r
+(const)s
+F0 sf
+0 g
+( F __LOW = )s
+F1 sf
+(numeric_limits)s
+F0 sf
+(<F>::)s
+F1 sf
+(min\(\))s
+F0 sf
+(;)s
+(    )59.5 472.4 ms
+F1 sf
+0 0.502 0 r
+(static)s
+F0 sf
+0 g
+( )s
+F1 sf
+0 0.502 0 r
+(const)s
+F0 sf
+0 g
+( F __HIGH = )s
+F1 sf
+(numeric_limits)s
+F0 sf
+(<F>::)s
+F1 sf
+(max\(\))s
+F0 sf
+(;)s
+(  )59.5 452.4 ms
+0.502 g
+(public)s
+0 g
+(:)s
+(    F )59.5 442.4 ms
+F1 sf
+(gvUnifRand \()s
+0 0.502 0 r
+(const)s
+F0 sf
+0 g
+( F& low = __LOW, )s
+F1 sf
+0 0.502 0 r
+(const)s
+F0 sf
+0 g
+( F& high = __HIGH)s
+F1 sf
+(\))s
+F0 sf
+( )s
+F1 sf
+({)s
+F0 sf
+(      )59.5 432.4 ms
+F1 sf
+(assert\()s
+F0 sf
+(low <= high)s
+F1 sf
+(\))s
+F0 sf
+(;)s
+(      )59.5 422.4 ms
+0.502 g
+(return)s
+0 g
+( )s
+F1 sf
+(uniform_int_distribution)s
+F0 sf
+( <F> )s
+F1 sf
+(\()s
+F0 sf
+(low, high)s
+F1 sf
+(\)\()s
+F0 sf
+(rng)s
+F1 sf
+(\))s
+F0 sf
+(; )s
+0.376 0.376 1 r
+(//closed interval [low, )s
+(high])59.5 412.4 ms
+0 g
+(    )59.5 402.4 ms
+F1 sf
+(})s
+F0 sf
+(    F )59.5 382.4 ms
+F1 sf
+(gvRand \()s
+0 0.502 0 r
+(const)s
+F0 sf
+0 g
+( F& low = __LOW, )s
+F1 sf
+0 0.502 0 r
+(const)s
+F0 sf
+0 g
+( F& high = __HIGH)s
+F1 sf
+(\))s
+F0 sf
+( )s
+F1 sf
+({)s
+F0 sf
+(      )59.5 372.4 ms
+0.376 0.376 1 r
+(// if \(is_floating_point<F>::value\) return gvUnifRand \(low, high\);)s
+0 g
+(      )59.5 362.4 ms
+0.376 0.376 1 r
+(// else return gvFineRand \(low, high\);)s
+0 g
+(      )59.5 352.4 ms
+0.502 g
+(return)s
+0 g
+( )s
+F1 sf
+(gvUnifRand\()s
+F0 sf
+(low, high)s
+F1 sf
+(\))s
+F0 sf
+(;)s
+(    )59.5 342.4 ms
+F1 sf
+(})s
+(})59.5 332.4 ms
+F0 sf
+(;)s
+F1 sf
+(template)59.5 312.4 ms
+F0 sf
+( <class T = int>)s
+F1 sf
+(class KuchBhiDedo)59.5 302.4 ms
+F0 sf
+( )s
+F1 sf
+({)s
+F0 sf
+(  )59.5 292.4 ms
+0.502 g
+(public)s
+0 g
+(:)s
+(    )59.5 282.4 ms
+F1 sf
+0 0.502 0 r
+(static)s
+F0 sf
+0 g
+( )s
+F1 sf
+0 0.502 0 r
+(const)s
+F0 sf
+0 g
+( T __LOW = )s
+F1 sf
+(numeric_limits)s
+F0 sf
+(<T>::)s
+F1 sf
+(min\(\))s
+F0 sf
+(;)s
+(    )59.5 272.4 ms
+F1 sf
+0 0.502 0 r
+(static)s
+F0 sf
+0 g
+( )s
+F1 sf
+0 0.502 0 r
+(const)s
+F0 sf
+0 g
+( T __HIGH = )s
+F1 sf
+(numeric_limits)s
+F0 sf
+(<T>::)s
+F1 sf
+(max\(\))s
+F0 sf
+(;)s
+(    )59.5 262.4 ms
+F1 sf
+(Rand )s
+F0 sf
+(<T> rndT;)s
+(    )59.5 252.4 ms
+F1 sf
+(Rand )s
+F0 sf
+(<int> rndInt;)s
+(    )59.5 232.4 ms
+F1 sf
+(vector)s
+F0 sf
+( <T> )s
+F1 sf
+(gvVec\()s
+0.502 g
+(int)s
+F0 sf
+0 g
+( n, )s
+F1 sf
+0 0.502 0 r
+(const)s
+F0 sf
+0 g
+( T& low = __LOW, )s
+F1 sf
+0 0.502 0 r
+(const)s
+F0 sf
+0 g
+( T& high = __HIGH)s
+F1 sf
+(\))s
+F0 sf
+( )s
+F1 sf
+({)s
+F0 sf
+(      )59.5 222.4 ms
+F1 sf
+(vector)s
+F0 sf
+( <T> )s
+F1 sf
+(v\()s
+F0 sf
+(n)s
+F1 sf
+(\))s
+F0 sf
+(;)s
+(      )59.5 212.4 ms
+F1 sf
+(for_each\()s
+F0 sf
+(v.)s
+F1 sf
+(begin\(\))s
+F0 sf
+(, v.)s
+F1 sf
+(end\(\))s
+F0 sf
+(, )s
+F1 sf
+([)s
+F0 sf
+(&)s
+F1 sf
+(])s
+F0 sf
+( )s
+F1 sf
+(\()s
+F0 sf
+(T &x)s
+F1 sf
+(\))s
+F0 sf
+( -> )s
+F1 sf
+0.502 g
+(void)s
+F0 sf
+0 g
+( )s
+F1 sf
+({)s
+F0 sf
+( x = rndT.)s
+F1 sf
+(gvRand)s
+F0 sf
+( )s
+F1 sf
+(\()s
+F0 sf
+(low, high)s
+F1 sf
+(\))s
+F0 sf
+(;)s
+( )59.5 202.4 ms
+F1 sf
+(}\))s
+F0 sf
+(;)s
+(      )59.5 192.4 ms
+0.502 g
+(return)s
+0 g
+( v;)s
+(    )59.5 182.4 ms
+F1 sf
+(})s
+F0 sf
+(    )59.5 162.4 ms
+F1 sf
+(set)s
+F0 sf
+( <T> )s
+F1 sf
+(gvSet \()s
+0.502 g
+(int)s
+F0 sf
+0 g
+( n, )s
+F1 sf
+0 0.502 0 r
+(const)s
+F0 sf
+0 g
+( T& low = __LOW, )s
+F1 sf
+0 0.502 0 r
+(const)s
+F0 sf
+0 g
+( T& high = __HIGH)s
+F1 sf
+(\))s
+F0 sf
+( )s
+F1 sf
+({)s
+F0 sf
+(      )59.5 152.4 ms
+F1 sf
+(assert\()s
+F0 sf
+(high - low + )s
+F1 sf
+0 0.502 0 r
+(1)s
+F0 sf
+0 g
+( >= n)s
+F1 sf
+(\))s
+F0 sf
+(;)s
+(      )59.5 142.4 ms
+F1 sf
+(set)s
+F0 sf
+( <T> s;)s
+(      )59.5 132.4 ms
+0 0.502 0 r
+(while)s
+0 g
+( )s
+F1 sf
+(\(static_cast )s
+F0 sf
+(<int> )s
+F1 sf
+(\()s
+F0 sf
+(s.)s
+F1 sf
+(size\(\)\))s
+F0 sf
+( != n)s
+F1 sf
+(\))s
+F0 sf
+(        s.)59.5 122.4 ms
+F1 sf
+(insert\()s
+F0 sf
+(rndT.)s
+F1 sf
+(gvRand)s
+F0 sf
+( )s
+F1 sf
+(\()s
+F0 sf
+(low, high)s
+F1 sf
+(\)\))s
+F0 sf
+(;)s
+(      )59.5 112.4 ms
+0.502 g
+(return)s
+0 g
+( s;)s
+(    )59.5 102.4 ms
+F1 sf
+(})s
+F0 sf
+(    )59.5 82.4 ms
+F1 sf
+(vector)s
+F0 sf
+( <T> )s
+F1 sf
+(gvVecUnique \()s
+0.502 g
+(int)s
+F0 sf
+0 g
+( n, )s
+F1 sf
+0 0.502 0 r
+(const)s
+F0 sf
+0 g
+( T& low = __LOW, )s
+F1 sf
+0 0.502 0 r
+(const)s
+F0 sf
+0 g
+( T& high = __HIGH)s
+F1 sf
+(\))s
+F0 sf
+( )s
+F1 sf
+({)s
+F0 sf
+(      )59.5 72.4 ms
+F1 sf
+(set)s
+F0 sf
+( <T> s = )s
+F1 sf
+(gvSet\()s
+F0 sf
+(n, low, high)s
+F1 sf
+(\))s
+F0 sf
+(;)s
+(      )59.5 62.4 ms
+F1 sf
+(vector)s
+F0 sf
+( <T> )s
+F1 sf
+(v \()s
+F0 sf
+(s.)s
+F1 sf
+(begin\(\))s
+F0 sf
+(, s.)s
+F1 sf
+(end\(\)\))s
+F0 sf
+(;)s
+(      )59.5 52.4 ms
+F1 sf
+(random_shuffle\()s
+F0 sf
+(v.)s
+F1 sf
+(begin\(\))s
+F0 sf
+(, v.)s
+F1 sf
+(end\(\)\))s
+F0 sf
+(;)s
+re sp
+%%PageTrailer
+%%Page: 2 2
+%%BeginPageSetup
+sv
+0 g
+F0 sf
+%%EndPageSetup
+F1 sf
+(gen.cpp                                                                       Page 2)59.5 792.4 ms
+F0 sf
+(      )59.5 772.4 ms
+0.502 g
+(return)s
+0 g
+( v;)s
+(    )59.5 762.4 ms
+F1 sf
+(})s
+F0 sf
+(    )59.5 742.4 ms
+F1 sf
+(string)s
+F0 sf
+( )s
+F1 sf
+(gvString \()s
+0.502 g
+(int)s
+F0 sf
+0 g
+( n, )s
+F1 sf
+0.502 g
+(bool)s
+F0 sf
+0 g
+( lowerCaseOnly = )s
+F1 sf
+0 0.502 0 r
+(true)s
+0 g
+(\))s
+F0 sf
+( )s
+F1 sf
+({)s
+F0 sf
+(      )59.5 732.4 ms
+F1 sf
+(string)s
+F0 sf
+( )s
+F1 sf
+(s\()s
+F0 sf
+(n, )s
+0 0.502 0 r
+('x')s
+F1 sf
+0 g
+(\))s
+F0 sf
+(;)s
+(      )59.5 722.4 ms
+0 0.502 0 r
+(for)s
+0 g
+( )s
+F1 sf
+(\()s
+0.502 g
+(char)s
+F0 sf
+0 g
+( &ch : s)s
+F1 sf
+(\))s
+F0 sf
+( )s
+F1 sf
+({)s
+F0 sf
+(        )59.5 712.4 ms
+F1 sf
+0 0.502 0 r
+(if)s
+F0 sf
+0 g
+( )s
+F1 sf
+(\()s
+F0 sf
+(lowerCaseOnly)s
+F1 sf
+(\))s
+F0 sf
+( ch = )s
+F1 sf
+(static_cast )s
+F0 sf
+(<char>)s
+F1 sf
+(\()s
+F0 sf
+0 0.502 0 r
+('a')s
+0 g
+( + rndInt.)s
+F1 sf
+(gvRand)s
+F0 sf
+( )s
+F1 sf
+(\()s
+0 0.502 0 r
+(0)s
+F0 sf
+0 g
+(, )s
+F1 sf
+0 0.502 0 r
+(25)s
+0 g
+(\)\))s
+F0 sf
+(;)s
+(        )59.5 702.4 ms
+F1 sf
+0 0.502 0 r
+(else)s
+F0 sf
+0 g
+( )s
+F1 sf
+({)s
+F0 sf
+(          )59.5 692.4 ms
+F1 sf
+0.502 g
+(bool)s
+F0 sf
+0 g
+( up = rndInt.)s
+F1 sf
+(gvRand)s
+F0 sf
+( )s
+F1 sf
+(\()s
+0 0.502 0 r
+(0)s
+F0 sf
+0 g
+(, )s
+F1 sf
+0 0.502 0 r
+(1)s
+0 g
+(\))s
+F0 sf
+(;)s
+(          ch = )59.5 682.4 ms
+F1 sf
+(static_cast )s
+F0 sf
+(<char> )s
+F1 sf
+(\(\()s
+F0 sf
+(up ? )s
+0 0.502 0 r
+('A')s
+0 g
+( : )s
+0 0.502 0 r
+('a')s
+F1 sf
+0 g
+(\))s
+F0 sf
+( + rndInt.)s
+F1 sf
+(gvRand)s
+F0 sf
+( )s
+F1 sf
+(\()s
+0 0.502 0 r
+(0)s
+F0 sf
+0 g
+(, )s
+F1 sf
+0 0.502 0 r
+(25)s
+0 g
+(\)\))s
+F0 sf
+(;)s
+(        )59.5 672.4 ms
+F1 sf
+(})s
+F0 sf
+(      )59.5 662.4 ms
+F1 sf
+(})s
+F0 sf
+(      )59.5 652.4 ms
+0.502 g
+(return)s
+0 g
+( s;)s
+(    )59.5 642.4 ms
+F1 sf
+(})s
+F0 sf
+(    )59.5 622.4 ms
+F1 sf
+(vector)s
+F0 sf
+( <)s
+F1 sf
+(vector)s
+F0 sf
+( <T>> )s
+F1 sf
+(gvMat \()s
+0.502 g
+(int)s
+F0 sf
+0 g
+( mnn, )s
+F1 sf
+0.502 g
+(int)s
+F0 sf
+0 g
+( mxn, )s
+F1 sf
+0 0.502 0 r
+(const)s
+F0 sf
+0 g
+( T& low = __LOW, )s
+F1 sf
+0 0.502 0 r
+(const)s
+F0 sf
+0 g
+( T& high)s
+( = __HIGH)59.5 612.4 ms
+F1 sf
+(\))s
+F0 sf
+( )s
+F1 sf
+({)s
+F0 sf
+(      )59.5 602.4 ms
+F1 sf
+0.502 g
+(int)s
+F0 sf
+0 g
+( n = rndInt.)s
+F1 sf
+(gvRand)s
+F0 sf
+( )s
+F1 sf
+(\()s
+F0 sf
+(mnn, mxn)s
+F1 sf
+(\))s
+F0 sf
+(, m = rndInt.)s
+F1 sf
+(gvRand)s
+F0 sf
+( )s
+F1 sf
+(\()s
+F0 sf
+(mnn, mxn)s
+F1 sf
+(\))s
+F0 sf
+(;)s
+(      )59.5 592.4 ms
+F1 sf
+(vector)s
+F0 sf
+( <)s
+F1 sf
+(vector)s
+F0 sf
+( <T>> )s
+F1 sf
+(mat\()s
+F0 sf
+(n, )s
+F1 sf
+(vector)s
+F0 sf
+( <T> )s
+F1 sf
+(\()s
+F0 sf
+(m)s
+F1 sf
+(\)\))s
+F0 sf
+(;)s
+(      )59.5 572.4 ms
+F1 sf
+0 0.502 0 r
+(cout)s
+F0 sf
+0 g
+( << n << )s
+0 0.502 0 r
+(' ')s
+0 g
+( << m << '\\n';)s
+(      )59.5 562.4 ms
+0 0.502 0 r
+(for)s
+0 g
+( )s
+F1 sf
+(\()s
+0.502 g
+(auto)s
+F0 sf
+0 g
+( &row : mat)s
+F1 sf
+(\))s
+F0 sf
+( )s
+F1 sf
+({)s
+F0 sf
+(        )59.5 552.4 ms
+0 0.502 0 r
+(for)s
+0 g
+( )s
+F1 sf
+(\()s
+F0 sf
+(T& c : row)s
+F1 sf
+(\))s
+F0 sf
+(          )59.5 542.4 ms
+F1 sf
+0 0.502 0 r
+(cout)s
+F0 sf
+0 g
+( << )s
+F1 sf
+(\()s
+F0 sf
+(c = rndT.)s
+F1 sf
+(gvRand)s
+F0 sf
+( )s
+F1 sf
+(\()s
+F0 sf
+(low, high)s
+F1 sf
+(\)\))s
+F0 sf
+( << )s
+0 0.502 0 r
+(' ')s
+0 g
+(;)s
+(        )59.5 532.4 ms
+F1 sf
+0 0.502 0 r
+(cout)s
+F0 sf
+0 g
+( << '\\n';)s
+(      )59.5 522.4 ms
+F1 sf
+(})s
+F0 sf
+(      )59.5 512.4 ms
+0.502 g
+(return)s
+0 g
+( mat;)s
+(    )59.5 502.4 ms
+F1 sf
+(})s
+F0 sf
+(    )59.5 482.4 ms
+F1 sf
+(vector)s
+F0 sf
+( <)s
+F1 sf
+0.502 g
+(int)s
+F0 sf
+0 g
+(> )s
+F1 sf
+(gvPerm \()s
+0.502 g
+(int)s
+F0 sf
+0 g
+( n)s
+F1 sf
+(\))s
+F0 sf
+( )s
+F1 sf
+({)s
+F0 sf
+(      )59.5 472.4 ms
+F1 sf
+(vector)s
+F0 sf
+( <)s
+F1 sf
+0.502 g
+(int)s
+F0 sf
+0 g
+(> )s
+F1 sf
+(pi\()s
+F0 sf
+(n)s
+F1 sf
+(\))s
+F0 sf
+(;)s
+(      )59.5 462.4 ms
+F1 sf
+(iota\()s
+F0 sf
+(pi.)s
+F1 sf
+(begin\(\))s
+F0 sf
+(, pi.)s
+F1 sf
+(end\(\))s
+F0 sf
+(, )s
+F1 sf
+0 0.502 0 r
+(0)s
+0 g
+(\))s
+F0 sf
+(;)s
+(      )59.5 452.4 ms
+F1 sf
+(random_shuffle\()s
+F0 sf
+(pi.)s
+F1 sf
+(begin\(\))s
+F0 sf
+(, pi.)s
+F1 sf
+(end\(\)\))s
+F0 sf
+(;)s
+(      )59.5 442.4 ms
+0.502 g
+(return)s
+0 g
+( pi;)s
+(    )59.5 432.4 ms
+F1 sf
+(})s
+F0 sf
+(    )59.5 412.4 ms
+F1 sf
+0.502 g
+(void)s
+F0 sf
+0 g
+( )s
+F1 sf
+(gvTree \()s
+0.502 g
+(int)s
+F0 sf
+0 g
+( mnn, )s
+F1 sf
+0.502 g
+(int)s
+F0 sf
+0 g
+( mxn, )s
+F1 sf
+0 0.502 0 r
+(const)s
+F0 sf
+0 g
+( T& low = __LOW, )s
+F1 sf
+0 0.502 0 r
+(const)s
+F0 sf
+0 g
+( T& high = __HIGH)s
+F1 sf
+(\))s
+F0 sf
+( )s
+F1 sf
+({)s
+F0 sf
+(      )59.5 402.4 ms
+F1 sf
+0.502 g
+(int)s
+F0 sf
+0 g
+( n = rndInt.)s
+F1 sf
+(gvRand)s
+F0 sf
+( )s
+F1 sf
+(\()s
+F0 sf
+(mnn, mxn)s
+F1 sf
+(\))s
+F0 sf
+(;)s
+(      )59.5 392.4 ms
+F1 sf
+0 0.502 0 r
+(cout)s
+F0 sf
+0 g
+( << n << '\\n';)s
+(      )59.5 382.4 ms
+F1 sf
+(vector)s
+F0 sf
+( <)s
+F1 sf
+0.502 g
+(int)s
+F0 sf
+0 g
+(> isomorph = )s
+F1 sf
+(gvPerm\()s
+F0 sf
+(n)s
+F1 sf
+(\))s
+F0 sf
+(;)s
+(       )59.5 362.4 ms
+F1 sf
+(vector)s
+F0 sf
+( <T> nodeValue = )s
+F1 sf
+(gvVec\()s
+F0 sf
+(n, low, high)s
+F1 sf
+(\))s
+F0 sf
+(;)s
+(      )59.5 352.4 ms
+0.376 0.376 1 r
+(// for \(T x : nodeValue\) { cout << x << ' '; } cout << '\\n';  // uncomment to )s
+(have NODE VALUES)59.5 342.4 ms
+0 g
+(      )59.5 322.4 ms
+F1 sf
+(vector)s
+F0 sf
+( <)s
+F1 sf
+(pair)s
+F0 sf
+( <)s
+F1 sf
+0.502 g
+(int)s
+F0 sf
+0 g
+(, )s
+F1 sf
+0.502 g
+(int)s
+F0 sf
+0 g
+(>> edges;)s
+(      )59.5 312.4 ms
+0 0.502 0 r
+(for)s
+0 g
+( )s
+F1 sf
+(\()s
+0.502 g
+(int)s
+F0 sf
+0 g
+( u = )s
+F1 sf
+0 0.502 0 r
+(1)s
+F0 sf
+0 g
+(; u < n; ++u)s
+F1 sf
+(\))s
+F0 sf
+( )s
+F1 sf
+({)s
+F0 sf
+(        )59.5 302.4 ms
+F1 sf
+0.502 g
+(bool)s
+F0 sf
+0 g
+( swp = rndInt.)s
+F1 sf
+(gvRand)s
+F0 sf
+( )s
+F1 sf
+(\()s
+0 0.502 0 r
+(0)s
+F0 sf
+0 g
+(, )s
+F1 sf
+0 0.502 0 r
+(1)s
+0 g
+(\))s
+F0 sf
+(;)s
+(        )59.5 292.4 ms
+F1 sf
+0.502 g
+(int)s
+F0 sf
+0 g
+( pr = rndInt.)s
+F1 sf
+(gvRand)s
+F0 sf
+( )s
+F1 sf
+(\()s
+0 0.502 0 r
+(0)s
+F0 sf
+0 g
+(, u - )s
+F1 sf
+0 0.502 0 r
+(1)s
+0 g
+(\))s
+F0 sf
+(;)s
+(        edges.)59.5 282.4 ms
+F1 sf
+(push_back\()s
+F0 sf
+(swp ? )s
+F1 sf
+(make_pair\()s
+F0 sf
+(isomorph)s
+F1 sf
+([)s
+F0 sf
+(u)s
+F1 sf
+(])s
+F0 sf
+(, isomorph)s
+F1 sf
+([)s
+F0 sf
+(pr)s
+F1 sf
+(]\))s
+F0 sf
+( : )s
+F1 sf
+(make_pair\()s
+F0 sf
+(isomo)s
+(rph)59.5 272.4 ms
+F1 sf
+([)s
+F0 sf
+(pr)s
+F1 sf
+(])s
+F0 sf
+(, isomorph)s
+F1 sf
+([)s
+F0 sf
+(u)s
+F1 sf
+(]\)\))s
+F0 sf
+(; )s
+0.376 0.376 1 r
+(// undirected edge)s
+0 g
+(      )59.5 262.4 ms
+F1 sf
+(})s
+F0 sf
+(      )59.5 252.4 ms
+F1 sf
+(random_shuffle\()s
+F0 sf
+(edges.)s
+F1 sf
+(begin\(\))s
+F0 sf
+(, edges.)s
+F1 sf
+(end\(\)\))s
+F0 sf
+(;)s
+(      )59.5 242.4 ms
+0 0.502 0 r
+(for)s
+0 g
+( )s
+F1 sf
+(\()s
+0.502 g
+(auto)s
+F0 sf
+0 g
+( e : edges)s
+F1 sf
+(\))s
+F0 sf
+( )s
+F1 sf
+({)s
+F0 sf
+(        )59.5 232.4 ms
+F1 sf
+0 0.502 0 r
+(cout)s
+F0 sf
+0 g
+( << e.)s
+F1 sf
+(first)s
+F0 sf
+( + )s
+F1 sf
+0 0.502 0 r
+(1)s
+F0 sf
+0 g
+( << )s
+0 0.502 0 r
+(' ')s
+0 g
+( << e.)s
+F1 sf
+(second)s
+F0 sf
+( + )s
+F1 sf
+0 0.502 0 r
+(1)s
+F0 sf
+0 g
+( <<)s
+(          )59.5 222.4 ms
+0.376 0.376 1 r
+(// ' ' << rndT.gvRand \(low, high\) <<  // uncomment to have EDGE VALUES)s
+0 g
+(          )59.5 212.4 ms
+0.502 g
+(")s
+0 g
+(\\n)s
+0.502 g
+(")s
+0 g
+(;)s
+(      )59.5 202.4 ms
+F1 sf
+(})s
+F0 sf
+(    )59.5 192.4 ms
+F1 sf
+(})s
+F0 sf
+(    )59.5 172.4 ms
+F1 sf
+0.502 g
+(void)s
+F0 sf
+0 g
+( )s
+F1 sf
+(gvDag \()s
+0.502 g
+(int)s
+F0 sf
+0 g
+( mnn, )s
+F1 sf
+0.502 g
+(int)s
+F0 sf
+0 g
+( mxn, )s
+F1 sf
+0 0.502 0 r
+(const)s
+F0 sf
+0 g
+( T& low = __LOW, )s
+F1 sf
+0 0.502 0 r
+(const)s
+F0 sf
+0 g
+( T& high = __HIGH)s
+F1 sf
+(\))s
+F0 sf
+( )s
+F1 sf
+({)s
+F0 sf
+(      )59.5 162.4 ms
+F1 sf
+0.502 g
+(int)s
+F0 sf
+0 g
+( n = rndInt.)s
+F1 sf
+(gvRand)s
+F0 sf
+( )s
+F1 sf
+(\()s
+F0 sf
+(mnn, mxn)s
+F1 sf
+(\))s
+F0 sf
+(;)s
+(      )59.5 152.4 ms
+F1 sf
+0.502 g
+(int)s
+F0 sf
+0 g
+( m = )s
+F1 sf
+0 0.502 0 r
+(0)s
+F0 sf
+0 g
+(;)s
+(      )59.5 142.4 ms
+F1 sf
+(vector)s
+F0 sf
+( <)s
+F1 sf
+0.502 g
+(int)s
+F0 sf
+0 g
+(> isomorph = )s
+F1 sf
+(gvPerm\()s
+F0 sf
+(n)s
+F1 sf
+(\))s
+F0 sf
+(;)s
+(      )59.5 132.4 ms
+F1 sf
+(vector)s
+F0 sf
+( <)s
+F1 sf
+(pair)s
+F0 sf
+( <)s
+F1 sf
+0.502 g
+(int)s
+F0 sf
+0 g
+(, )s
+F1 sf
+0.502 g
+(int)s
+F0 sf
+0 g
+(>> edges;)s
+(      )59.5 112.4 ms
+0 0.502 0 r
+(for)s
+0 g
+( )s
+F1 sf
+(\()s
+0.502 g
+(int)s
+F0 sf
+0 g
+( u = )s
+F1 sf
+0 0.502 0 r
+(0)s
+F0 sf
+0 g
+(; u < n - )s
+F1 sf
+0 0.502 0 r
+(1)s
+F0 sf
+0 g
+(; ++u)s
+F1 sf
+(\))s
+F0 sf
+( )s
+F1 sf
+({)s
+F0 sf
+(        )59.5 102.4 ms
+F1 sf
+0.502 g
+(int)s
+F0 sf
+0 g
+( remVer = n - )s
+F1 sf
+0 0.502 0 r
+(1)s
+F0 sf
+0 g
+( - u;)s
+(        )59.5 92.4 ms
+F1 sf
+0.502 g
+(int)s
+F0 sf
+0 g
+( k = rndInt.)s
+F1 sf
+(gvRand)s
+F0 sf
+( )s
+F1 sf
+(\()s
+0 0.502 0 r
+(0)s
+F0 sf
+0 g
+(, remVer)s
+F1 sf
+(\))s
+F0 sf
+(;)s
+(        m += k;)59.5 82.4 ms
+(        )59.5 62.4 ms
+F1 sf
+(set)s
+F0 sf
+( <)s
+F1 sf
+0.502 g
+(int)s
+F0 sf
+0 g
+(> neigh = )s
+F1 sf
+(gvSet\()s
+F0 sf
+(k, u + )s
+F1 sf
+0 0.502 0 r
+(1)s
+F0 sf
+0 g
+(, n - )s
+F1 sf
+0 0.502 0 r
+(1)s
+0 g
+(\))s
+F0 sf
+(;)s
+(        )59.5 52.4 ms
+0 0.502 0 r
+(for)s
+0 g
+( )s
+F1 sf
+(\()s
+0.502 g
+(int)s
+F0 sf
+0 g
+( v : neigh)s
+F1 sf
+(\))s
+re sp
+%%PageTrailer
+%%Page: 3 3
+%%BeginPageSetup
+sv
+0 g
+F0 sf
+%%EndPageSetup
+F1 sf
+(gen.cpp                                                                       Page 3)59.5 792.4 ms
+F0 sf
+(          edges.)59.5 772.4 ms
+F1 sf
+(push_back\(make_pair\()s
+F0 sf
+(isomorph)s
+F1 sf
+([)s
+F0 sf
+(u)s
+F1 sf
+(])s
+F0 sf
+(, isomorph)s
+F1 sf
+([)s
+F0 sf
+(v)s
+F1 sf
+(]\)\))s
+F0 sf
+(; )s
+0.376 0.376 1 r
+(// directed edge)s
+0 g
+(      )59.5 762.4 ms
+F1 sf
+(})s
+F0 sf
+(      )59.5 752.4 ms
+F1 sf
+(random_shuffle\()s
+F0 sf
+(edges.)s
+F1 sf
+(begin\(\))s
+F0 sf
+(, edges.)s
+F1 sf
+(end\(\)\))s
+F0 sf
+(;)s
+(      )59.5 732.4 ms
+F1 sf
+0 0.502 0 r
+(cout)s
+F0 sf
+0 g
+( << n << )s
+0 0.502 0 r
+(' ')s
+0 g
+( << m << '\\n';)s
+(       )59.5 712.4 ms
+F1 sf
+(vector)s
+F0 sf
+( <T> nodeValue = )s
+F1 sf
+(gvVec\()s
+F0 sf
+(n, low, high)s
+F1 sf
+(\))s
+F0 sf
+(;)s
+(      )59.5 702.4 ms
+0.376 0.376 1 r
+(// for \(T x : nodeValue\) { cout << x << ' '; } cout << '\\n';  // uncomment to )s
+(have NODE VALUES)59.5 692.4 ms
+0 g
+(      )59.5 672.4 ms
+0 0.502 0 r
+(for)s
+0 g
+( )s
+F1 sf
+(\()s
+0.502 g
+(auto)s
+F0 sf
+0 g
+( e : edges)s
+F1 sf
+(\))s
+F0 sf
+( )s
+F1 sf
+({)s
+F0 sf
+(        )59.5 662.4 ms
+F1 sf
+0 0.502 0 r
+(cout)s
+F0 sf
+0 g
+( << e.)s
+F1 sf
+(first)s
+F0 sf
+( + )s
+F1 sf
+0 0.502 0 r
+(1)s
+F0 sf
+0 g
+( << )s
+0 0.502 0 r
+(' ')s
+0 g
+( << e.)s
+F1 sf
+(second)s
+F0 sf
+( + )s
+F1 sf
+0 0.502 0 r
+(1)s
+F0 sf
+0 g
+( <<)s
+(          )59.5 652.4 ms
+0.376 0.376 1 r
+(// ' ' << rndT.gvRand \(low, high\) <<  // uncomment to have EDGE VALUES)s
+0 g
+(          )59.5 642.4 ms
+0.502 g
+(")s
+0 g
+(\\n)s
+0.502 g
+(")s
+0 g
+(;)s
+(      )59.5 632.4 ms
+F1 sf
+(})s
+F0 sf
+(    )59.5 622.4 ms
+F1 sf
+(})s
+(})59.5 612.4 ms
+F0 sf
+(;)s
+re sp
+%%PageTrailer
+%%Trailer
+%%Pages: 3
+%%EOF
+

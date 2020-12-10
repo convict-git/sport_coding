@@ -2,6 +2,7 @@
 using namespace std;
 
 /* Thanks to tourist */
+/*{{{*/
 template <typename T>
 T inverse(T a, T m) {
   T u = 0, v = 1;
@@ -145,7 +146,8 @@ std::istream& operator>>(std::istream& stream, Modular<T>& number) {
   number.value = Modular<T>::normalize(x);
   return stream;
 }
+/*}}}*/
 
 // constexpr int md = 998244353;
 constexpr int md = (int) 1e9 + 7;
-using Int = Modular<std::integral_constant<decay<decltype(md)>::type, md>>;
+using Mint = Modular<std::integral_constant<decay<decltype(md)>::type, md>>;

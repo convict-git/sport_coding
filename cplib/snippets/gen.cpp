@@ -1,3 +1,10 @@
+// Author: Priyanshu Shrivastav
+// Library KuchBhiDedo: (In Hindi, means 'Give out anything random')
+// Library to create random test cases like
+// random graphs, trees, arrays, numbers
+// Hosted on: https://github.com/convict-git/sport_coding/blob/master/cplib/snippets/gen.cpp
+// Work In Progress
+
 #include <bits/stdc++.h>
 using namespace std;
 #define IOS       ios_base::sync_with_stdio(false); cin.tie (nullptr)
@@ -19,34 +26,27 @@ mt19937 rng(seed);
 template <class F = int>
 class Rand {
   private:
-    static constexpr F __LOW = numeric_limits<F>::min();
-    static constexpr F __HIGH = numeric_limits<F>::max();
+    static const F __LOW = numeric_limits<F>::min();
+    static const F __HIGH = numeric_limits<F>::max();
 
   public:
-
-    Rand() { srand(static_cast <unsigned>(time(0))); }
-
-    F gvFineRand (const F& low = __LOW, const F& high = __HIGH) {
-      assert(low <= high);
-      return low + (rand() % (high - low + 1));
-    }
-
     F gvUnifRand (const F& low = __LOW, const F& high = __HIGH) {
       assert(low <= high);
       return uniform_int_distribution <F> (low, high)(rng); //closed interval [low, high]
     }
 
     F gvRand (const F& low = __LOW, const F& high = __HIGH) {
-      if (is_floating_point<F>::value) return gvUnifRand (low, high);
-      else return gvFineRand (low, high);
+      // if (is_floating_point<F>::value) return gvUnifRand (low, high);
+      // else return gvFineRand (low, high);
+      return gvUnifRand(low, high);
     }
 };
 
 template <class T = int>
 class KuchBhiDedo {
   public:
-    static constexpr T __LOW = numeric_limits<T>::min();
-    static constexpr T __HIGH = numeric_limits<T>::max();
+    static const T __LOW = numeric_limits<T>::min();
+    static const T __HIGH = numeric_limits<T>::max();
     Rand <T> rndT;
     Rand <int> rndInt;
 
@@ -154,15 +154,3 @@ class KuchBhiDedo {
       }
     }
 };
-
-signed main() {
-  IOS; PREC;
-  KuchBhiDedo <int> k;
-  int tc = 1;
-  cout << tc << '\n';
-  while (tc--) {
-    k.gvDag(1, 100, 100, 1000);
-    // k.gvDag(1, 100); // Uncomment this to see the compiler complaining TODO
-  }
-  return EXIT_SUCCESS;
-}
