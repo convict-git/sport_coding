@@ -11,6 +11,12 @@ using namespace std;
 
 void preproc()
 {
+#warning No preprocessing done
+}
+
+void reset()
+{
+#warning No resetting of global variables done
 }
 
 void solve()
@@ -19,14 +25,15 @@ void solve()
 
 signed main()
 {
-  IOS; PREC;
-  preproc();
+   IOS; PREC;
+   preproc();
 
-  int tc = 1;
-  // cin >> tc;
-  for (int Tt = 1; Tt <= tc; ++Tt) {
-    // cout << "Case #" << Tt << ": ";
-    solve();
-  }
-  return EXIT_SUCCESS;
+   int tc = 1;
+   // cin >> tc;
+   for (int Tt = 1; Tt <= tc; ++Tt) {
+      // cout << "Case #" << Tt << ": ";
+      reset();
+      solve();
+   }
+   return EXIT_SUCCESS;
 }

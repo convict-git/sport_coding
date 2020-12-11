@@ -1,0 +1,112 @@
+#pragma GCC   optimize ("Ofast")
+#pragma GCC   optimize ("unroll-loops")
+#pragma GCC   target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")
+#include      <bits/stdc++.h>
+using namespace std;
+
+#define Ios   ios_base::sync_with_stdio(false); cin.tie (nullptr)
+#define Prec  cout.precision (10); cout << fixed
+#define x     first
+#define y     second
+#define bg(x) " [ " << #x << " : " << (x) << " ] "
+#define un(x) sort(x.begin(), x.end()), \
+              x.erase(unique(x.begin(), x.end()), x.end())
+using   ll  = long long;
+using   ull = unsigned long long;
+using   ff  = long double;
+using   pii = pair<int,int>;
+using   pil = pair<int,ll>;
+
+const int N = int(1e6);
+const int maxCost = int(1e9);
+long long int dp[N + 10];
+long long int seg[4*N + 10];
+
+void createSegTree (int l, int r, int cidx) {
+   if (l > r) return;
+   if (l == r) {
+      seg[cidx] = dp[l];
+      return;
+   }
+   int mid = (l + r)/2;
+   createSegTree(l, mid, 2*cidx + 1);
+   createSegTree(mid + 1, r, 2*cidx + 2);
+   seg[cidx] = min(seg[2*cidx + 1], seg[2*cidx + 2]);
+}
+
+long long int query (int ql, int qr, int l, int r, int cidx) {
+   if (l > r or ql > qr) return LONG_MAX;
+   if (l == r) {
+      assert(ql == qr);
+      return seg[cidx];
+   }
+   int mid = (l + r)/2;
+   if (mid >= qr) {
+      return query(ql, qr, l, mid, 2*cidx + 1);
+   }
+   else if (ql > mid) {
+      return query(ql, qr, mid + 1, r, 2*cidx + 2);
+   }
+   else {
+      long long int ans_l = query(ql, mid, l, mid, 2*cidx + 1);
+      long long int ans_r = query(mid + 1, qr, mid + 1, r, 2*cidx + 2);
+      return min(ans_l, ans_r);
+   }
+}
+
+void update (int l, int r, int sidx, int pt, long long int nw) {
+   if (l > r) return;
+   if (l == r) {
+      seg[sidx] = nw;
+      dp[pt] = nw;
+      return;
+   }
+   int mid = (l + r)/2;
+   if (mid >= pt) {
+      update(l, mid, 2*sidx + 1, pt, nw);
+   }
+   else {
+      update(mid + 1, r, 2*sidx + 2, pt, nw);
+   }
+   seg[sidx] = min(seg[2*sidx + 1], seg[2*sidx + 2]);
+}
+
+int main() {
+   Ios; Prec;
+   int t, n, m;
+   int cost[1000000];
+   cin >> t;
+   for (int tc = 1; tc <= t; ++tc) {
+      cin >> n >> m;
+      for (int i = 0; i < n; ++i) {
+         cin >> cost[i];
+         if (i == 0 or i == n - 1)
+            cost[i] = 0;    // TODO - what value should be here?
+         else if (cost[i] == 0)
+            cost[i] = maxCost + 1;
+      }
+      for (int i = 0; i < n; ++i) {
+         dp[i] = LONG_MAX;
+      }
+      dp[0] = 0;
+      createSegTree(0, n - 1, 0);
+      for (int i = 1; i < n; ++i) {
+         if (cost[i] == maxCost + 1)
+            continue;
+         else {
+            long long int minv = query(max(i - m, 0), i, 0, n - 1, 0);
+            if (minv == LONG_MAX) {
+               // not possible to get fuel from [i - m, i]
+               // already dp[i] = LONG_MAX;
+               continue;
+            }
+            long long int dp_i = minv + cost[i];
+            update(0, n - 1, 0, i, dp_i);
+         }
+      }
+      cout << "Case #" << tc << ": ";
+      dp[n - 1] == LONG_MAX ? cout << "-1\n" : cout << dp[n - 1] << "\n";
+   }
+   return 0;
+}
+

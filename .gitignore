@@ -18,8 +18,8 @@
 ./.vscode
 *pconfig.json
 ./test
-crap
-interview-prep
-tests
-tle_session
-Blogs
+./crap
+./interview-prep
+./tests
+./tle_session
+./Blogs
