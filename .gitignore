@@ -17,9 +17,9 @@
 *.out
 ./.vscode*
 *pconfig.json*
-**/test*
-**/crap*
-**/interview-prep*
-**/tests*
-**/tle_session*
-**/Blogs*
+**/test
+**/crap
+**/interview-prep
+**/tests
+**/tle_session
+**/Blogs
