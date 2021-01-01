@@ -4,7 +4,7 @@ using namespace std;
 constexpr double eps = 1e-9;
 inline bool isZero(double x) { return fabs(x) < eps; }
 inline bool isZero(long long x) { return x == 0ll; }
-struct pt {
+struct pt { // 2d Plane point
    double x, y;
    pt(){}
    pt(double _x, double _y):x(_x), y(_y){}

@@ -76,17 +76,36 @@ void pref_func (string &s) {
    }
 }
 
+
+void prefixCnt (string &s) {
+   int N = (int)s.size();
+   vector <int> cnt(N + 1);
+
+   // pi : index -> length
+   for (int i = 0; i < N; ++i) {
+      cnt[pi[i]] += 1;
+   }
+   for (int i = N - 1; i >= 0; --i) {
+      cnt[pi[i]] += cnt[i + 1];
+   }
+   for (int i = 1; i <= N; ++i) {
+      cnt[i] += 1;
+   }
+}
+
 void solve() {
    bool ok = false;
    pref_func(t);
 
+   // Number of occurance of a prefix
    for (int i = 0; i < n; ++i)
       ++cnt[pi[i]];
-   for (int i = n - 1; i >= 0; --i) {
-      cnt[pi[i - 1]] += cnt[i];
+   for (int i = n - 1; i >= 1; --i) {
+      cnt[pi[i - 1]] += cnt[i]; // This doesn't make sense right?
    }
    for (int i = 0; i <= n; ++i)
-      ++cnt[i];
+   ++cnt[i];
+   // prefixCnt(t);
 
    int len_j = pi[n - 1], j = len_j - 1;
 
